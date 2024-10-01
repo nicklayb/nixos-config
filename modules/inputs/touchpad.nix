@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, ... }: {
   options = {
-    mods.touchpad = {
+    mods.inputs.touchpad = {
       enable = lib.mkEnableOption "Enables touchpad";
     };
   };
-  config = lib.mkIf config.mods.touchpad.enable {
+  config = lib.mkIf config.mods.inputs.touchpad.enable {
     services.libinput = {
       enable = true;
       touchpad.disableWhileTyping = false;

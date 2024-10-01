@@ -6,11 +6,13 @@
       ./hardware-configuration.nix
     ];
 
-  mods.steam.enable = true;
-  mods.nautilus.enable = true;
-  mods.hyprland.enable = true;
-  mods.docker.enable = true;
   mods._1password.enable = true;
+  mods.bluetooth.enable = true;
+  mods.docker.enable = true;
+  mods.hyprland.enable = true;
+  mods.inputs.touchpad.enable = true;
+  mods.nautilus.enable = true;
+  mods.steam.enable = true;
 
   programs.firefox.enable = true;
 

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, ... }: {
   options = {
     mods._1password = {
       enable = lib.mkEnableOption "Enables 1Password";

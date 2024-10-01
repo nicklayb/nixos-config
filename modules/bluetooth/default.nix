@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, ... }: {
   options = {
     mods.bluetooth = {
       enable = lib.mkEnableOption "Enables bluetooth";
