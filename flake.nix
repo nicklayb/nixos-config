@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -22,16 +22,6 @@
       config.allowUnfree = true;
     };
   in {
-    homeConfigurations = {
-      "nboisvert" = home-manager.lib.homeManagerConfiguration {
-        specialArgs = {
-          inherit pkgs mainUser;
-        };
-        modules = [
-         ./homes/nboisvert.nix
-        ];
-      };
-    };
     nixosConfigurations = {
       "t480s" = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -43,6 +33,13 @@
            ./modules
           ./hosts/t480s/configuration.nix
           ./hosts/t480s/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nboisvert = import ./homes/nboisvert;
+            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion; };
+          }
         ];
       };
     };

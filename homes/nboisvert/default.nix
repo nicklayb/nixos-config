@@ -1,5 +1,6 @@
-{ pkgs, mainUser, ... }: {
+{ pkgs, mainUser, stateVersion, ... }: {
   programs.home-manager.enable = true;
+  home.stateVersion = stateVersion;
   home.username = mainUser.username;
   home.homeDirectory = "/home/${mainUser.username}";
 
@@ -22,9 +23,7 @@
     userEmail = mainUser.email;
   };
 
-  programs.alacritty = {
-    enable = true;
-  };
+  programs.alacritty.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -57,4 +56,7 @@
   # Wofi
   xdg.configFile."wofi/config".source = ./configs/wofi/config;
   xdg.configFile."wofi/style.css".source = ./configs/wofi/style.css;
+
+  # Alacritty
+  xdg.configFile."alacritty/alacritty.toml".source = ./configs/alacritty/alacritty.toml;
 }
