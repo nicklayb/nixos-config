@@ -38,10 +38,23 @@
       theme = "eastwood";
     };
   };
+
   nixpkgs.config.allowUnfree = true;
 
+  # Hyprland
   xdg.configFile."hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
   xdg.configFile."hypr/hypridle.conf".source = ./configs/hypr/hypridle.conf;
   xdg.configFile."hypr/hyprlock.conf".source = ./configs/hypr/hyprlock.conf;
   xdg.configFile."hypr/hyprpaper.conf".source = ./configs/hypr/hyprpaper.conf;
+  xdg.configFile."hypr/latte.conf".source = ./configs/hypr/latte.conf;
+
+  # Waybar
+  xdg.configFile."waybar/config".source = ./configs/waybar/config;
+  xdg.configFile."waybar/mocha.css".source = ./configs/waybar/mocha.css;
+  xdg.configFile."waybar/nixos.svg".source = ./configs/waybar/nixos.svg;
+  xdg.configFile."waybar/style.css".source = ./configs/waybar/style.css;
+
+  # Wofi
+  xdg.configFile."wofi/config".source = ./configs/wofi/config;
+  xdg.configFile."wofi/style.css".source = ./configs/wofi/style.css;
 }

@@ -1,0 +1,50 @@
+{
+	"layer": "top",
+	"modules-left": ["image#logo", "hyprland/workspaces", "hyprland/submap", "hyprland/window"],
+	"modules-center": [],
+	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "clock"],
+	"image#logo": {
+		"path": "/home/nboisvert/.config/waybar/nixos.svg",
+		"size": 32,
+		"on-double-click": "firefox https://search.nixos.org/packages"
+	},
+	"hyprland/window": {
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "  $1"
+    }
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 0.3,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+			"default": [" ", " ", " "]
+		},
+		"on-double-click": "pavucontrol"
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": "   {essid} | {ipaddr}",
+		"format-ethernet": "  {ipaddr}"
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": "  {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"backlight/slider": {
+		"min": 15
+	},
+	"battery": {
+	    	"format": "{icon}   {capacity}%",
+	    	"format-icons": ["", "", "", " ", ""],
+		"states": {
+      		  	"warning": 25,
+        		"critical": 10
+		}
+    },
+	}
+}

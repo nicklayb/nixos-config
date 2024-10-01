@@ -1,6 +1,7 @@
 { ... } : {
   imports = [
     ./1password
+    ./applications
     ./bluetooth
     ./command_line
     ./dev

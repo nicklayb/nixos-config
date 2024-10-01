@@ -14,23 +14,12 @@
   mods.nautilus.enable = true;
   mods.steam.enable = true;
 
-  programs.firefox.enable = true;
-
   users.users.${mainUser.username} = {
     isNormalUser = true;
     description = mainUser.name;
     extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
-
-  environment.systemPackages = with pkgs; [
-    firefox
-    neovim
-    krita
-    pavucontrol
-    vlc
-    alacritty
-  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
