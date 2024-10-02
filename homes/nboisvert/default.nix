@@ -58,6 +58,7 @@
 
   # Scripts
   xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;
+  xdg.configFile."scripts/wikis.sh".source = ./scripts/wikis.sh;
 
   xdg.desktopEntries.Mailspring = {
     name = "Mailspring";
