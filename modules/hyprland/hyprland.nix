@@ -94,6 +94,7 @@
     "$mainMod, V, togglefloating,"
     "$mainMod, D, exec, $menu"
     "$mainMod, P, exec, ~/.config/scripts/power-menu.sh"
+    "$mainMod, W, exec, ~/.config/scripts/wikis.sh"
     "$mainMod, J, togglesplit, # dwindle"
     "$mainMod, L, exec, loginctl lock-session"
 
