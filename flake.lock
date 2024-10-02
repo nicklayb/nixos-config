@@ -1,5 +1,37 @@
 {
   "nodes": {
+    "astronvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727892638,
+        "narHash": "sha256-B9U4KMiFMYTi3htGb/RzB8uGTNMut3Okr9RMPJiJ6u0=",
+        "owner": "nicklayb",
+        "repo": "astronvim",
+        "rev": "06f39c439ffdce65682116ffc168493f3f09d92c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "astronvim",
+        "type": "github"
+      }
+    },
+    "firefox-mod-blur": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727035403,
+        "narHash": "sha256-xkVZOZRGrL5YKEXb0R701F71vGJ+K5BFpugtqPwf4XQ=",
+        "owner": "datguypiko",
+        "repo": "Firefox-Mod-Blur",
+        "rev": "694566afa267fe6d5eb5c97a87e116ba794ea293",
+        "type": "github"
+      },
+      "original": {
+        "owner": "datguypiko",
+        "repo": "Firefox-Mod-Blur",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +71,8 @@
     },
     "root": {
       "inputs": {
+        "astronvim-config": "astronvim-config",
+        "firefox-mod-blur": "firefox-mod-blur",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

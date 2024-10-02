@@ -1,4 +1,4 @@
-{ pkgs, mainUser, stateVersion, ... }: {
+{ pkgs, mainUser, stateVersion, inputs, ... }: {
   programs.home-manager.enable = true;
   home.stateVersion = stateVersion;
   home.username = mainUser.username;
@@ -60,8 +60,5 @@
   xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;
   xdg.configFile."scripts/wikis.sh".source = ./scripts/wikis.sh;
 
-  xdg.desktopEntries.Mailspring = {
-    name = "Mailspring";
-    exec = "${pkgs.mailspring} --password-store=\"gnome-libsecret\"";
-  };
+  xdg.configFile."nvim".source = inputs.astronvim-config;
 }

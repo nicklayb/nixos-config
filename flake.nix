@@ -7,6 +7,8 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
+    astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -38,7 +40,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.nboisvert = import ./homes/nboisvert;
-            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion; };
+            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
           }
         ];
       };
@@ -57,7 +59,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.nboisvert = import ./homes/nboisvert;
-            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion; };
+            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
           }
         ];
       };
