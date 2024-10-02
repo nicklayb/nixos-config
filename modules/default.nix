@@ -12,5 +12,6 @@
     ./locale
     ./nautilus
     ./steam
+    ./wallet
   ];
 }

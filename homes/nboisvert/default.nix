@@ -55,4 +55,7 @@
 
   # Alacritty
   xdg.configFile."alacritty/alacritty.toml".source = ./configs/alacritty/alacritty.toml;
+
+  # Scripts
+  xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;
 }
