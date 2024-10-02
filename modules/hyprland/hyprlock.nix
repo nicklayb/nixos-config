@@ -2,7 +2,7 @@
   source = "$HOME/.config/hypr/latte.conf";
 
   "$accent" = "$flamingo";
-  "$accentAlpha" = "$flamingoAlpha";
+  "$alphaAccent" = "$flamingoAlpha";
   "$font" = "Menslo Nerd Font";
 
   general = {
@@ -71,7 +71,7 @@
     inner_color = "$surface0";
     font_color = "$text";
     fade_on_empty = "false";
-    placeholder_text = "<span foreground=\"##$textAlpha\">󰌾  <span foreground=\"##$accentAlpha\">$USER</span> connecté</span>";
+    placeholder_text = "<span foreground=\"##$textAlpha\">󰌾  <span foreground=\"##$alphaAccent\">$USER</span> connecté</span>";
     hide_input = false;
     check_color = "$accent";
     fail_color = "$red";

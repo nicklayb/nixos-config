@@ -44,7 +44,7 @@
     home-manager.users.${mainUser.username} = {
       wayland.windowManager.hyprland = {
         enable = true;
-        settings = import ./hyprland.nix { monitor = config.mods.hyprland.monitor; };
+        settings = import ./hyprland.nix { config = config; monitor = config.mods.hyprland.monitor; };
       };
       services.hyprpaper = {
         enable = true;

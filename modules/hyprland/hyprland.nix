@@ -1,4 +1,4 @@
-{ monitor, ... }: {
+{ monitor, config, ... }: {
   "$terminal" = "alacritty";
   "$fileManager" = "dolphin";
   "$menu" = "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
@@ -25,10 +25,11 @@
   };
 
   decoration = {
-    rounding = 10;
+    rounding = 8;
     active_opacity = 1.0;
-    inactive_opacity = 1.0;
+    inactive_opacity = 0.95;
     drop_shadow = true;
+    dim_inactive = true;
     shadow_range = 4;
     shadow_render_power = 3;
     "col.shadow" = "rgba(1a1a1aee)";
@@ -122,6 +123,11 @@
     "$mainMod SHIFT, 8, movetoworkspace, 8"
     "$mainMod SHIFT, 9, movetoworkspace, 9"
     "$mainMod SHIFT, 0, movetoworkspace, 10"
+
+    "$mainMod SHIFT, right, resizeactive, 20 0"
+    "$mainMod SHIFT, left, resizeactive, -20 0"
+    "$mainMod SHIFT, up, resizeactive, 0 -20"
+    "$mainMod SHIFT, down, resizeactive, 0 20"
 
     "$mainMod, S, togglespecialworkspace, magic"
     "$mainMod SHIFT, S, movetoworkspace, special:magic"
