@@ -7,5 +7,6 @@
     pavucontrol
     vlc
     alacritty
+    mailspring
   ];
 }

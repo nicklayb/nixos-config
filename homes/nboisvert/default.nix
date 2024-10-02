@@ -58,4 +58,9 @@
 
   # Scripts
   xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;
+
+  xdg.desktopEntries.Mailspring = {
+    name = "Mailspring";
+    exec = "${pkgs.mailspring} --password-store=\"gnome-libsecret\"";
+  };
 }
