@@ -6,5 +6,6 @@
   };
   config = lib.mkIf config.mods.steam.enable {
     programs.steam.enable = true;
+    programs.gamemode.enable = true;
   };
 }

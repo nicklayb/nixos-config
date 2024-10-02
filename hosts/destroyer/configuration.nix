@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, mainUser, ... }:
+{ pkgs, stateVersion, mainUser, home-manager, ... }:
 
 {
   imports =
@@ -7,11 +7,14 @@
     ];
 
   mods._1password.enable = true;
-  mods.bluetooth.enable = true;
+  mods.bluetooth.enable = false;
   mods.docker.enable = true;
   mods.hyprland.enable = true;
-  mods.hyprland.monitor = [ "eDP-1,1920x1080@60.00Hz,0x0,1" ];
-  mods.hyprland.wallpapers = ["eDP-1,/home/${mainUser.username}/.background"];
+  mods.hyprland.monitor = [
+    "DP-2,2560x1440@144.01Hz,0x0,1"
+    "Unknown-1,disable"
+  ];
+  mods.hyprland.wallpapers = ["DP-2,/home/${mainUser.username}/.background"];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;

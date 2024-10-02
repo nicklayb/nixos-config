@@ -23,6 +23,25 @@
     };
   in {
     nixosConfigurations = {
+      "destroyer" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          hostname = "destroyer";
+          inherit stateVersion pkgs self system inputs mainUser;
+        };
+        inherit system;
+        modules = [
+           ./modules
+          ./hosts/destroyer/configuration.nix
+          ./hosts/destroyer/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nboisvert = import ./homes/nboisvert;
+            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion; };
+          }
+        ];
+      };
       "t480s" = nixpkgs.lib.nixosSystem {
         specialArgs = {
           hostname = "t480s";

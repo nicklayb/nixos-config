@@ -41,10 +41,6 @@
   nixpkgs.config.allowUnfree = true;
 
   # Hyprland
-  xdg.configFile."hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
-  xdg.configFile."hypr/hypridle.conf".source = ./configs/hypr/hypridle.conf;
-  xdg.configFile."hypr/hyprlock.conf".source = ./configs/hypr/hyprlock.conf;
-  xdg.configFile."hypr/hyprpaper.conf".source = ./configs/hypr/hyprpaper.conf;
   xdg.configFile."hypr/latte.conf".source = ./configs/hypr/latte.conf;
 
   # Waybar

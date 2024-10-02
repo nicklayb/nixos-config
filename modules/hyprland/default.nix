@@ -1,7 +1,22 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, mainUser, ... }: {
   options = {
     mods.hyprland = {
       enable = lib.mkEnableOption "Enables Hyprland";
+      monitor = lib.mkOption {
+        description = "Hyprland monitor configuration";
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
+      wallpapers = lib.mkOption {
+        description = "Hyprpaper wallpapers";
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
+      wallpaperPreloads = lib.mkOption {
+        description = "Hyprpaper preloads";
+        type = lib.types.listOf lib.types.str;
+        default = ["/home/${mainUser.username}/.background"];
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
@@ -25,5 +40,27 @@
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
       pkgs.libsForQt5.qt5.qtgraphicaleffects
     ];
+
+    home-manager.users.${mainUser.username} = {
+      wayland.windowManager.hyprland = {
+        enable = true;
+        settings = import ./hyprland.nix { monitor = config.mods.hyprland.monitor; };
+      };
+      services.hyprpaper = {
+        enable = true;
+        settings = import ./hyprpaper.nix { 
+          preloads = config.mods.hyprland.wallpaperPreloads; 
+          wallpapers = config.mods.hyprland.wallpapers;
+        };
+      };
+      services.hypridle = {
+        enable = true;
+        settings = import ./hypridle.nix { };
+      };
+      programs.hyprlock = {
+        enable = true;
+        settings = import ./hyprlock.nix { };
+      };
+    };
   };
 }
