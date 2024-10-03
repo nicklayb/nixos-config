@@ -7,16 +7,14 @@
     ];
 
   mods._1password.enable = true;
-  mods.bluetooth.enable = false;
+  mods.alacritty.enable = true;
   mods.docker.enable = true;
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [
     "DP-3,2560x1440@144.01Hz,0x0,1"
   ];
   mods.hyprland.wallpapers = ["DP-3,/home/${mainUser.username}/.background"];
-  mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
-  mods.steam.enable = true;
 
   users.users.${mainUser.username} = {
     isNormalUser = true;

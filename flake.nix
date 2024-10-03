@@ -23,6 +23,12 @@
       inherit system;
       config.allowUnfree = true;
     };
+    home-config = {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.nboisvert = import ./homes/nboisvert;
+      home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
+    };
   in {
     nixosConfigurations = {
       "destroyer" = nixpkgs.lib.nixosSystem {
@@ -36,12 +42,7 @@
           ./hosts/destroyer/configuration.nix
           ./hosts/destroyer/hardware-configuration.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nboisvert = import ./homes/nboisvert;
-            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
-          }
+          home-config
         ];
       };
       "t480s" = nixpkgs.lib.nixosSystem {
@@ -55,12 +56,7 @@
           ./hosts/t480s/configuration.nix
           ./hosts/t480s/hardware-configuration.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nboisvert = import ./homes/nboisvert;
-            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
-          }
+          home-config
         ];
       };
       "fleur-de-lys" = nixpkgs.lib.nixosSystem {
@@ -74,12 +70,7 @@
           ./hosts/fleur-de-lys/configuration.nix
           ./hosts/fleur-de-lys/hardware-configuration.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nboisvert = import ./homes/nboisvert;
-            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
-          }
+          home-config
         ];
       };
     };
