@@ -23,8 +23,6 @@
     userEmail = mainUser.email;
   };
 
-  programs.alacritty.enable = true;
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -52,9 +50,6 @@
   # Wofi
   xdg.configFile."wofi/config".source = ./configs/wofi/config;
   xdg.configFile."wofi/style.css".source = ./configs/wofi/style.css;
-
-  # Alacritty
-  xdg.configFile."alacritty/alacritty.toml".source = ./configs/alacritty/alacritty.toml;
 
   # Scripts
   xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;

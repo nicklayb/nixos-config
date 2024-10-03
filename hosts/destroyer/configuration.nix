@@ -7,6 +7,7 @@
     ];
 
   mods._1password.enable = true;
+  mods.alacritty.enable = true;
   mods.bluetooth.enable = false;
   mods.docker.enable = true;
   mods.hyprland.enable = true;
