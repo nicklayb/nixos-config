@@ -16,5 +16,6 @@
     fzf
     nfs-utils
     unzip
+    neovim
   ];
 }
