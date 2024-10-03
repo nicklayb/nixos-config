@@ -29,50 +29,25 @@
       home-manager.users.nboisvert = import ./homes/nboisvert;
       home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
     };
+    build-system = hostname : nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        hostname = hostname;
+        inherit stateVersion pkgs self system inputs mainUser;
+      };
+      inherit system;
+      modules = [
+          ./modules
+        ./hosts/${hostname}/configuration.nix
+        ./hosts/${hostname}/hardware-configuration.nix
+        home-manager.nixosModules.home-manager
+        home-config
+      ];
+    };
   in {
     nixosConfigurations = {
-      "destroyer" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          hostname = "destroyer";
-          inherit stateVersion pkgs self system inputs mainUser;
-        };
-        inherit system;
-        modules = [
-           ./modules
-          ./hosts/destroyer/configuration.nix
-          ./hosts/destroyer/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          home-config
-        ];
-      };
-      "t480s" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          hostname = "t480s";
-          inherit stateVersion pkgs self system inputs mainUser;
-        };
-        inherit system;
-        modules = [
-           ./modules
-          ./hosts/t480s/configuration.nix
-          ./hosts/t480s/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          home-config
-        ];
-      };
-      "fleur-de-lys" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          hostname = "fleur-de-lys";
-          inherit stateVersion pkgs self system inputs mainUser;
-        };
-        inherit system;
-        modules = [
-           ./modules
-          ./hosts/fleur-de-lys/configuration.nix
-          ./hosts/fleur-de-lys/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          home-config
-        ];
-      };
+      "destroyer" = build-system "destroyer";
+      "t480s" = build-system "t480s";
+      "fleur-de-lys" = build-system "fleur-de-lys";
     };
   };
 }
