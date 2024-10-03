@@ -63,6 +63,25 @@
           }
         ];
       };
+      "fleur-de-lys" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          hostname = "fleur-de-lys";
+          inherit stateVersion pkgs self system inputs mainUser;
+        };
+        inherit system;
+        modules = [
+           ./modules
+          ./hosts/fleur-de-lys/configuration.nix
+          ./hosts/fleur-de-lys/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nboisvert = import ./homes/nboisvert;
+            home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
+          }
+        ];
+      };
     };
   };
 }
