@@ -9,6 +9,7 @@
   mods._1password.enable = true;
   mods.alacritty.enable = true;
   mods.docker.enable = true;
+  mods.firefox.enable = true;
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [
     "DP-3,2560x1440@144.01Hz,0x0,1"

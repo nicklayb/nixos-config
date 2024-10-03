@@ -1,18 +1,13 @@
 { ... } : {
   imports = [
-    ./1password
-    ./alacritty
     ./applications
     ./bluetooth
     ./command_line
+    ./desktop_environment
     ./dev
     ./docker
     ./fonts
-    ./hyprland
     ./inputs
     ./locale
-    ./nautilus
-    ./steam
-    ./wallet
   ];
 }

@@ -10,6 +10,7 @@
   mods.alacritty.enable = true;
   mods.bluetooth.enable = false;
   mods.docker.enable = true;
+  mods.firefox.enable = true;
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [
     "DP-2,2560x1440@144.01Hz,0x0,1"
