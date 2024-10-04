@@ -22,6 +22,7 @@
     pkgs = import inputs.nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      config.nvidia.acceptLicense = true;
     };
     home-config = {
       home-manager.useGlobalPkgs = true;
@@ -49,6 +50,7 @@
       "t480s" = build-system "t480s";
       "fleur-de-lys" = build-system "fleur-de-lys";
       "macmini" = build-system "macmini";
+      "macpro" = build-system "macpro";
     };
   };
 }
