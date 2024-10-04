@@ -12,9 +12,10 @@
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.hyprland.enable = true;
-  mods.hyprland.monitor = [ "HDMI-1,2560x1440@60.00Hz,0x0,1" ];
-  mods.hyprland.wallpapers = ["HDMI-1,/home/${mainUser.username}/.background"];
+  mods.hyprland.monitor = [ "HDMI-2-A,2560x1440@74.97Hz,0x0,1" ];
+  mods.hyprland.wallpapers = ["HDMI-2-A,/home/${mainUser.username}/.background"];
   mods.nautilus.enable = true;
+  mods.plasma.enable = true;
   mods.waybar.enable = true;
   mods.wofi.enable = true;
 
