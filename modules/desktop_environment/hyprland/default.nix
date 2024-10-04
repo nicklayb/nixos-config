@@ -35,13 +35,13 @@
       pkgs.hyprpaper
       pkgs.hyprlock
       pkgs.hypridle
-      pkgs.wofi
-      pkgs.waybar
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
       pkgs.libsForQt5.qt5.qtgraphicaleffects
     ];
 
     home-manager.users.${mainUser.username} = {
+      xdg.configFile."hypr/latte.conf".source = ./latte.conf;
+
       wayland.windowManager.hyprland = {
         enable = true;
         settings = import ./hyprland.nix { config = config; monitor = config.mods.hyprland.monitor; };

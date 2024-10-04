@@ -20,6 +20,8 @@
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;
+  mods.waybar.enable = true;
+  mods.wofi.enable = true;
 
   users.users.${mainUser.username} = {
     isNormalUser = true;

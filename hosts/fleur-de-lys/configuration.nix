@@ -16,6 +16,8 @@
   ];
   mods.hyprland.wallpapers = ["DP-3,/home/${mainUser.username}/.background"];
   mods.nautilus.enable = true;
+  mods.waybar.enable = true;
+  mods.wofi.enable = true;
 
   users.users.${mainUser.username} = {
     isNormalUser = true;
