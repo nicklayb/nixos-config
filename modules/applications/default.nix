@@ -1,4 +1,4 @@
-{ pkgs, mainUser, inputs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./1password.nix
     ./alacritty
@@ -11,7 +11,6 @@
   environment.systemPackages = with pkgs; [
     krita
     mailspring
-    neovim
     pavucontrol
     vlc
   ];
