@@ -48,6 +48,7 @@
       "destroyer" = build-system "destroyer";
       "t480s" = build-system "t480s";
       "fleur-de-lys" = build-system "fleur-de-lys";
+      "macmini" = build-system "macmini";
     };
   };
 }
