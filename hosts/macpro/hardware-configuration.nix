@@ -33,6 +33,10 @@
 
   services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
+  services.jack = {
+    jackd.enable = true;
+    alsa.enable = true;
+  };
 
   hardware.opengl.enable = true;
 
