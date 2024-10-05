@@ -9,6 +9,7 @@
     };
     firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
+    musnix = { url = "github:musnix/musnix"; };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -22,6 +23,7 @@
     pkgs = import inputs.nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      config.nvidia.acceptLicense = true;
     };
     home-config = {
       home-manager.useGlobalPkgs = true;
@@ -36,7 +38,7 @@
       };
       inherit system;
       modules = [
-          ./modules
+        ./modules
         ./hosts/${hostname}/configuration.nix
         ./hosts/${hostname}/hardware-configuration.nix
         home-manager.nixosModules.home-manager
@@ -48,6 +50,8 @@
       "destroyer" = build-system "destroyer";
       "t480s" = build-system "t480s";
       "fleur-de-lys" = build-system "fleur-de-lys";
+      "macmini" = build-system "macmini";
+      "macpro" = build-system "macpro";
     };
   };
 }

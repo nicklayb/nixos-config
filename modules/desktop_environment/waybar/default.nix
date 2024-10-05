@@ -14,7 +14,6 @@
       programs.waybar = {
         enable = true;
         style = ./style.css;
-        systemd.enable = true;
       };
       xdg.configFile."waybar/config".source = ./config.json;
       xdg.configFile."waybar/mocha.css".source = ./mocha.css;

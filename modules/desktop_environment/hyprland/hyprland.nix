@@ -4,6 +4,10 @@
   "$menu" = "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
   "$mainMod" = "SUPER";
 
+  exec-once = [
+    "waybar"
+  ];
+
   env = [
     "XCURSOR_SIZE,24"
     "HYPRCURSOR_SIZE,24"
