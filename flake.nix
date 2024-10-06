@@ -10,9 +10,10 @@
     firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
     musnix = { url = "github:musnix/musnix"; };
+    nix-snapd = { url = "github:nix-community/nix-snapd"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, lib, nixpkgs, home-manager, ... }@inputs: let
     system = "x86_64-linux";
     stateVersion = "23.05";
     mainUser = {
@@ -31,27 +32,46 @@
       home-manager.users.nboisvert = import ./homes/nboisvert;
       home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
     };
-    build-system = hostname : nixpkgs.lib.nixosSystem {
+    build-home = { username }@user: {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = { inherit pkgs stateVersion inputs; };
+      home-manager.users.${username} = import ./homes/${username} { user = user; };
+    };
+    nboisvert = {
+      username = "nboisvert";
+      name = "Nicolas Boisvert";
+      email = "nicklay@me.com";
+      groups = [ "wheel" "docker" ];
+    };
+    elaforme = {
+      username = "elaforme";
+      name = "Eve-Lynn Laforme";
+      groups = [];
+    };
+    build-system = { users, hostname } : nixpkgs.lib.nixosSystem {
       specialArgs = {
         hostname = hostname;
-        inherit stateVersion pkgs self system inputs mainUser;
+        inherit stateVersion pkgs self system inputs users mainUser;
       };
       inherit system;
-      modules = [
-        ./modules
-        ./hosts/${hostname}/configuration.nix
-        ./hosts/${hostname}/hardware-configuration.nix
-        home-manager.nixosModules.home-manager
-        home-config
+      modules = lib.concat [
+        [
+          ./modules
+          ./hosts/${hostname}/configuration.nix
+          ./hosts/${hostname}/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+        ]
+        (map build-home users)
       ];
     };
   in {
     nixosConfigurations = {
-      "destroyer" = build-system "destroyer";
-      "t480s" = build-system "t480s";
-      "fleur-de-lys" = build-system "fleur-de-lys";
-      "macmini" = build-system "macmini";
-      "macpro" = build-system "macpro";
+      "destroyer" = build-system { hostname = "destroyer"; users = [ nboisvert ]; };
+      "t480s" = build-system { hostname = "t480s"; users = [ nboisvert ]; };
+      "fleur-de-lys" = build-system { hostname = "fleur-de-lys"; users = [ nboisvert ]; };
+      "macmini" = build-system { hostname = "macmini"; users = [ nboisvert elaforme ]; };
+      "macpro" = build-system { hostname = "macpro"; users = [ nboisvert ]; };
     };
   };
 }

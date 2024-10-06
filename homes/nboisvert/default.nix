@@ -1,8 +1,8 @@
-{ pkgs, mainUser, stateVersion, inputs, ... }: {
+{ pkgs, user, stateVersion, inputs, ... }: {
   programs.home-manager.enable = true;
   home.stateVersion = stateVersion;
-  home.username = mainUser.username;
-  home.homeDirectory = "/home/${mainUser.username}";
+  home.username = user.username;
+  home.homeDirectory = "/home/${user.username}";
 
   home.packages = [
     pkgs.slack
@@ -19,8 +19,8 @@
 
   programs.git = {
     enable = true;
-    userName = mainUser.username;
-    userEmail = mainUser.email;
+    userName = user.username;
+    userEmail = user.email;
     diff-so-fancy.enable = true;
   };
 

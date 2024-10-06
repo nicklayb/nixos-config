@@ -1,9 +1,10 @@
-{ pkgs, stateVersion, mainUser, ... }:
+{ pkgs, stateVersion, mainUser, inputs, ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
+      inputs.nix-snapd.nixosModules.default
     ];
 
   mods._1password.enable = true;
@@ -16,6 +17,7 @@
   mods.hyprland.wallpapers = ["eDP-1,/home/${mainUser.username}/.background"];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
+  mods.snap.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
   mods.wofi.enable = true;

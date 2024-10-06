@@ -4,12 +4,12 @@
     ./alacritty
     ./firefox.nix
     ./nautilus.nix
+    ./snap.nix
     ./steam.nix
     ./wallet.nix
   ];
 
   environment.systemPackages = with pkgs; [
-    bluemail
     krita
     pavucontrol
     vlc

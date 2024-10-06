@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, mainUser, home-manager, ... }:
+{ pkgs, stateVersion, users, ... }:
 
 {
   imports =
@@ -14,17 +14,11 @@
   mods.hyprland.monitor = [
     "DP-3,2560x1440@144.01Hz,0x0,1"
   ];
-  mods.hyprland.wallpapers = ["DP-3,/home/${mainUser.username}/.background"];
   mods.nautilus.enable = true;
   mods.waybar.enable = true;
   mods.wofi.enable = true;
 
-  users.users.${mainUser.username} = {
-    isNormalUser = true;
-    description = mainUser.name;
-    extraGroups = [ "wheel" "docker" ];
-    shell = pkgs.zsh;
-  };
+  users = import ../tools/create_users.nix { users = users; pkgs = pkgs; };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
