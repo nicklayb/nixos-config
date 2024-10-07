@@ -1,6 +1,6 @@
 { users, pkgs }: 
 let
-  users = map ({ user } : {
+  users = builtins.mapAttrs (name: { user } : {
     ${user.username} = {
       isNormalUser = true;
       description = user.name;

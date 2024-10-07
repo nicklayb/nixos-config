@@ -62,16 +62,16 @@
           ./hosts/${hostname}/hardware-configuration.nix
           home-manager.nixosModules.home-manager
         ]
-        (map build-home users)
+        (map build-home (builtins.attrValues users))
       ];
     };
   in {
     nixosConfigurations = {
-      "destroyer" = build-system { hostname = "destroyer"; users = [ nboisvert ]; };
-      "t480s" = build-system { hostname = "t480s"; users = [ nboisvert ]; };
-      "fleur-de-lys" = build-system { hostname = "fleur-de-lys"; users = [ nboisvert ]; };
-      "macmini" = build-system { hostname = "macmini"; users = [ nboisvert elaforme ]; };
-      "macpro" = build-system { hostname = "macpro"; users = [ nboisvert ]; };
+      "destroyer" = build-system { hostname = "destroyer"; users = { inherit nboisvert; }; };
+      "t480s" = build-system { hostname = "t480s"; users = { inherit nboisvert; }; };
+      "fleur-de-lys" = build-system { hostname = "fleur-de-lys"; users = { inherit nboisvert; }; };
+      "macmini" = build-system { hostname = "macmini"; users = { inherit nboisvert elaforme; }; };
+      "macpro" = build-system { hostname = "macpro"; users = { inherit nboisvert; }; };
     };
   };
 }
