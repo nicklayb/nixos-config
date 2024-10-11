@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-23-11.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,6 +11,10 @@
     firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
     musnix = { url = "github:musnix/musnix"; };
+    t480s-fingerprint-sensor = {
+      url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor";
+      inputs.nixpkgs.follows = "nixpkgs-23-11";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -38,6 +43,8 @@
       };
       inherit system;
       modules = [
+        inputs.t480s-fingerprint-sensor.nixosModules.open-fprintd
+        inputs.t480s-fingerprint-sensor.nixosModules.python-validity
         ./modules
         ./hosts/${hostname}/configuration.nix
         ./hosts/${hostname}/hardware-configuration.nix

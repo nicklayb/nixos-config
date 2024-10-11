@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, hostname, system, ... }:
+{ config, lib, modulesPath, hostname, system, pkgs, ... }:
 
 {
   imports =
@@ -27,6 +27,13 @@
   swapDevices =
     [ { device = "/dev/disk/by-uuid/d74da650-de57-46b5-9e13-ea5ca1d95fea"; }
     ];
+
+  services.open-fprintd.enable = true;
+  services.python-validity.enable = true;
+
+  environment.systemPackages = [
+    pkgs.glib
+  ];
 
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
