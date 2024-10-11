@@ -10,15 +10,17 @@
     ];
 
     home-manager.users.${mainUser.username} = {
-      home.file.".mozilla/firefox/${mainUser.username}/chrome/firefox-mod-blur".source = inputs.firefox-mod-blur;
+      home.file.".mozilla/firefox/${mainUser.username}/chrome/firefox-mod-blur".source = inputs.firefox-firefox-mod-blur;
+      home.file.".mozilla/firefox/${mainUser.username}/chrome/textfox".source = inputs.firefox-textfox;
+      home.file.".mozilla/firefox/${mainUser.username}/chrome/textfox".source = inputs.firefox-textfox;
       programs.firefox = {
         enable = true;
         profiles.${mainUser.username} = {
           userChrome = ''
-            @import "firefox-mod-blur/userChrome.css";
+            @import "textfox/userChrome.css";
           '';
           userContent = ''
-            @import "firefox-mod-blur/userContent.css";
+            @import "textfox/userContent.css";
           '';
           settings = {
             "browser.theme.content-theme" = 0;

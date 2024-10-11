@@ -3,11 +3,11 @@
     "astronvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1727892638,
-        "narHash": "sha256-B9U4KMiFMYTi3htGb/RzB8uGTNMut3Okr9RMPJiJ6u0=",
+        "lastModified": 1727900938,
+        "narHash": "sha256-dYOWQ9PkOPjqvTNSaaQ5ByPv6i93Hov63mjvNYq1jJU=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "06f39c439ffdce65682116ffc168493f3f09d92c",
+        "rev": "be2b1c2e18bae84704ba4ad88d75f1097d8073ca",
         "type": "github"
       },
       "original": {
@@ -16,19 +16,35 @@
         "type": "github"
       }
     },
-    "firefox-mod-blur": {
+    "firefox-firefox-mod-blur": {
       "flake": false,
       "locked": {
-        "lastModified": 1727035403,
-        "narHash": "sha256-xkVZOZRGrL5YKEXb0R701F71vGJ+K5BFpugtqPwf4XQ=",
+        "lastModified": 1728223705,
+        "narHash": "sha256-7wvQABKZ9Cc7UYgZRA9l7kKtpMsrMlBWM9q70CvQSJY=",
         "owner": "datguypiko",
         "repo": "Firefox-Mod-Blur",
-        "rev": "694566afa267fe6d5eb5c97a87e116ba794ea293",
+        "rev": "d68c33f003f1f0ef1373d5839e9a1e16753a12b1",
         "type": "github"
       },
       "original": {
         "owner": "datguypiko",
         "repo": "Firefox-Mod-Blur",
+        "type": "github"
+      }
+    },
+    "firefox-textfox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728681072,
+        "narHash": "sha256-WvByAahynOsJvyO59XWaltAx0RRHmOpFZt009KV60bM=",
+        "owner": "nicklayb",
+        "repo": "textfox",
+        "rev": "7cc881c61fef481e6cad90dc9aa66de4718d63ec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "textfox",
         "type": "github"
       }
     },
@@ -89,11 +105,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1727540905,
-        "narHash": "sha256-40J9tW7Y794J7Uw4GwcAKlMxlX2xISBl6IBigo83ih8=",
+        "lastModified": 1728500571,
+        "narHash": "sha256-dOymOQ3AfNI4Z337yEwHGohrVQb4yPODCW9MDUyAc4w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fbca5e745367ae7632731639de5c21f29c8744ed",
+        "rev": "d51c28603def282a24fa034bcb007e2bcb5b5dd0",
         "type": "github"
       },
       "original": {
@@ -106,7 +122,8 @@
     "root": {
       "inputs": {
         "astronvim-config": "astronvim-config",
-        "firefox-mod-blur": "firefox-mod-blur",
+        "firefox-firefox-mod-blur": "firefox-firefox-mod-blur",
+        "firefox-textfox": "firefox-textfox",
         "home-manager": "home-manager",
         "musnix": "musnix",
         "nixpkgs": "nixpkgs_2"

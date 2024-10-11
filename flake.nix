@@ -7,7 +7,8 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
+    firefox-firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
+    firefox-textfox = { url = "github:nicklayb/textfox"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
     musnix = { url = "github:musnix/musnix"; };
   };
