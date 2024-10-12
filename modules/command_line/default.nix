@@ -16,6 +16,7 @@
     fzf
     nfs-utils
     unzip
+    jq
     neovim
   ];
 }

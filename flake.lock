@@ -35,11 +35,11 @@
     "firefox-textfox": {
       "flake": false,
       "locked": {
-        "lastModified": 1728681072,
-        "narHash": "sha256-WvByAahynOsJvyO59XWaltAx0RRHmOpFZt009KV60bM=",
+        "lastModified": 1728697838,
+        "narHash": "sha256-4aCaJxngPqJ5bLFwSuQipWgER6KL70x2CbZQPWJAJUU=",
         "owner": "nicklayb",
         "repo": "textfox",
-        "rev": "7cc881c61fef481e6cad90dc9aa66de4718d63ec",
+        "rev": "df7d56dbfcf9fe3e64238409f55a2f9919850a1c",
         "type": "github"
       },
       "original": {
@@ -105,11 +105,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1728500571,
-        "narHash": "sha256-dOymOQ3AfNI4Z337yEwHGohrVQb4yPODCW9MDUyAc4w=",
+        "lastModified": 1728627514,
+        "narHash": "sha256-r+SF9AnHrTg+bk6YszoKfV9lgyw+yaFUQe0dOjI0Z2o=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d51c28603def282a24fa034bcb007e2bcb5b5dd0",
+        "rev": "c505ebf777526041d792a49d5f6dd4095ea391a7",
         "type": "github"
       },
       "original": {

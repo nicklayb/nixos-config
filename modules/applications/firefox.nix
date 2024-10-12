@@ -2,6 +2,11 @@
   options = {
     mods.firefox = {
       enable = lib.mkEnableOption "Enables Firefox";
+      theme = lib.mkOption {
+        description = "Theme to apply";
+        default = "textfox";
+        type = lib.types.str;
+      };
     };
   };
   config = lib.mkIf config.mods.firefox.enable {
@@ -16,17 +21,16 @@
         enable = true;
         profiles.${mainUser.username} = {
           userChrome = ''
-            @import "textfox/userChrome.css";
+            @import "${config.mods.firefox.theme}/userChrome.css";
           '';
           userContent = ''
-            @import "textfox/userContent.css";
+            @import "${config.mods.firefox.theme}/userContent.css";
           '';
           settings = {
             "browser.theme.content-theme" = 0;
             "browser.theme.dark-private-windows" = false; 
             "browser.theme.toolbar-theme" = 0;
             "browser.uidensity" = 0;
-            "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
             "services.sync.engine.passwords" = false;
             "svg.context-properties.content.enabled" = true;
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;

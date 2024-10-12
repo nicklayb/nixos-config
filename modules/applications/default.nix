@@ -13,5 +13,6 @@
     mailspring
     pavucontrol
     vlc
+    plexamp
   ];
 }
