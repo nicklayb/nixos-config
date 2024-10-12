@@ -97,6 +97,8 @@
     "$mainMod, W, exec, ~/.config/scripts/wikis.sh"
     "$mainMod, J, togglesplit, # dwindle"
     "$mainMod, L, exec, loginctl lock-session"
+    "$mainMod, X, exec, hyprshot --clipboard-only -m output"
+    "$mainMod SHIFT, X, exec, hyprshot --clipboard-only -m region"
 
     "$mainMod, left, movefocus, l"
     "$mainMod, right, movefocus, r"

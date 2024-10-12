@@ -35,12 +35,16 @@
       pkgs.hyprpaper
       pkgs.hyprlock
       pkgs.hypridle
+      pkgs.hyprshot
+      pkgs.libnotify
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
       pkgs.libsForQt5.qt5.qtgraphicaleffects
     ];
 
     home-manager.users.${mainUser.username} = {
       xdg.configFile."hypr/latte.conf".source = ./latte.conf;
+
+      services.dunst.enable = true;
 
       wayland.windowManager.hyprland = {
         enable = true;

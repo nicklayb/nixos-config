@@ -5,15 +5,15 @@
 	font-size: 14px;
 }
 
-#backlight-slider, #network, #pulseaudio, #cpu, #memory, #clock, #battery, #workspaces {
+#backlight-slider, #network, #pulseaudio, #cpu, #memory, #clock, #battery {
 	border-radius: 5px;
 	margin-top: 8px;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
 	margin-bottom: 0;
 	transition: none;
-	min-height: 10px;
-	border: 1px solid #FA8072;
+	min-height: 4px;
+	border: 1px solid #fa7282;
 	background: rgb(35, 33, 54);
 	color: #b5b5b5;
 }
@@ -51,6 +51,7 @@ window#waybar.empty #window {
 }
 
 #workspaces {
+	background: transparent;
 	margin-top: 8px;
 	margin-bottom: 0;
 	border-radius: 5px;
@@ -62,30 +63,30 @@ window#waybar.empty #window {
 
 #workspaces button {
 	transition: none;
-	background: transparent;
+	background: rgb(35, 33, 54);
 	font-size: 16px;
 	color: #b5b5b5;
 }
 
 #workspaces button:first-child {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	border-top-left-radius: 14px;
+	border-bottom-left-radius: 14px;
 }
 #workspaces button:last-child {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
 }
 
 #workspaces button.active {
 	color: white;
-	background: #FA8072;
+	background: #fa7282;
 }
 
 #workspaces button:hover {
 	transition: none;
 	box-shadow: inherit;
 	text-shadow: inherit;
-	color: #FA8072;
+	color: #fa7282;
 }
 
 #backlight-slider {
@@ -104,7 +105,7 @@ window#waybar.empty #window {
 }
 #backlight-slider highlight {
 	border-radius: 100px;
-	background-color: #FA8072;
+	background-color: #fa7282;
 }
 
 #battery.warning {
