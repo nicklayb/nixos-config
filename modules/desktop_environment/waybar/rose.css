@@ -1,26 +1,51 @@
 * {
 	border: none;
 	border-radius: 0;
+	margin: 0;
+	padding: 0;
 	font-family: 'CaskaydiaCoveNF', monospace; /*Nerd Font Hack;*/
 	font-size: 12px;
 }
 
 #backlight-slider, #network, #pulseaudio, #cpu, #memory, #clock, #battery {
 	border-radius: 1px;
-	margin-top: 8px;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-bottom: 0;
 	transition: none;
-	min-height: 2px;
-	border: 1px solid #fa7282;
-	background: rgb(35, 33, 54);
-	color: #b5b5b5;
+	border-right: 1px solid gray;
 }
 
-/* Right side */
-#backlight-slider, #network, #pulseaudio, #cpu, #memory, #clock, #battery {
-	/*margin-right: 5px*/
+#clock {
+	border-right: 0;
+}
+
+.modules-right {
+	color: #b5b5b5;
+	background: rgb(35, 33, 54);
+	border: 2px solid #fa7282;
+	margin-top: 4px;
+	border-radius: 8px;
+	margin-right: 4px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.modules-left {
+	color: #b5b5b5;
+	margin-left: 4px;
+	background: rgb(35, 33, 54);
+	border-radius: 10px;
+	border: 2px solid #fa7282;
+	margin-top: 4px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.modules-center {
+	color: #b5b5b5;
+	margin-top: 4px;
+	padding: 3px;
 }
 
 window#waybar {
@@ -32,19 +57,14 @@ window#waybar.hidden {
 }
 
 #window {
-	margin-left: 5px;
-  color: #f8f8f2;
-  margin-top: 8px;
-  padding-left: 8px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-left: 1px solid gray;
 }
 
 #image {
-	margin-top: 8px;
-	margin-left: 12px;
-	background: rgb(35, 33, 54);
-	min-width: 34px;
-	border-radius: 5px;
-	border: 1px solid #fa7282;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 window#waybar.empty #window {
@@ -53,33 +73,19 @@ window#waybar.empty #window {
 
 #workspaces {
 	background: transparent;
-	margin-top: 8px;
-	margin-bottom: 0;
-	border-radius: 5px;
 	transition: none;
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-left: 5px;
 }
 
 #workspaces button {
 	transition: none;
 	background: rgb(35, 33, 54);
+	padding-left: 5px;
+	padding-right: 5px;
 	font-size: 16px;
-	color: #b5b5b5;
-	border-top: 1px solid #fa7282;
-	border-bottom: 1px solid #fa7282;
-}
-
-#workspaces button:first-child {
-	border-left: 1px solid #fa7282;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
-#workspaces button:last-child {
-	border-right: 1px solid #fa7282;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border: 2px solid #fa7282;
+	margin-left: 8px;
+	border-radius: 1000px;
+	color: #fa7282;
 }
 
 #workspaces button.active {
@@ -95,7 +101,6 @@ window#waybar.empty #window {
 }
 
 #backlight-slider {
-	margin-top: 8px;
 	border-radius: 1px;
 }
 

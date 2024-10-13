@@ -17,6 +17,7 @@
   mods.nautilus.enable = true;
   mods.plasma.enable = true;
   mods.waybar.enable = true;
+  mods.waybar.theme = "rose";
   mods.wofi.enable = true;
 
   users.users.${mainUser.username} = {

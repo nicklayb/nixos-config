@@ -1,7 +1,7 @@
 {
 	"layer": "top",
-	"modules-left": ["image#logo", "hyprland/workspaces", "hyprland/submap", "hyprland/window"],
-	"modules-center": [],
+	"modules-left": ["image#logo", "hyprland/submap", "hyprland/window"],
+	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "clock"],
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
