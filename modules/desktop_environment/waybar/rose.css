@@ -14,6 +14,8 @@
 	margin-bottom: 0;
 	transition: none;
 	border-right: 1px solid gray;
+	border: 2px solid transparent;
+	border-radius: 4px;
 }
 
 #clock {
@@ -119,10 +121,10 @@ window#waybar.empty #window {
 }
 
 #battery.warning {
-	border: 4px solid #ca64f5;
+	border: 2px solid #ca64f5;
 }
 
 #battery.critical {
-	border: 4px solid #ff4545;
+	border: 2px solid #ff4545;
 }
 
