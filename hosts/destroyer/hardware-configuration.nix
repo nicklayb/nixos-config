@@ -42,6 +42,24 @@
       options = ["rw" "uid=1000"];
     };
 
+  fileSystems."/media/nouveau_volume" =
+    { device = "/dev/disk/by-uuid/9E380E50380E27BB";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
+
+  fileSystems."/media/new_volume" =
+    { device = "/dev/disk/by-uuid/609CDD999CDD6A54";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
+
+  fileSystems."/media/plugins" =
+    { device = "/dev/disk/by-uuid/B65613E35613A363";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/f092cf58-36b8-4431-8e2e-8a70b34479f4"; }
     ];
