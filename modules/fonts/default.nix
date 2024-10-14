@@ -5,12 +5,12 @@
       noto-fonts-cjk
       noto-fonts-emoji
       font-awesome
-      (nerdfonts.override { fonts = ["Meslo"]; })
+      (nerdfonts.override { fonts = ["CascadiaCode"]; })
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
+        monospace = ["CaskaydiaCove Nerd Font Mono"];
         serif = ["Noto Serif" "Source Han Serif"];
         sansSerif = ["Noto Sans" "Source Han Sans"];
       };

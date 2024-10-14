@@ -15,9 +15,9 @@
 
   general = {
     gaps_in = 5;
-    gaps_out = 20;
+    gaps_out = 5;
     border_size = 2;
-    "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+    "col.active_border" = "rgba(ff65baee) rgba(ffab7dee) 45deg";
     "col.inactive_border" = "rgba(595959aa)";
     resize_on_border = false; 
     allow_tearing = "false";
@@ -97,6 +97,8 @@
     "$mainMod, W, exec, ~/.config/scripts/wikis.sh"
     "$mainMod, J, togglesplit, # dwindle"
     "$mainMod, L, exec, loginctl lock-session"
+    "$mainMod, X, exec, hyprshot --clipboard-only -m output"
+    "$mainMod SHIFT, X, exec, hyprshot --clipboard-only -m region"
 
     "$mainMod, left, movefocus, l"
     "$mainMod, right, movefocus, r"

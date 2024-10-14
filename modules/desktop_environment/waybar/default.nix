@@ -2,6 +2,11 @@
   options = {
     mods.waybar = {
       enable = lib.mkEnableOption "Enables Waybar";
+      theme = lib.mkOption {
+        description = "Theme to apply";
+        default = "pastel";
+        type = lib.types.str;
+      };
     };
   };
   config = lib.mkIf config.mods.waybar.enable {
@@ -13,7 +18,7 @@
     home-manager.users.${mainUser.username} = {
       programs.waybar = {
         enable = true;
-        style = ./style.css;
+        style = ./${config.mods.waybar.theme}.css;
       };
       xdg.configFile."waybar/config".source = ./config.json;
       xdg.configFile."waybar/mocha.css".source = ./mocha.css;

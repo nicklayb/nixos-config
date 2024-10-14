@@ -1,0 +1,130 @@
+* {
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	font-family: 'CaskaydiaCoveNF', monospace; /*Nerd Font Hack;*/
+	font-size: 12px;
+}
+
+#backlight-slider, #network, #pulseaudio, #cpu, #memory, #clock, #battery {
+	border-radius: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0;
+	transition: none;
+	border-right: 1px solid gray;
+	border: 2px solid transparent;
+	border-radius: 4px;
+}
+
+#clock {
+	border-right: 0;
+}
+
+.modules-right {
+	color: #b5b5b5;
+	background: rgb(35, 33, 54);
+	border: 2px solid #fa7282;
+	margin-top: 4px;
+	border-radius: 8px;
+	margin-right: 4px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.modules-left {
+	color: #b5b5b5;
+	margin-left: 4px;
+	background: rgb(35, 33, 54);
+	border-radius: 10px;
+	border: 2px solid #fa7282;
+	margin-top: 4px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.modules-center {
+	color: #b5b5b5;
+	margin-top: 4px;
+	padding: 3px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+	padding-right: 10px;
+	padding-left: 10px;
+	border-left: 1px solid gray;
+}
+
+#image {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+}
+
+#workspaces {
+	background: transparent;
+	transition: none;
+}
+
+#workspaces button {
+	transition: none;
+	background: rgb(35, 33, 54);
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 16px;
+	border: 2px solid #fa7282;
+	margin-left: 8px;
+	border-radius: 1000px;
+	color: #fa7282;
+}
+
+#workspaces button.active {
+	color: white;
+	background: #fa7282;
+}
+
+#workspaces button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	color: #fa7282;
+}
+
+#backlight-slider {
+	border-radius: 1px;
+}
+
+#backlight-slider slider {
+	border-radius: 100px;
+}
+
+#backlight-slider trough {
+	border-radius: 100px;
+	min-width: 80px;
+	min-height: 5px;
+}
+#backlight-slider highlight {
+	border-radius: 100px;
+	background-color: #fa7282;
+}
+
+#battery.warning {
+	border: 2px solid #ca64f5;
+}
+
+#battery.critical {
+	border: 2px solid #ff4545;
+}
+
