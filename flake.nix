@@ -52,6 +52,7 @@
       "t480s" = build-system "t480s";
       "fleur-de-lys" = build-system "fleur-de-lys";
       "macmini" = build-system "macmini";
+      "imac" = build-system "imac";
       "macpro" = build-system "macpro";
     };
   };
