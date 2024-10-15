@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     krita
     mailspring
+    obsidian
     pavucontrol
     vlc
     plexamp
