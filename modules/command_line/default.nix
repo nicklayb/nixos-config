@@ -21,5 +21,6 @@
     unzip
     jq
     neovim
+    lazygit
   ];
 }
