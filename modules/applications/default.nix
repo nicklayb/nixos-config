@@ -14,5 +14,6 @@
     pavucontrol
     vlc
     plexamp
+    localsend
   ];
 }

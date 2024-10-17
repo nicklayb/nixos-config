@@ -12,8 +12,14 @@
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.hyprland.enable = true;
-  mods.hyprland.monitor = [ "eDP-1,1920x1080@60.00Hz,0x0,1" ];
-  mods.hyprland.wallpapers = ["eDP-1,/home/${mainUser.username}/.background"];
+  mods.hyprland.monitor = [
+    "eDP-1,1920x1080@60.00Hz,0x1440,1"
+    "HDMI-A-2,2560x1440@120.00Hz,0x0,1"
+  ];
+  mods.hyprland.wallpapers = [
+    "eDP-1,/home/${mainUser.username}/.background"
+    "HDMI-A-2,/home/${mainUser.username}/.background-external"
+  ];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;
