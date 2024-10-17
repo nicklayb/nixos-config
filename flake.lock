@@ -3,11 +3,11 @@
     "astronvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1727900938,
-        "narHash": "sha256-dYOWQ9PkOPjqvTNSaaQ5ByPv6i93Hov63mjvNYq1jJU=",
+        "lastModified": 1728866186,
+        "narHash": "sha256-I/nJ5MwnesOQT8x9+2f6GzhUOpvGRzEEIDTkB4vISeA=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "be2b1c2e18bae84704ba4ad88d75f1097d8073ca",
+        "rev": "670b4f451c52c291a598c30edd5b717fac730d29",
         "type": "github"
       },
       "original": {
@@ -87,6 +87,26 @@
         "type": "github"
       }
     },
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728901530,
+        "narHash": "sha256-I9Qd0LnAsEGHtKE9+uVR0iDFmsijWSy7GT0g3jihG4Q=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "a60ac02f9466f85f092e576fd8364dfc4406b5a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1726755586,
@@ -126,6 +146,7 @@
         "firefox-textfox": "firefox-textfox",
         "home-manager": "home-manager",
         "musnix": "musnix",
+        "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_2"
       }
     }

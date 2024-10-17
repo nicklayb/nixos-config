@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./tmux
+  ];
+
   programs.zsh.enable = true;
   services.openssh.enable = true;
 
@@ -11,12 +15,12 @@
     git
     btop
     psmisc
-    tmux
     ripgrep
     fzf
     nfs-utils
     unzip
     jq
     neovim
+    lazygit
   ];
 }
