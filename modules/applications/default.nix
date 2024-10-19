@@ -2,6 +2,7 @@
   imports = [
     ./1password.nix
     ./alacritty
+    ./ardour.nix
     ./firefox.nix
     ./nautilus.nix
     ./steam.nix
@@ -15,5 +16,6 @@
     pavucontrol
     vlc
     plexamp
+    localsend
   ];
 }

@@ -4,5 +4,6 @@
     ./plasma
     ./waybar
     ./wofi
+    ./xfce
   ];
 }
