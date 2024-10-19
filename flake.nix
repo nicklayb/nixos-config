@@ -61,6 +61,7 @@
     nixosConfigurations = {
       "destroyer" = build-nixos-system "destroyer";
       "t480s" = build-nixos-system "t480s";
+      "drumboi" = build-nixos-system "drumboi";
       "fleur-de-lys" = build-nixos-system "fleur-de-lys";
       "macmini" = build-nixos-system "macmini";
       "imac" = build-nixos-system "imac";
