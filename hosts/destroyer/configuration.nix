@@ -1,5 +1,8 @@
 { pkgs, stateVersion, mainUser, home-manager, ... }:
-
+let
+  wallpaperLeft = "/home/${mainUser.username}/.background-left";
+  wallpaperRight = "/home/${mainUser.username}/.background-right";
+in
 {
   imports =
     [ 
@@ -18,7 +21,11 @@
     "DP-3,2560x1440@144.00Hz,0x0,1"
     "Unknown-1,disable"
   ];
-  mods.hyprland.wallpapers = ["DP-2,/home/${mainUser.username}/.background"];
+  mods.hyprland.wallpapers = [
+    "DP-3,${wallpaperLeft}"
+    "DP-2,${wallpaperRight}"
+  ];
+  mods.hyprland.wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;

@@ -15,6 +15,7 @@
     obsidian
     pavucontrol
     vlc
+    gparted
     plexamp
     localsend
   ];
