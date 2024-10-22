@@ -24,7 +24,7 @@
 
 .modules-right {
 	color: #b5b5b5;
-	background: rgb(35, 33, 54);
+	background: #232136;
 	border: 2px solid #fa7282;
 	margin-top: 4px;
 	border-radius: 8px;
@@ -36,7 +36,7 @@
 .modules-left {
 	color: #b5b5b5;
 	margin-left: 4px;
-	background: rgb(35, 33, 54);
+	background: #232136;
 	border-radius: 10px;
 	border: 2px solid #fa7282;
 	margin-top: 4px;
@@ -80,7 +80,7 @@ window#waybar.empty #window {
 
 #workspaces button {
 	transition: none;
-	background: rgb(35, 33, 54);
+	background: #232136;
 	padding-left: 5px;
 	padding-right: 5px;
 	font-size: 16px;

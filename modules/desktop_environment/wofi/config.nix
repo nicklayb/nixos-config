@@ -1,7 +1,7 @@
 {
-  xoffset = 10;
-  yoffset = 10;
-  height = "75%";
-  width = "15%";
+  # xoffset = 10;
+  # yoffset = 10;
+  # height = "40%";
+  width = "30%";
   term = "alacritty";
 }
