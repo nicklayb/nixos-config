@@ -20,6 +20,10 @@
     "eDP-1,/home/${mainUser.username}/.background"
     "HDMI-A-2,/home/${mainUser.username}/.background-external"
   ];
+  mods.hyprland.wallpaperPreloads = [
+    "/home/${mainUser.username}/.background"
+    "/home/${mainUser.username}/.background-external"
+  ];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;
