@@ -2,6 +2,7 @@
   imports = [
     ./1password.nix
     ./alacritty
+    ./ardour.nix
     ./firefox.nix
     ./nautilus.nix
     ./steam.nix
@@ -14,6 +15,7 @@
     obsidian
     pavucontrol
     vlc
+    gparted
     plexamp
     localsend
   ];
