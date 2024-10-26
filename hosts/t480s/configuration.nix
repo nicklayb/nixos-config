@@ -9,6 +9,7 @@
   mods._1password.enable = true;
   mods.alacritty.enable = true;
   mods.bluetooth.enable = true;
+  mods.dbeaver.enable = true;
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.hyprland.enable = true;

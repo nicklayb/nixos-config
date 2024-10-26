@@ -3,6 +3,7 @@
     ./1password.nix
     ./alacritty
     ./ardour.nix
+    ./dbeaver.nix
     ./firefox.nix
     ./nautilus.nix
     ./steam.nix
