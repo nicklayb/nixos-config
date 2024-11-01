@@ -28,6 +28,7 @@ in
   mods.hyprland.wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
+  mods.printing.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
