@@ -16,6 +16,7 @@
   mods.hyprland.wallpapers = ["eDP-1,/home/${mainUser.username}/.background"];
   mods.nautilus.enable = true;
   mods.plasma.enable = true;
+  mods.printing.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
