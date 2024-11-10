@@ -6,6 +6,7 @@
     ./dbeaver.nix
     ./firefox.nix
     ./nautilus.nix
+    ./reaper.nix
     ./steam.nix
     ./wallet.nix
   ];
