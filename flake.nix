@@ -28,7 +28,7 @@
       config.allowUnfree = true;
       config.nvidia.acceptLicense = true;
     };
-    home-config = {
+    nixos-home-config = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.nboisvert = import ./homes/nboisvert;
@@ -45,7 +45,7 @@
         ./hosts/${hostname}/configuration.nix
         ./hosts/${hostname}/hardware-configuration.nix
         home-manager.nixosModules.home-manager
-        home-config
+        nixos-home-config
       ];
     };
     build-darwin-system = hostname : inputs.nix-darwin.lib.darwinSystem {
@@ -69,6 +69,7 @@
     };
     darwinConfigurations = {
       "WorkBookPro" = build-darwin-system "WorkBookPro";
+      "StudioMini" = build-darwin-system "StudioMini";
     };
   };
 }
