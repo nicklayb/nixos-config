@@ -50,6 +50,7 @@
     "1password"
     "slack"
     "alacritty"
+    "the-unarchiver"
   ];
 
   services.nix-daemon.enable = true;
@@ -60,8 +61,15 @@
     enableFzfGit = true;
     enableSyntaxHighlighting = true;
     interactiveShellInit = ''
+      export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
+
+      ZSH_THEME="eastwood"
+      plugins=(git fzf web-search)
+
+      source ${pkgs.oh-my-zsh}/share/oh-my-zsh//oh-my-zsh.sh
       . $(brew --prefix asdf)/libexec/asdf.sh
     '';
+    promptInit = "";
   };
 
   system.stateVersion = 4;
