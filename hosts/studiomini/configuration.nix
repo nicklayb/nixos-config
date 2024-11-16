@@ -51,6 +51,7 @@
     "slack"
     "alacritty"
     "the-unarchiver"
+    "darktable"
   ];
 
   services.nix-daemon.enable = true;
