@@ -9,5 +9,6 @@
     ./fonts
     ./inputs
     ./locale
+    ./services
   ];
 }

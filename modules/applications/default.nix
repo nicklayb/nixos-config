@@ -20,5 +20,6 @@
     gparted
     plexamp
     localsend
+    wpsoffice
   ];
 }

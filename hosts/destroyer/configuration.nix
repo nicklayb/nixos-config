@@ -17,7 +17,7 @@ in
   mods.firefox.theme = "textfox-dev";
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [
-    "DP-2,2560x1440@144.01Hz,2560x0,1"
+    "DP-2,2560x1440@144.01Hz,0x1440,1"
     "DP-3,2560x1440@144.00Hz,0x0,1"
     "Unknown-1,disable"
   ];
@@ -28,6 +28,7 @@ in
   mods.hyprland.wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
+  mods.printing.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";

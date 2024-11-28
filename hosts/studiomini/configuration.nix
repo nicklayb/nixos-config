@@ -1,4 +1,4 @@
-{ pkgs, system, lib, ... }:
+{ pkgs, system, lib, inputs, home-manager, ... }:
 
 {
   mods.tmux.enable = true;
@@ -15,34 +15,20 @@
     silver-searcher
     openssh
     direnv
-    k9s
-    kubectx
-    kubectl
-    docker
-    docker-compose
-    coreutils
     obsidian
     curl
     efm-langserver
     gnupg
-    colima
-    mas
     glow
     unrar
-    awscli2
     nodePackages.serve
     lazygit
-    smartmontools
-    prototool
-    xz
-    zlib
-    ijq
     rclone
-    weechat
     ffmpeg
-    pam-reattach
-    zsh-autosuggestions
+    nerdfonts
+    oh-my-zsh
   ];
+
   environment.variables = {
     EDITOR = "nvim";
   };
@@ -55,11 +41,17 @@
  
   homebrew.brews = [
     "asdf"
-    "platformio"
   ];
 
   homebrew.casks = [
     "amethyst"
+    "raycast"
+    "reaper"
+    "1password"
+    "slack"
+    "alacritty"
+    "the-unarchiver"
+    "darktable"
   ];
 
   services.nix-daemon.enable = true;
@@ -75,14 +67,15 @@
       ZSH_THEME="eastwood"
       plugins=(git fzf web-search)
 
-      source ${pkgs.oh-my-zsh}/share/oh-my-zsh/oh-my-zsh.sh
-      source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+      source ${pkgs.oh-my-zsh}/share/oh-my-zsh//oh-my-zsh.sh
       . $(brew --prefix asdf)/libexec/asdf.sh
     '';
     promptInit = "";
   };
 
   system.stateVersion = 4;
+
+  system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   nixpkgs.config.allowUnfree = true;
 
