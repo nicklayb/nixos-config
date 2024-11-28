@@ -5,15 +5,15 @@ op=$( echo -e "Nixpkgs\nHome-Manager\nHyprland\nWaybar\n" | wofi -i --dmenu | aw
 echo $op
 case $op in 
         nixpkgs)
-          firefox -url "https://search.nixos.org/packages"
+          xdg-open "https://search.nixos.org/packages"
           ;;
         home-manager)
-          firefox -url "https://nix-community.github.io/home-manager/"
+          xdg-open "https://nix-community.github.io/home-manager/"
           ;;
         hyprland)
-          firefox -url "https://wiki.hyprland.org/"
+          xdg-open "https://wiki.hyprland.org/"
           ;;
         waybar)
-          firefox -url "https://github.com/Alexays/Waybar/wiki"
+          xdg-open "https://github.com/Alexays/Waybar/wiki"
           ;;
 esac

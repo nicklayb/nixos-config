@@ -6,7 +6,7 @@
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
 		"size": 20,
-		"on-double-click": "firefox https://search.nixos.org/packages"
+		"on-double-click": "xdg-open https://search.nixos.org/packages"
 	},
 	"hyprland/window": {
 		"rewrite": {
