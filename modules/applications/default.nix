@@ -8,6 +8,7 @@
     ./nautilus.nix
     ./steam.nix
     ./wallet.nix
+    ./zen.nix
   ];
 
   environment.systemPackages = with pkgs; [

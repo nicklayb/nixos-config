@@ -13,6 +13,7 @@
     musnix.url = "github:musnix/musnix";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser.url = "github:omarcresp/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
