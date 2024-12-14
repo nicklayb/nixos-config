@@ -5,6 +5,7 @@
     ./ardour.nix
     ./dbeaver.nix
     ./firefox.nix
+    ./insomnia.nix
     ./nautilus.nix
     ./steam.nix
     ./wallet.nix

@@ -26,6 +26,7 @@
     "/home/${mainUser.username}/.background-external"
   ];
   mods.inputs.touchpad.enable = true;
+  mods.insomnia.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
