@@ -34,6 +34,10 @@
   mods.wofi.enable = true;
   mods.zen.enable = true;
 
+  environment.systemPackages = [
+    pkgs.swift
+  ];
+
   users.users.${mainUser.username} = {
     isNormalUser = true;
     description = mainUser.name;
