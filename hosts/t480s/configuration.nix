@@ -35,6 +35,10 @@
   mods.wofi.enable = true;
   mods.zen.enable = true;
 
+  services.open-fprintd.enable = true;
+
+  security.polkit.enable = true;
+
   services."06cb-009a-fingerprint-sensor" = {                                 
     enable = true;                                                            
     backend = "python-validity";                                              

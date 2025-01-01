@@ -9,7 +9,7 @@
     services.udisks2.enable = true;
 
     environment.systemPackages = [
-      pkgs.gnome.nautilus
+      pkgs.nautilus
     ];
   };
 }
