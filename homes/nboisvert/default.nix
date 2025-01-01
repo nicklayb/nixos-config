@@ -7,7 +7,6 @@
   home.packages = [
     pkgs.slack
     pkgs.elixir
-    pkgs.gnome.nautilus
   ];
 
   home.sessionVariables = {
