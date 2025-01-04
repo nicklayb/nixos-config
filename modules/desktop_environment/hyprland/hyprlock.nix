@@ -1,13 +1,19 @@
 { ... }: {
-  source = "$HOME/.config/hypr/latte.conf";
 
-  "$accent" = "$flamingo";
-  "$alphaAccent" = "$flamingoAlpha";
+  "$alphaAccent" = "dd7878";
+  "$accent" = "rgb(dd7878)";
   "$font" = "Menslo Nerd Font";
+  "$base" = "rgb(eff1f5)";
+  "$text" = "rgb(4c4f69)";
+  "$textAlpha" = "4c4f69";
+  "$surface0" = "rgb(ccd0da)";
+  "$yellow" = "rgb(df8e1d)";
+  "$red" = "rgb(d20f39)";
 
   general = {
     disable_loading_bar = true;
     hide_cursor = true;
+    enable_fingerprint = true;
   };
 
   background = {
@@ -16,6 +22,7 @@
     blur_passes = "0";
     color = "$base";
   };
+
 
   label = [
     {
