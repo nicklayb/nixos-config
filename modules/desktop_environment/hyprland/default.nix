@@ -45,7 +45,7 @@
     ];
 
     home-manager.users.${mainUser.username} = {
-      xdg.configFile."hypr/latte.conf".source = ./latte.conf;
+      # xdg.configFile."hypr/latte.conf".source = ./latte.conf;
 
       services.dunst.enable = true;
 
