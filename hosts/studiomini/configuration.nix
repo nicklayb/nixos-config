@@ -27,6 +27,8 @@
     ffmpeg
     nerdfonts
     oh-my-zsh
+    tree-sitter
+    nodejs_22
   ];
 
   environment.variables = {
@@ -78,6 +80,8 @@
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.hostPlatform = lib.mkDefault system;
 }
