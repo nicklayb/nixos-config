@@ -6,7 +6,7 @@
   };
   config = lib.mkIf config.mods._1password.enable {
     environment.systemPackages = [
-      pkgs._1password
+      pkgs._1password-cli
       pkgs._1password-gui
     ];
     programs._1password.enable = true;

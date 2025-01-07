@@ -1,9 +1,10 @@
-{ pkgs, stateVersion, mainUser, ... }:
+{ pkgs, stateVersion, mainUser, inputs, ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
+      inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules."06cb-009a-fingerprint-sensor"
     ];
 
   mods._1password.enable = true;
@@ -33,6 +34,17 @@
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
   mods.zen.enable = true;
+
+  services.open-fprintd.enable = true;
+
+  security.polkit.enable = true;
+
+  security.pam.services.sddm.fprintAuth = true;
+
+  services."06cb-009a-fingerprint-sensor" = {                                 
+    enable = true;                                                            
+    backend = "python-validity";                                              
+  }; 
 
   users.users.${mainUser.username} = {
     isNormalUser = true;

@@ -24,7 +24,10 @@
     services.displayManager.sddm.enable = true;
     services.displayManager.sddm.theme = "sugar-candy";
     services.displayManager.sddm.wayland.enable = true;
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
 
     xdg.portal = {
       enable = true;
@@ -42,7 +45,7 @@
     ];
 
     home-manager.users.${mainUser.username} = {
-      xdg.configFile."hypr/latte.conf".source = ./latte.conf;
+      # xdg.configFile."hypr/latte.conf".source = ./latte.conf;
 
       services.dunst.enable = true;
 

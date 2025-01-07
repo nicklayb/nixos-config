@@ -28,11 +28,11 @@
     rounding = 8;
     active_opacity = 0.98;
     inactive_opacity = 0.94;
-    drop_shadow = true;
+    # drop_shadow = true;
     dim_inactive = true;
-    shadow_range = 4;
-    shadow_render_power = 3;
-    "col.shadow" = "rgba(1a1a1aee)";
+    # shadow_range = 4;
+    # shadow_render_power = 3;
+    # "col.shadow" = "rgba(1a1a1aee)";
     blur = {
         enabled = true;
         size = 3;
