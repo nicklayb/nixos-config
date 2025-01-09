@@ -1,9 +1,10 @@
-{ pkgs, stateVersion, mainUser, ... }:
+{ pkgs, stateVersion, mainUser, inputs, ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
+      ./fingerprint.nix
     ];
 
   mods._1password.enable = true;
@@ -26,11 +27,13 @@
     "/home/${mainUser.username}/.background-external"
   ];
   mods.inputs.touchpad.enable = true;
+  mods.insomnia.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
+  mods.zen.enable = true;
 
   users.users.${mainUser.username} = {
     isNormalUser = true;
