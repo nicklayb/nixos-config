@@ -7,6 +7,10 @@
       ./fingerprint.nix
     ];
 
+  environment.systemPackages = [
+    pkgs.obs-studio
+  ];
+
   mods._1password.enable = true;
   mods.alacritty.enable = true;
   mods.bluetooth.enable = true;
@@ -30,6 +34,7 @@
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
   mods.steam.enable = true;
+  mods.virtualbox.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
