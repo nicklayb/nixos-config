@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, hostname, system, ... }:
+{ config, lib, modulesPath, pkgs, hostname, system, ... }:
 
 {
   imports =
@@ -12,6 +12,11 @@
   boot.extraModulePackages = [ ];
 
   boot.loader.systemd-boot.enable = true;
+
+  fileSystems."/mnt/windows" = 
+    { device = "/dev/disk/by-uuid/42B41F08B41EFDDB";
+      fsType = "ntfs";
+    };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f938fabb-fc8a-4a44-88f7-eb115506bda2";
@@ -34,6 +39,14 @@
 
   services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = [
+      pkgs.vpl-gpu-rt
+      pkgs.intel-media-driver
+    ];
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault system;
 }
