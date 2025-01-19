@@ -34,6 +34,7 @@ in
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
+  mods.zen.enable = true;
 
   users.users.${mainUser.username} = {
     isNormalUser = true;
