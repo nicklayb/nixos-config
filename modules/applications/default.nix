@@ -6,6 +6,7 @@
     ./dbeaver.nix
     ./firefox.nix
     ./insomnia.nix
+    ./heroic.nix
     ./nautilus.nix
     ./reaper.nix
     ./steam.nix

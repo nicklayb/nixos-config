@@ -15,10 +15,11 @@ in
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.firefox.theme = "textfox-dev";
+  mods.heroic.enable = true;
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [
-    "DP-2,2560x1440@144.01Hz,0x1440,1"
-    "DP-3,2560x1440@144.00Hz,0x0,1"
+    "DP-2,2560x1440@144.01Hz,0x0,1"
+    "DP-3,2560x1440@144.00Hz,0x1440,1"
     "Unknown-1,disable"
   ];
   mods.hyprland.wallpapers = [
