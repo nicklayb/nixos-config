@@ -33,6 +33,7 @@
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
+  mods.printing.enable = true;
   mods.steam.enable = true;
   mods.virtualbox.enable = true;
   mods.waybar.enable = true;
