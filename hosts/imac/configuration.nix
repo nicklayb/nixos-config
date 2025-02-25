@@ -20,9 +20,11 @@
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
+  mods.zen.enable = true;
 
   environment.systemPackages = [
     pkgs.mbpfan
+    pkgs.handbrake
   ];
 
   systemd.services.mbpfan = {
