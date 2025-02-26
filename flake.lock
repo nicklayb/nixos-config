@@ -203,8 +203,8 @@
       },
       "original": {
         "owner": "omarcresp",
-        "ref": "e51913e312a92e47fe90cc3381202b6c9bcaa1ec",
         "repo": "zen-browser-flake",
+        "rev": "e51913e312a92e47fe90cc3381202b6c9bcaa1ec",
         "type": "github"
       }
     }

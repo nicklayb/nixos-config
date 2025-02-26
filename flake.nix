@@ -15,7 +15,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser = {
       # Locking to 1.6b
-      url = "github:omarcresp/zen-browser-flake?ref=e51913e312a92e47fe90cc3381202b6c9bcaa1ec";
+      url = "github:omarcresp/zen-browser-flake/e51913e312a92e47fe90cc3381202b6c9bcaa1ec";
     };
     nixos-06cb-009a-fingerprint-sensor = {
       url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
