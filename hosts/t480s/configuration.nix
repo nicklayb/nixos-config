@@ -36,6 +36,7 @@
   mods.printing.enable = true;
   mods.steam.enable = true;
   mods.virtualbox.enable = true;
+  mods.tmux.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
