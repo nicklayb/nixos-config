@@ -13,7 +13,10 @@
     musnix.url = "github:musnix/musnix";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.url = "github:omarcresp/zen-browser-flake";
+    zen-browser = {
+      # Locking to 1.6b
+      url = "github:omarcresp/zen-browser-flake/e51913e312a92e47fe90cc3381202b6c9bcaa1ec";
+    };
     nixos-06cb-009a-fingerprint-sensor = {
       url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
       inputs.nixpkgs.follows = "nixpkgs";

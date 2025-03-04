@@ -8,7 +8,10 @@
     services.printing.enable = true;
     services.printing.cups-pdf.enable = true;
     services.printing.webInterface = true;
-    services.printing.drivers = [ pkgs.brlaser ];
+    services.printing.drivers = [ 
+      pkgs.brlaser
+      pkgs.epson-escpr2
+    ];
     services.avahi.enable = true;
     services.avahi.nssmdns = true;
     services.avahi.openFirewall = true;

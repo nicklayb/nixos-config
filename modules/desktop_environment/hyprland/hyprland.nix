@@ -27,7 +27,7 @@
   decoration = {
     rounding = 8;
     active_opacity = 0.98;
-    inactive_opacity = 0.94;
+    inactive_opacity = 0.96;
     # drop_shadow = true;
     dim_inactive = true;
     # shadow_range = 4;
