@@ -42,6 +42,7 @@
     ffmpeg
     pam-reattach
     zsh-autosuggestions
+    just
   ];
   environment.variables = {
     EDITOR = "nvim";
@@ -85,6 +86,8 @@
   system.stateVersion = 4;
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.hostPlatform = lib.mkDefault system;
 }
