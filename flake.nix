@@ -11,7 +11,7 @@
     firefox-textfox = { url = "github:nicklayb/textfox"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
     musnix.url = "github:musnix/musnix";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser = {
       # Locking to 1.6b
