@@ -89,7 +89,6 @@
   bind = [
     "$mainMod, RETURN, exec, $terminal"
     "$mainMod SHIFT, Q, killactive,"
-    "$mainMod, M, exit,"
     "$mainMod, E, exec, $fileManager"
     "$mainMod, V, togglefloating,"
     "$mainMod, D, exec, $menu"
