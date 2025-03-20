@@ -89,7 +89,6 @@
   bind = [
     "$mainMod, RETURN, exec, $terminal"
     "$mainMod SHIFT, Q, killactive,"
-    "$mainMod, M, exit,"
     "$mainMod, E, exec, $fileManager"
     "$mainMod, V, togglefloating,"
     "$mainMod, D, exec, $menu"
@@ -137,7 +136,7 @@
 
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
-  ];
+  ] ++ config.mods.hyprland.extraBindings;
 
   # Move/resize windows with mainMod + LMB/RMB and dragging;
   bindm = [

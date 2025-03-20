@@ -17,6 +17,11 @@
         type = lib.types.listOf lib.types.str;
         default = ["/home/${mainUser.username}/.background"];
       };
+      extraBindings = lib.mkOption {
+        description = "Extra bindings to register";
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {

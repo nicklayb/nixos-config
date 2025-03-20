@@ -30,6 +30,9 @@
     "/home/${mainUser.username}/.background"
     "/home/${mainUser.username}/.background-external"
   ];
+  mods.hyprland.extraBindings = [
+    "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
+  ];
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
