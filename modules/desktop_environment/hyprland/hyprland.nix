@@ -91,6 +91,7 @@
     "$mainMod SHIFT, Q, killactive,"
     "$mainMod, E, exec, $fileManager"
     "$mainMod, V, togglefloating,"
+    "$mainMod, F, fullscreen 1"
     "$mainMod, D, exec, $menu"
     "$mainMod, P, exec, ~/.config/scripts/power-menu.sh"
     "$mainMod, W, exec, ~/.config/scripts/wikis.sh"

@@ -35,6 +35,7 @@ in
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
+  mods.xfce.enable = true;
   mods.zen.enable = true;
 
   users.users.${mainUser.username} = {
@@ -45,6 +46,10 @@ in
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  environment.systemPackages = [
+    pkgs.godot_4
+  ];
 
   system.stateVersion = stateVersion;
 }
