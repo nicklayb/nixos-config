@@ -1,4 +1,4 @@
-{ mainUser, self, inputs }:
+{ mainUser, inputs }:
 let
   system = "x86_64-linux";
   stateVersion = "24.11";
@@ -16,6 +16,7 @@ let
     home-manager.users.nboisvert = import ./homes/nboisvert;
     home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
   };
+  self = inputs.self;
 in
 hostname: inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
