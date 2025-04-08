@@ -9,6 +9,7 @@
 
   environment.systemPackages = [
     pkgs.obs-studio
+    (pkgs.nnn.override { withNerdIcons = true; })
   ];
 
   mods._1password.enable = true;
@@ -36,6 +37,7 @@
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
+  mods.playstation.enable = true;
   mods.printing.enable = true;
   mods.steam.enable = true;
   mods.virtualbox.enable = true;

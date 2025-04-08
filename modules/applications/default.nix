@@ -10,6 +10,7 @@ in {
     ./insomnia.nix
     ./heroic.nix
     ./nautilus.nix
+    ./playstation.nix
     ./reaper.nix
     ./steam.nix
     ./wallet.nix
