@@ -1,48 +1,50 @@
-{ pkgs, system, lib, ... }:
+{ pkgs, unstable-pkgs, system, lib, ... }:
 
 {
   mods.tmux.enable = true;
 
-  environment.systemPackages = with pkgs; [ 
-    wget
-    btop
-    ripgrep
-    fzf
-    unzip
-    jq
-    neovim
-    gitAndTools.gitFull
-    silver-searcher
-    openssh
-    direnv
-    k9s
-    kubectx
-    kubectl
-    docker
-    docker-compose
-    coreutils
-    obsidian
-    curl
-    efm-langserver
-    gnupg
-    colima
-    mas
-    glow
-    unrar
-    awscli2
-    nodePackages.serve
-    lazygit
-    smartmontools
-    prototool
-    xz
-    zlib
-    ijq
-    rclone
-    weechat
-    ffmpeg
-    pam-reattach
-    zsh-autosuggestions
-    just
+  environment.systemPackages = [
+    pkgs.wget
+    pkgs.btop
+    pkgs.ripgrep
+    pkgs.fzf
+    pkgs.unzip
+    pkgs.jq
+    pkgs.neovim
+    pkgs.gitAndTools.gitFull
+    pkgs.silver-searcher
+    pkgs.openssh
+    pkgs.direnv
+    unstable-pkgs.k9s
+    pkgs.kubectx
+    pkgs.kubectl
+    pkgs.docker
+    pkgs.docker-compose
+    pkgs.coreutils
+    pkgs.obsidian
+    pkgs.curl
+    pkgs.efm-langserver
+    pkgs.gnupg
+    pkgs.colima
+    pkgs.mas
+    pkgs.glow
+    pkgs.unrar
+    pkgs.awscli2
+    pkgs.nodePackages.serve
+    pkgs.lazygit
+    pkgs.smartmontools
+    pkgs.prototool
+    pkgs.xz
+    pkgs.zlib
+    pkgs.ijq
+    pkgs.rclone
+    pkgs.weechat
+    pkgs.ffmpeg
+    pkgs.pam-reattach
+    pkgs.zsh-autosuggestions
+    pkgs.just
+    pkgs.postgresql_15
+    pkgs.cargo
   ];
   environment.variables = {
     EDITOR = "nvim";
@@ -53,7 +55,7 @@
   ];
 
   homebrew.enable = true;
- 
+
   homebrew.brews = [
     "asdf"
     "platformio"
@@ -62,6 +64,22 @@
   homebrew.casks = [
     "amethyst"
   ];
+
+  system.defaults = {
+    trackpad = {
+      Clicking = true;
+      TrackpadThreeFingerDrag = true;
+    };
+
+    dock = {
+      orientation = "right";
+      show-recents = false;
+    };
+
+    controlcenter = {
+      BatteryShowPercentage = true;
+    };
+  };
 
   services.nix-daemon.enable = true;
 
