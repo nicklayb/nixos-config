@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +37,9 @@
       config.allowUnfree = true;
       config.nvidia.acceptLicense = true;
     };
+    unstable-pkgs = import inputs.nixpkgs-unstable {
+      inherit system;
+    };
     nixos-home-config = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
@@ -45,7 +49,7 @@
     build-nixos-system = hostname : nixpkgs.lib.nixosSystem {
       specialArgs = {
         hostname = hostname;
-        inherit stateVersion pkgs self system inputs mainUser;
+        inherit stateVersion pkgs self system inputs mainUser unstable-pkgs;
       };
       inherit system;
       modules = [
@@ -59,6 +63,7 @@
     build-darwin-system = hostname : inputs.nix-darwin.lib.darwinSystem {
       specialArgs = {
         system = "aarch64-darwin";
+        inherit unstable-pkgs;
       };
       modules = [
         ./hosts/${hostname}/configuration.nix
