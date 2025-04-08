@@ -32,6 +32,7 @@
         email = "nicklay@me.com";
       };
       options = {
+        self = self;
         inputs = inputs;
         mainUser = mainUser;
       };

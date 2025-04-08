@@ -1,4 +1,4 @@
-{ mainUser, inputs }:
+{ mainUser, self, inputs }:
 let
   system = "x86_64-linux";
   stateVersion = "24.11";
@@ -17,7 +17,7 @@ let
     home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
   };
 in
-hostname: nixpkgs.lib.nixosSystem {
+hostname: inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     hostname = hostname;
     inherit stateVersion pkgs self system inputs mainUser unstable-pkgs;
@@ -27,7 +27,7 @@ hostname: nixpkgs.lib.nixosSystem {
     ./modules
     ./hosts/${hostname}/configuration.nix
     ./hosts/${hostname}/hardware-configuration.nix
-    home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
     nixos-home-config
   ];
 }
