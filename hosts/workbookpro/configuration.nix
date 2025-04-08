@@ -1,9 +1,9 @@
-{ pkgs, unstable-pkgs, system, lib, ... }: 
+{ pkgs, unstable-pkgs, system, lib, ... }:
 
 {
   mods.tmux.enable = true;
 
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     pkgs.wget
     pkgs.btop
     pkgs.ripgrep
@@ -44,6 +44,7 @@
     pkgs.zsh-autosuggestions
     pkgs.just
     pkgs.postgresql_15
+    pkgs.cargo
   ];
   environment.variables = {
     EDITOR = "nvim";
@@ -54,7 +55,7 @@
   ];
 
   homebrew.enable = true;
- 
+
   homebrew.brews = [
     "asdf"
     "platformio"
