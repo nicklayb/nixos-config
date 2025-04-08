@@ -24,7 +24,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = inputs:
     let
       mainUser = {
         username = "nboisvert";
@@ -32,7 +32,6 @@
         email = "nicklay@me.com";
       };
       options = {
-        self = self;
         inputs = inputs;
         mainUser = mainUser;
       };
