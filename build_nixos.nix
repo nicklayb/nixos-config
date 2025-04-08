@@ -13,7 +13,7 @@ let
   nixos-home-config = {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
-    home-manager.users.nboisvert = import ./homes/nboisvert;
+    home-manager.users.nboisvert = import ./homes/nboisvert/nixos.nix;
     home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
   };
   self = inputs.self;

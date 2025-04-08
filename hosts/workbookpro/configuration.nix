@@ -1,7 +1,11 @@
-{ pkgs, unstable-pkgs, system, lib, ... }:
+{ pkgs, unstable-pkgs, username, system, lib, ... }:
 
 {
   mods.tmux.enable = true;
+
+  users.users.${username} = {
+    home = "/Users/${username}";
+  };
 
   environment.systemPackages = [
     pkgs.wget

@@ -49,8 +49,8 @@
         "macpro" = build-nixos-system "macpro";
       };
       darwinConfigurations = {
-        "WorkBookPro" = build-darwin-system "WorkBookPro";
-        "StudioMini" = build-darwin-system "StudioMini";
+        "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";
+        "StudioMini" = build-darwin-system "StudioMini" "nboisvert";
       };
     };
 }

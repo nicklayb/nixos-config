@@ -1,9 +1,12 @@
-{ pkgs, system, lib, inputs, home-manager, ... }:
+{ pkgs, system, username, lib, inputs, home-manager, ... }:
 
 {
   mods.tmux.enable = true;
+  users.users.${username} = {
+    home = "/Users/${username}";
+  };
 
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     wget
     btop
     ripgrep
@@ -40,7 +43,7 @@
   ];
 
   homebrew.enable = true;
- 
+
   homebrew.brews = [
     "asdf"
   ];
