@@ -67,7 +67,7 @@
       export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
 
       ZSH_THEME="eastwood"
-      plugins=(git fzf web-search)
+      plugins=(git fzf web-search direnv)
 
       source ${pkgs.oh-my-zsh}/share/oh-my-zsh//oh-my-zsh.sh
       . $(brew --prefix asdf)/libexec/asdf.sh
