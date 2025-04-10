@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let 
+  localsendPort = 53317;
+in {
   imports = [
     ./1password.nix
     ./alacritty
@@ -6,7 +8,10 @@
     ./dbeaver.nix
     ./firefox.nix
     ./insomnia.nix
+    ./heroic.nix
     ./nautilus.nix
+    ./playstation.nix
+    ./reaper.nix
     ./steam.nix
     ./wallet.nix
     ./zen.nix
@@ -23,4 +28,8 @@
     localsend
     wpsoffice
   ];
+
+  networking.firewall = {
+    allowedTCPPorts = [ localsendPort ];
+  };
 }

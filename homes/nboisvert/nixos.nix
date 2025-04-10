@@ -41,6 +41,7 @@
   # Scripts
   xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;
   xdg.configFile."scripts/wikis.sh".source = ./scripts/wikis.sh;
+  xdg.configFile."scripts/monitors.sh".source = ./scripts/monitors.sh;
 
   xdg.configFile."nvim".source = inputs.astronvim-config;
 }

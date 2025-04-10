@@ -4,8 +4,13 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules."06cb-009a-fingerprint-sensor"
+      ./fingerprint.nix
     ];
+
+  environment.systemPackages = [
+    pkgs.obs-studio
+    (pkgs.nnn.override { withNerdIcons = true; })
+  ];
 
   mods._1password.enable = true;
   mods.alacritty.enable = true;
@@ -26,25 +31,21 @@
     "/home/${mainUser.username}/.background"
     "/home/${mainUser.username}/.background-external"
   ];
+  mods.hyprland.extraBindings = [
+    "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
+  ];
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
+  mods.playstation.enable = true;
+  mods.printing.enable = true;
   mods.steam.enable = true;
+  mods.virtualbox.enable = true;
+  mods.tmux.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
   mods.zen.enable = true;
-
-  services.open-fprintd.enable = true;
-
-  security.polkit.enable = true;
-
-  security.pam.services.sddm.fprintAuth = true;
-
-  services."06cb-009a-fingerprint-sensor" = {                                 
-    enable = true;                                                            
-    backend = "python-validity";                                              
-  }; 
 
   users.users.${mainUser.username} = {
     isNormalUser = true;
