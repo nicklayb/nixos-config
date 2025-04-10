@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, mainUser, ... }:
 let
   system = "aarch64-darwin";
   stateVersion = "24.11";
@@ -12,13 +12,13 @@ let
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.${username} = import ./homes/nboisvert/darwin.nix;
-    home-manager.extraSpecialArgs = { inherit pkgs username stateVersion inputs; };
+    home-manager.extraSpecialArgs = { inherit pkgs username mainUser stateVersion inputs; };
   };
 in
 hostname: username: inputs.nix-darwin.lib.darwinSystem {
   specialArgs = {
     system = "aarch64-darwin";
-    inherit unstable-pkgs username;
+    inherit unstable-pkgs mainUser username;
   };
   modules = [
     ./hosts/${hostname}/configuration.nix

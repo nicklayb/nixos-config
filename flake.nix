@@ -27,7 +27,7 @@
   outputs = inputs:
     let
       mainUser = {
-        username = "nboisvert";
+        githubUsername = "nicklayb";
         name = "Nicolas Boisvert";
         email = "nicklay@me.com";
       };
@@ -40,13 +40,13 @@
     in
     {
       nixosConfigurations = {
-        "destroyer" = build-nixos-system "destroyer";
-        "t480s" = build-nixos-system "t480s";
-        "drumboi" = build-nixos-system "drumboi";
-        "fleur-de-lys" = build-nixos-system "fleur-de-lys";
-        "macmini" = build-nixos-system "macmini";
-        "imac" = build-nixos-system "imac";
-        "macpro" = build-nixos-system "macpro";
+        "destroyer" = build-nixos-system "destroyer" "nboisvert";
+        "t480s" = build-nixos-system "t480s" "nboisvert";
+        "drumboi" = build-nixos-system "drumboi" "nboisvert";
+        "fleur-de-lys" = build-nixos-system "fleur-de-lys" "nboisvert";
+        "macmini" = build-nixos-system "macmini" "nboisvert";
+        "imac" = build-nixos-system "imac" "nboisvert";
+        "macpro" = build-nixos-system "macpro" "nboisvert";
       };
       darwinConfigurations = {
         "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";

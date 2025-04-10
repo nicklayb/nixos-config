@@ -1,26 +1,26 @@
-{ config, lib, pkgs, mainUser, ... }: {
+{ config, lib, pkgs, mainUser, username, ... }: {
   options = {
     mods.hyprland = {
       enable = lib.mkEnableOption "Enables Hyprland";
       monitor = lib.mkOption {
         description = "Hyprland monitor configuration";
         type = lib.types.listOf lib.types.str;
-        default = [];
+        default = [ ];
       };
       wallpapers = lib.mkOption {
         description = "Hyprpaper wallpapers";
         type = lib.types.listOf lib.types.str;
-        default = [];
+        default = [ ];
       };
       wallpaperPreloads = lib.mkOption {
         description = "Hyprpaper preloads";
         type = lib.types.listOf lib.types.str;
-        default = ["/home/${mainUser.username}/.background"];
+        default = [ "/home/${username}/.background" ];
       };
       extraBindings = lib.mkOption {
         description = "Extra bindings to register";
         type = lib.types.listOf lib.types.str;
-        default = [];
+        default = [ ];
       };
     };
   };
@@ -49,7 +49,7 @@
       pkgs.libsForQt5.qt5.qtgraphicaleffects
     ];
 
-    home-manager.users.${mainUser.username} = {
+    home-manager.users.${username} = {
       # xdg.configFile."hypr/latte.conf".source = ./latte.conf;
 
       services.dunst.enable = true;
@@ -60,8 +60,8 @@
       };
       services.hyprpaper = {
         enable = true;
-        settings = import ./hyprpaper.nix { 
-          preloads = config.mods.hyprland.wallpaperPreloads; 
+        settings = import ./hyprpaper.nix {
+          preloads = config.mods.hyprland.wallpaperPreloads;
           wallpapers = config.mods.hyprland.wallpapers;
         };
       };

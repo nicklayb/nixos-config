@@ -1,8 +1,8 @@
-{ pkgs, stateVersion, mainUser, home-manager, ... }:
+{ pkgs, stateVersion, username, mainUser, home-manager, ... }:
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
     ];
 
@@ -15,7 +15,7 @@
   mods.inputs.touchpad.enable = true;
   mods.xfce.enable = true;
 
-  users.users.${mainUser.username} = {
+  users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
     extraGroups = [ "wheel" "docker" ];

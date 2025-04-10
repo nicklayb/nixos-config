@@ -10,18 +10,18 @@ let
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
   };
-  nixos-home-config = {
+  nixos-home-config = username: {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.nboisvert = import ./homes/nboisvert/nixos.nix;
-    home-manager.extraSpecialArgs = { inherit pkgs mainUser stateVersion inputs; };
+    home-manager.extraSpecialArgs = { inherit pkgs username mainUser stateVersion inputs; };
   };
   self = inputs.self;
 in
-hostname: inputs.nixpkgs.lib.nixosSystem {
+hostname: username: inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     hostname = hostname;
-    inherit stateVersion pkgs self system inputs mainUser unstable-pkgs;
+    inherit stateVersion pkgs self system inputs mainUser username unstable-pkgs;
   };
   inherit system;
   modules = [
@@ -29,6 +29,6 @@ hostname: inputs.nixpkgs.lib.nixosSystem {
     ./hosts/${hostname}/configuration.nix
     ./hosts/${hostname}/hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
-    nixos-home-config
+    (nixos-home-config username)
   ];
 }

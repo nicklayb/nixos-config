@@ -1,4 +1,4 @@
-{ config, lib, pkgs, mainUser, ... }: {
+{ config, lib, pkgs, username, ... }: {
   options = {
     mods.wofi = {
       enable = lib.mkEnableOption "Enables Wofi";
@@ -10,7 +10,7 @@
       pkgs.wofi
     ];
 
-    home-manager.users.${mainUser.username} = {
+    home-manager.users.${username} = {
       programs.wofi = {
         enable = true;
         settings = import ./config.nix;
