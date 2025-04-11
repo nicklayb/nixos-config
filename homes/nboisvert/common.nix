@@ -12,4 +12,7 @@
   nixpkgs.config.allowUnfree = true;
 
   xdg.configFile."nvim".source = inputs.astronvim-config;
+
+  home.file.".elixir".source = "${inputs.elixir-extensions}/elixir";
+  home.file.".iex.exs".source = "${inputs.elixir-extensions}/iex.exs";
 }

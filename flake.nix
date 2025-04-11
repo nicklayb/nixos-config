@@ -11,6 +11,7 @@
     firefox-firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     firefox-textfox = { url = "github:nicklayb/textfox"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
+    elixir-extensions = { url = "github:nicklayb/ex_tensions"; flake = false; };
     musnix.url = "github:musnix/musnix";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";

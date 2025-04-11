@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "elixir-extensions": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744383180,
+        "narHash": "sha256-IjxiaVOg5pk+Qqaln11Pu0N01aXVGSFppDn+oqUAJRU=",
+        "owner": "nicklayb",
+        "repo": "ex_tensions",
+        "rev": "652ff9e92a5c49756334c6d1355a17ef592e39a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "ex_tensions",
+        "type": "github"
+      }
+    },
     "firefox-firefox-mod-blur": {
       "flake": false,
       "locked": {
@@ -196,6 +212,7 @@
     "root": {
       "inputs": {
         "astronvim-config": "astronvim-config",
+        "elixir-extensions": "elixir-extensions",
         "firefox-firefox-mod-blur": "firefox-firefox-mod-blur",
         "firefox-textfox": "firefox-textfox",
         "home-manager": "home-manager",
