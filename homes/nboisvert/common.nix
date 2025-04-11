@@ -13,6 +13,6 @@
 
   xdg.configFile."nvim".source = inputs.astronvim-config;
 
-  home.file.".elixir".source = "${inputs.elixir-extensions}/elixir";
+  home.file.".elixir".source = "${inputs.elixir-extensions}/extensions";
   home.file.".iex.exs".source = "${inputs.elixir-extensions}/iex.exs";
 }
