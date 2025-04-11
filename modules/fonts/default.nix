@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   fonts = {
-    packages = import ./packages pkgs;
+    packages = import ./packages.nix pkgs;
     fontconfig = {
       enable = true;
       defaultFonts = {
