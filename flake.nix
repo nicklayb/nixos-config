@@ -11,6 +11,7 @@
     firefox-firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     firefox-textfox = { url = "github:nicklayb/textfox"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
+    elixir-extensions = { url = "github:nicklayb/ex_tensions"; flake = false; };
     musnix.url = "github:musnix/musnix";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +28,7 @@
   outputs = inputs:
     let
       mainUser = {
-        username = "nboisvert";
+        githubUsername = "nicklayb";
         name = "Nicolas Boisvert";
         email = "nicklay@me.com";
       };
@@ -40,13 +41,13 @@
     in
     {
       nixosConfigurations = {
-        "destroyer" = build-nixos-system "destroyer";
-        "t480s" = build-nixos-system "t480s";
-        "drumboi" = build-nixos-system "drumboi";
-        "fleur-de-lys" = build-nixos-system "fleur-de-lys";
-        "macmini" = build-nixos-system "macmini";
-        "imac" = build-nixos-system "imac";
-        "macpro" = build-nixos-system "macpro";
+        "destroyer" = build-nixos-system "destroyer" "nboisvert";
+        "t480s" = build-nixos-system "t480s" "nboisvert";
+        "drumboi" = build-nixos-system "drumboi" "nboisvert";
+        "fleur-de-lys" = build-nixos-system "fleur-de-lys" "nboisvert";
+        "macmini" = build-nixos-system "macmini" "nboisvert";
+        "imac" = build-nixos-system "imac" "nboisvert";
+        "macpro" = build-nixos-system "macpro" "nboisvert";
       };
       darwinConfigurations = {
         "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";

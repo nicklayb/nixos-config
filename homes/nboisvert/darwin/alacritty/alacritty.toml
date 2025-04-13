@@ -1,0 +1,27 @@
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+[cursor.style]
+blinking = "Always"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font"
+
+[font.bold_italic]
+family = "CaskaydiaCove Nerd Font"
+
+[font.italic]
+family = "CaskaydiaCove Nerd Font"
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
+
+[window]
+decorations = "buttonless"
+opacity = 1
+option_as_alt = "OnlyLeft"

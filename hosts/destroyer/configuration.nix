@@ -1,11 +1,11 @@
-{ pkgs, stateVersion, mainUser, home-manager, ... }:
+{ pkgs, stateVersion, mainUser, username, home-manager, ... }:
 let
-  wallpaperLeft = "/home/${mainUser.username}/.background-left";
-  wallpaperRight = "/home/${mainUser.username}/.background-right";
+  wallpaperLeft = "/home/${username}/.background-left";
+  wallpaperRight = "/home/${username}/.background-right";
 in
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
     ];
 
@@ -38,7 +38,7 @@ in
   mods.xfce.enable = true;
   mods.zen.enable = true;
 
-  users.users.${mainUser.username} = {
+  users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
     extraGroups = [ "wheel" "docker" ];

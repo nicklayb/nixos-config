@@ -1,4 +1,4 @@
-{ config, lib, mainUser, pkgs, ... }: {
+{ config, lib, username, pkgs, ... }: {
   options = {
     mods.alacritty = {
       enable = lib.mkEnableOption "Enables Alacritty";
@@ -8,8 +8,8 @@
     environment.systemPackages = [
       pkgs.alacritty
     ];
-    
-    home-manager.users.${mainUser.username} = {
+
+    home-manager.users.${username} = {
       programs.alacritty = {
         enable = true;
         settings = lib.importTOML ./alacritty.toml;

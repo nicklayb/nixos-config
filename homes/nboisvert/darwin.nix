@@ -1,4 +1,9 @@
 { stateVersion, username, ... }: {
+  imports = [
+    ./common.nix
+    ./darwin
+  ];
+
   home.stateVersion = stateVersion;
   home.username = username;
 
