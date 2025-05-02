@@ -1,8 +1,8 @@
-{ pkgs, stateVersion, mainUser, ... }:
+{ pkgs, stateVersion, username, mainUser, ... }:
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
     ];
 
@@ -13,7 +13,7 @@
   mods.firefox.enable = true;
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [ "eDP-1,2560x1440@59.95Hz,0x0,1" ];
-  mods.hyprland.wallpapers = ["eDP-1,/home/${mainUser.username}/.background"];
+  mods.hyprland.wallpapers = [ "eDP-1,/home/${username}/.background" ];
   mods.nautilus.enable = true;
   mods.plasma.enable = true;
   mods.printing.enable = true;
@@ -28,7 +28,7 @@
   ];
 
   systemd.services.mbpfan = {
-    wantedBy = ["multi-user.target"];
+    wantedBy = [ "multi-user.target" ];
     enable = true;
     serviceConfig = {
       User = "root";
@@ -37,7 +37,7 @@
     };
   };
 
-  users.users.${mainUser.username} = {
+  users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
     extraGroups = [ "wheel" "docker" ];

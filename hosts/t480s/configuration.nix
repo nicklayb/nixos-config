@@ -1,14 +1,15 @@
-{ pkgs, stateVersion, mainUser, inputs, ... }:
+{ pkgs, stateVersion, username, mainUser, inputs, ... }:
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
       ./fingerprint.nix
     ];
 
   environment.systemPackages = [
     pkgs.obs-studio
+    (pkgs.nnn.override { withNerdIcons = true; })
   ];
 
   mods._1password.enable = true;
@@ -23,12 +24,12 @@
     "HDMI-A-2,2560x1440@120.00Hz,0x0,1"
   ];
   mods.hyprland.wallpapers = [
-    "eDP-1,/home/${mainUser.username}/.background"
-    "HDMI-A-2,/home/${mainUser.username}/.background-external"
+    "eDP-1,/home/${username}/.background"
+    "HDMI-A-2,/home/${username}/.background-external"
   ];
   mods.hyprland.wallpaperPreloads = [
-    "/home/${mainUser.username}/.background"
-    "/home/${mainUser.username}/.background-external"
+    "/home/${username}/.background"
+    "/home/${username}/.background-external"
   ];
   mods.hyprland.extraBindings = [
     "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
@@ -36,6 +37,7 @@
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
+  mods.playstation.enable = true;
   mods.printing.enable = true;
   mods.steam.enable = true;
   mods.virtualbox.enable = true;
@@ -45,7 +47,7 @@
   mods.wofi.enable = true;
   mods.zen.enable = true;
 
-  users.users.${mainUser.username} = {
+  users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
     extraGroups = [ "wheel" "docker" ];

@@ -45,6 +45,8 @@
     extraPackages = [
       pkgs.vpl-gpu-rt
       pkgs.intel-media-driver
+      pkgs.libva
+      pkgs.vaapiVdpau
     ];
   };
 

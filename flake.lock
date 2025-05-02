@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "elixir-extensions": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744383180,
+        "narHash": "sha256-IjxiaVOg5pk+Qqaln11Pu0N01aXVGSFppDn+oqUAJRU=",
+        "owner": "nicklayb",
+        "repo": "ex_tensions",
+        "rev": "652ff9e92a5c49756334c6d1355a17ef592e39a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "ex_tensions",
+        "type": "github"
+      }
+    },
     "firefox-firefox-mod-blur": {
       "flake": false,
       "locked": {
@@ -94,11 +110,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739553546,
-        "narHash": "sha256-L4ou3xfOr17EAe836djRoQ7auVkYOREMtiQa82wVGqU=",
+        "lastModified": 1743127615,
+        "narHash": "sha256-+sMGqywrSr50BGMLMeY789mSrzjkoxZiu61eWjYS/8o=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "353846417f985e74fdc060555f17939e4472ea2c",
+        "rev": "fc843893cecc1838a59713ee3e50e9e7edc6207c",
         "type": "github"
       },
       "original": {
@@ -145,6 +161,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1743964447,
+        "narHash": "sha256-nEo1t3Q0F+0jQ36HJfbJtiRU4OI+/0jX/iITURKe3EE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "063dece00c5a77e4a0ea24e5e5a5bd75232806f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1740339700,
@@ -180,6 +212,7 @@
     "root": {
       "inputs": {
         "astronvim-config": "astronvim-config",
+        "elixir-extensions": "elixir-extensions",
         "firefox-firefox-mod-blur": "firefox-firefox-mod-blur",
         "firefox-textfox": "firefox-textfox",
         "home-manager": "home-manager",
@@ -187,6 +220,7 @@
         "nix-darwin": "nix-darwin",
         "nixos-06cb-009a-fingerprint-sensor": "nixos-06cb-009a-fingerprint-sensor",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "zen-browser": "zen-browser"
       }
     },

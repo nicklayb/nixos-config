@@ -1,4 +1,4 @@
-{ config, lib, pkgs, mainUser, ... }: {
+{ config, lib, pkgs, username, ... }: {
   options = {
     mods.waybar = {
       enable = lib.mkEnableOption "Enables Waybar";
@@ -15,7 +15,7 @@
       pkgs.waybar
     ];
 
-    home-manager.users.${mainUser.username} = {
+    home-manager.users.${username} = {
       programs.waybar = {
         enable = true;
         style = ./${config.mods.waybar.theme}.css;
