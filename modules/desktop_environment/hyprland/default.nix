@@ -47,7 +47,10 @@
       pkgs.libnotify
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
       pkgs.libsForQt5.qt5.qtgraphicaleffects
+      pkgs.lxqt.lxqt-policykit
     ];
+
+    security.polkit.enable = true;
 
     home-manager.users.${username} = {
       # xdg.configFile."hypr/latte.conf".source = ./latte.conf;
