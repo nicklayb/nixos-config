@@ -6,9 +6,15 @@ let
     inherit system;
     config.allowUnfree = true;
     config.nvidia.acceptLicense = true;
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
   };
   nixos-home-config = username: {
     home-manager.useGlobalPkgs = true;

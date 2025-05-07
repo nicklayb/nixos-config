@@ -2,6 +2,10 @@
 
 {
   mods.tmux.enable = true;
+  mods.vscode = {
+    enable = true;
+    cycode = true;
+  };
 
   users.users.${username} = {
     home = "/Users/${username}";
@@ -62,6 +66,7 @@
 
   homebrew.brews = [
     "asdf"
+    "cycode"
     "platformio"
   ];
 

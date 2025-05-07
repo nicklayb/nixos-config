@@ -1,6 +1,8 @@
-{ pkgs, ... }: let 
+{ pkgs, ... }:
+let
   localsendPort = 53317;
-in {
+in
+{
   imports = [
     ./1password.nix
     ./alacritty
@@ -13,6 +15,7 @@ in {
     ./playstation.nix
     ./reaper.nix
     ./steam.nix
+    ./vscode.nix
     ./wallet.nix
     ./zen.nix
   ];
