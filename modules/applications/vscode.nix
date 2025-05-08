@@ -9,6 +9,10 @@
     home-manager.users."${username}".programs.vscode = {
       enable = true;
 
+      userSettings = {
+        "editor.lineNumbers" = "relative";
+      };
+
       extensions = with pkgs.vscode-marketplace; [
         vscodevim.vim
 
