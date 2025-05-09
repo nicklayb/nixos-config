@@ -13,7 +13,7 @@
 
   catppuccin = {
     enable = true;
-    catppuccin.flavor = "frappe";
+    flavor = "frappe";
   };
 
   nixpkgs.config.allowUnfree = true;
