@@ -9,6 +9,7 @@ in
     ./ardour.nix
     ./dbeaver.nix
     ./firefox.nix
+    ./github.nix
     ./insomnia.nix
     ./heroic.nix
     ./nautilus.nix
