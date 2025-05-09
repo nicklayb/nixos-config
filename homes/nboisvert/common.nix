@@ -9,6 +9,15 @@
     userName = mainUser.githubUsername;
     userEmail = mainUser.email;
     diff-so-fancy.enable = true;
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+        hooksPath = "~/.git/hooks";
+      };
+      pull = {
+        rebase = false;
+      };
+    };
   };
 
   catppuccin = {

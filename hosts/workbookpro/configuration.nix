@@ -41,7 +41,6 @@
       pkgs.glow
       pkgs.unrar
       pkgs.awscli2
-      pkgs.nodePackages.serve
       pkgs.lazygit
       pkgs.smartmontools
       pkgs.prototool
