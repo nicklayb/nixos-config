@@ -18,6 +18,7 @@
   mods.dbeaver.enable = true;
   mods.docker.enable = true;
   mods.firefox.enable = true;
+  mods.github.enable = true;
   mods.hyprland.enable = true;
   mods.hyprland.monitor = [
     "eDP-1,1920x1080@60.00Hz,0x1440,1"
