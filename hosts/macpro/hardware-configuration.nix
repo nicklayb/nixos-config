@@ -38,7 +38,7 @@
     alsa.enable = true;
   };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

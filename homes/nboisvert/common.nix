@@ -2,7 +2,7 @@
   programs.home-manager.enable = true;
   home.stateVersion = stateVersion;
 
-  imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
+  imports = [ inputs.catppuccin.homeModules.catppuccin ];
 
   programs.git = {
     enable = true;
