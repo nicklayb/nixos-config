@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./command_line/tmux
+    ./applications/vscode.nix
   ];
 
   fonts = {
