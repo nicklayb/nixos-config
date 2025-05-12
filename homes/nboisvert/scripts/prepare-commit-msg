@@ -20,9 +20,7 @@ if [ -z "$COMMIT_SOURCE" ] || [ "$COMMIT_SOURCE" = "message" ]; then
     fi
     
     if ! grep -q "^$PREFIX" "$COMMIT_MSG_FILE"; then
-        # Sauvegarder le message original
         TEMP_MSG=$(cat "$COMMIT_MSG_FILE")
-        # Préfixer le message
         echo "$PREFIX $TEMP_MSG" > "$COMMIT_MSG_FILE"
     fi
 fi
