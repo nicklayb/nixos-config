@@ -35,7 +35,6 @@ in
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
-  mods.xfce.enable = true;
   mods.zen.enable = true;
 
   users.users.${username} = {
