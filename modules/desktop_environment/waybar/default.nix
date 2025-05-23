@@ -16,6 +16,7 @@
     ];
 
     home-manager.users.${username} = {
+      catppuccin.waybar.enable = false;
       programs.waybar = {
         enable = true;
         style = ./${config.mods.waybar.theme}.css;

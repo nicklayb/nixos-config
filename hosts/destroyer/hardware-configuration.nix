@@ -72,7 +72,7 @@
   services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;

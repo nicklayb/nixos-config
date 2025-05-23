@@ -6,6 +6,7 @@
 
   exec-once = [
     "waybar"
+    "lxqt-policykit-agent"
   ];
 
   env = [

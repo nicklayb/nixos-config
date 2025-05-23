@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
     firefox-firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     firefox-textfox = { url = "github:nicklayb/textfox"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
@@ -23,6 +24,7 @@
       url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = inputs:
