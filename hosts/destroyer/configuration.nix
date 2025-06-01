@@ -9,6 +9,8 @@ in
       ./hardware-configuration.nix
     ];
 
+  bundles.music.enable = true;
+
   mods._1password.enable = true;
   mods.alacritty.enable = true;
   mods.bluetooth.enable = true;
@@ -30,7 +32,6 @@ in
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.printing.enable = true;
-  mods.reaper.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
