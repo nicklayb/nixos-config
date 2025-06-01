@@ -41,7 +41,12 @@
     {
       musnix.enable = true;
 
+      boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+
       environment.systemPackages = defaultPackages ++ bitwig ++ reaper ++ ardour;
+
+      services.pipewire.enable = true;
+      hardware.pulseaudio.enable = false;
 
       services.jack = {
         jackd.enable = true;
@@ -52,6 +57,7 @@
           enable = true;
         };
       };
+
 
       users.users.${username} = {
         extraGroups = [ "audio" "jackaudio" ];
