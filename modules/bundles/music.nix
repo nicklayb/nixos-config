@@ -29,15 +29,32 @@
       bitwig = packageIf config.bundles.music.bitwig (packages: [packages.bitwig-studio]);
       reaper = packageIf config.bundles.music.reaper (packages: [packages.reaper]);
       ardour = packageIf config.bundles.music.ardour (packages: [packages.ardour]);
-      defaultPackages = [pkgs.alsa-scarlett-gui];
+      defaultPackages = [
+        pkgs.alsa-scarlett-gui
+        pkgs.jack2
+        pkgs.qjackctl
+        pkgs.pavucontrol
+        pkgs.libjack2
+        pkgs.jack_capture
+      ];
     in
     {
       musnix.enable = true;
 
       environment.systemPackages = defaultPackages ++ bitwig ++ reaper ++ ardour;
 
+      services.jack = {
+        jackd.enable = true;
+        # support ALSA only programs via ALSA JACK PCM plugin
+        alsa.enable = false;
+        # support ALSA only programs via loopback device (supports programs like Steam)
+        loopback = {
+          enable = true;
+        };
+      };
+
       users.users.${username} = {
-        extraGroups = [ "audio" ];
+        extraGroups = [ "audio" "jackaudio" ];
       };
     }
   );
