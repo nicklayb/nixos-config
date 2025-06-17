@@ -13,7 +13,10 @@
   ];
 
   mods._1password.enable = true;
-  mods.alacritty.enable = true;
+  mods.alacritty = {
+    enable = true;
+    fontSize = 10;
+  };
   mods.bluetooth.enable = true;
   mods.dbeaver.enable = true;
   mods.docker.enable = true;
