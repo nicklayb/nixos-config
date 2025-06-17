@@ -2,6 +2,7 @@
   imports = [
     ./applications
     ./bluetooth
+    ./bundles
     ./command_line
     ./desktop_environment
     ./dev

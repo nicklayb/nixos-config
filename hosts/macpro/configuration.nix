@@ -1,11 +1,12 @@
-{ pkgs, stateVersion, username, mainUser, inputs, ... }:
+{ pkgs, stateVersion, username, mainUser, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-      inputs.musnix.nixosModules.musnix
     ];
+
+  bundles.music.enable = true;
 
   mods._1password.enable = true;
   mods.alacritty.enable = true;
@@ -23,7 +24,6 @@
   mods.waybar.enable = false;
   mods.wofi.enable = false;
 
-  musnix.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
