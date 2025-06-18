@@ -3,5 +3,5 @@ pkgs: with pkgs; [
   noto-fonts-cjk-sans
   noto-fonts-emoji
   font-awesome
-  (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+  nerd-fonts.caskaydia-cove
 ]
