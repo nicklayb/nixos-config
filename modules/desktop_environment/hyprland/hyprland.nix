@@ -88,7 +88,7 @@
       sensitivity = -0.5;
   };
   bind = [
-    "$mainMod, RETURN, exec, $terminal"
+    "$mainMod, RETURN, exec, uwsm app -- $terminal"
     "$mainMod SHIFT, Q, killactive,"
     "$mainMod, E, exec, $fileManager"
     "$mainMod, V, togglefloating,"
