@@ -25,9 +25,8 @@
 .modules-right {
 	color: #b5b5b5;
 	background: #232136;
-	border: 2px solid #fa7282;
 	margin-top: 4px;
-	border-radius: 8px;
+	border-radius: 100px;
 	margin-right: 4px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -37,8 +36,7 @@
 	color: #b5b5b5;
 	margin-left: 4px;
 	background: #232136;
-	border-radius: 10px;
-	border: 2px solid #fa7282;
+	border-radius: 100px;
 	margin-top: 4px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -81,18 +79,16 @@ window#waybar.empty #window {
 #workspaces button {
 	transition: none;
 	background: #232136;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 4px;
+	padding-right: 4px;
 	font-size: 16px;
-	border: 2px solid #fa7282;
 	margin-left: 8px;
 	border-radius: 1000px;
-	color: #fa7282;
+	color: #999;
 }
 
 #workspaces button.active {
-	color: white;
-	background: #fa7282;
+	color: #fa7282;
 }
 
 #workspaces button:hover {

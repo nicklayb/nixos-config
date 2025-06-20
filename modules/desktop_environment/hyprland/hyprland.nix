@@ -147,6 +147,10 @@
 
   windowrulev2 = "suppressevent maximize, class:.*";
 
+  windowrule = [
+    "float,title:Picture-in-Picture"
+  ];
+
   monitor = monitor;
 }
 

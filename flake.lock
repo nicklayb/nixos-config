@@ -3,11 +3,11 @@
     "astronvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1746463868,
-        "narHash": "sha256-5de+cYGh3h1n5eaTRNDfMt/HtJ+GR+xgB+WMMkaX2MQ=",
+        "lastModified": 1750385366,
+        "narHash": "sha256-aFOS7Au1nJyu8Zfzg4MDJzM9uz10clphdIghLEbaPYc=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "d7c8ffca82362d15238744157eb1a1169e2b5349",
+        "rev": "15431b1fd4f9401ca28655545c9d42a21c2adce0",
         "type": "github"
       },
       "original": {
@@ -166,11 +166,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1750212334,
-        "narHash": "sha256-wLZj7wKuky8jh9USmi2BKUFTOn8ENh1g5/C5ODolTWc=",
+        "lastModified": 1750385101,
+        "narHash": "sha256-pA8Bl/FUg3gRUHmre+VCx0MNRXshaneTevnr19BAGfY=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "33d4864b366ab1ca7657221fb13f82ea2308e5af",
+        "rev": "9631817b593f6e2a0f1a9de667ad26fbc5edb085",
         "type": "github"
       },
       "original": {
@@ -266,11 +266,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1750133334,
-        "narHash": "sha256-urV51uWH7fVnhIvsZIELIYalMYsyr2FCalvlRTzqWRw=",
+        "lastModified": 1750259320,
+        "narHash": "sha256-H8J4H2XCIMEJ5g6fZ179QfQvsc2dUqhqfBjC8RAHNRY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "36ab78dab7da2e4e27911007033713bab534187b",
+        "rev": "9ba04bda9249d5d5e5238303c9755de5a49a79c5",
         "type": "github"
       },
       "original": {
