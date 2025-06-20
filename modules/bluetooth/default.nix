@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options = {
     mods.bluetooth = {
       enable = lib.mkEnableOption "Enables bluetooth";
@@ -9,5 +9,9 @@
       enable = true;
       powerOnBoot = true;
     };
+
+    environment.systemPackages = [
+      pkgs.blueman
+    ];
   };
 }

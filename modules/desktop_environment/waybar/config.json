@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["image#logo", "hyprland/submap", "hyprland/window"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "clock"],
+	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "bluetooth", "clock"],
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
 		"size": 20,
@@ -46,5 +46,10 @@
       "warning": 25,
       "critical": 10
 		}
+	},
+	"bluetooth": {
+		"format": "",
+		"format-connected": " {num_connections}",
+		"on-click": "blueman-manager"
 	}
 }

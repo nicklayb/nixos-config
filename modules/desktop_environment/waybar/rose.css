@@ -7,10 +7,10 @@
 	font-size: 12px;
 }
 
-#backlight-slider, #network, #pulseaudio, #cpu, #memory, #clock, #battery {
+#backlight-slider, #network, #bluetooth, #pulseaudio, #cpu, #memory, #clock, #battery {
 	border-radius: 1px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
 	margin-bottom: 0;
 	transition: none;
 	border-right: 1px solid gray;
