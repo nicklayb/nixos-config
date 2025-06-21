@@ -116,6 +116,16 @@
     "$mainMod, 9, workspace, 9"
     "$mainMod, 0, workspace, 10"
 
+    "$mainMod ALT, 1, splitratio, exact 0.2"
+    "$mainMod ALT, 2, splitratio, exact 0.4"
+    "$mainMod ALT, 3, splitratio, exact 0.6"
+    "$mainMod ALT, 4, splitratio, exact 0.8"
+    "$mainMod ALT, 5, splitratio, exact 1.0"
+    "$mainMod ALT, 6, splitratio, exact 1.2"
+    "$mainMod ALT, 7, splitratio, exact 1.4"
+    "$mainMod ALT, 8, splitratio, exact 1.6"
+    "$mainMod ALT, 9, splitratio, exact 1.8"
+
     "$mainMod SHIFT, 1, movetoworkspace, 1"
     "$mainMod SHIFT, 2, movetoworkspace, 2"
     "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -131,6 +141,11 @@
     "$mainMod SHIFT, left, resizeactive, -20 0"
     "$mainMod SHIFT, up, resizeactive, 0 -20"
     "$mainMod SHIFT, down, resizeactive, 0 20"
+
+    "$mainMod ALT, right, swapwindow, r"
+    "$mainMod ALT, left, swapwindow, l"
+    "$mainMod ALT, up, swapwindow, u"
+    "$mainMod ALT, down, swapwindow, d"
 
     "$mainMod, S, togglespecialworkspace, magic"
     "$mainMod SHIFT, S, movetoworkspace, special:magic"
@@ -149,6 +164,9 @@
 
   windowrule = [
     "float,title:Picture-in-Picture"
+    "nodim 1,title:Picture-in-Picture"
+    "pin,title:Picture-in-Picture"
+    "forcergbx 1,title:Picture-in-Picture"
   ];
 
   monitor = monitor;
