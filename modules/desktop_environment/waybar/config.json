@@ -24,7 +24,7 @@
 	},
 	"network": {
 		"tooltip": false,
-		"format-wifi": "  {essid} | {ipaddr}",
+		"format-wifi": "  {essid}",
 		"format-ethernet": "  {ipaddr}",
 		"family": "ipv4"
 	},

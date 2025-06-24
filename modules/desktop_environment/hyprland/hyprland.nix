@@ -1,5 +1,6 @@
 { monitor, config, ... }: {
   "$terminal" = "alacritty";
+  "$browser" = "zen";
   "$fileManager" = "dolphin";
   "$menu" = "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
   "$mainMod" = "SUPER";
@@ -91,6 +92,7 @@
     "$mainMod, RETURN, exec, uwsm app -- $terminal"
     "$mainMod SHIFT, Q, killactive,"
     "$mainMod, E, exec, $fileManager"
+    "$mainMod, Z, exec, $browser"
     "$mainMod, V, togglefloating,"
     "$mainMod, D, exec, $menu"
     "$mainMod, P, exec, ~/.config/scripts/power-menu.sh"
