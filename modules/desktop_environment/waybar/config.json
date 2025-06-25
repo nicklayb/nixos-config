@@ -11,7 +11,7 @@
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 0.3,
-		"format": "{icon} {volume}%",
+		"format": "{icon} {volume}<span alpha=\"60%\">%</span>",
 		"format-icons": {
 			"default": [
 				"<span color=\"#c7564a\"> </span>", 
@@ -29,17 +29,17 @@
 	},
 	"cpu": {
 		"tooltip": false,
-		"format": "<span color=\"#674ac7\"></span> {}%"
+		"format": "<span color=\"#674ac7\"></span> {}<span alpha=\"60%\">%</span>"
 	},
 	"memory": {
 		"tooltip": false,
-		"format": "<span color=\"#4ac797\"> </span>{}%"
+		"format": "<span color=\"#4ac797\"> </span>{}<span alpha=\"60%\">%</span>"
 	},
 	"backlight/slider": {
 		"min": 15
 	},
 	"battery": {
-	  "format": "{icon} {capacity}%",
+	  "format": "{icon} {capacity}<span alpha=\"60%\">%</span>",
 	  "format-icons": [
 	  	"<span color=\"#c74a4a\"></span>",
 	  	"<span color=\"#c7844a\"></span>",
