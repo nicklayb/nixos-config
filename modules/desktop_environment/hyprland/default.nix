@@ -22,6 +22,18 @@
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
+      gtkTheme = {
+        package = lib.mkOption {
+          description = "GTK theme package";
+          type = lib.types.package;
+          default = pkgs.tokyonight-gtk-theme;
+        };
+        name = lib.mkOption {
+          description = "GTK theme name";
+          type = lib.types.str;
+          default = "Tokyonight-Dark";
+        };
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
@@ -53,7 +65,11 @@
     security.polkit.enable = true;
 
     home-manager.users.${username} = {
-      # xdg.configFile."hypr/latte.conf".source = ./latte.conf;
+    xdg.configFile = {
+      "gtk-4.0/assets".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
+      "gtk-4.0/gtk.css".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
+      "gtk-4.0/gtk-dark.css".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
+    };
 
       services.dunst.enable = true;
 
