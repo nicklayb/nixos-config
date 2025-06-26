@@ -25,15 +25,18 @@
 		"tooltip": false,
 		"format-wifi": "<span color=\"#a4c74a\"></span>  {essid}",
 		"format-ethernet": "<span color=\"#a4c74a\"> </span> {ipaddr}",
-		"family": "ipv4"
+		"family": "ipv4",
+		"on-double-click": "alacritty -e nmtui"
 	},
 	"cpu": {
 		"tooltip": false,
-		"format": "<span color=\"#674ac7\"></span> {}<span alpha=\"60%\">%</span>"
+		"format": "<span color=\"#674ac7\"></span> {}<span alpha=\"60%\">%</span>",
+		"on-double-click": "alacritty -e btop"
 	},
 	"memory": {
 		"tooltip": false,
-		"format": "<span color=\"#4ac797\"> </span>{}<span alpha=\"60%\">%</span>"
+		"format": "<span color=\"#4ac797\"> </span>{}<span alpha=\"60%\">%</span>",
+		"on-double-click": "alacritty -e btop"
 	},
 	"backlight/slider": {
 		"min": 15
