@@ -30,7 +30,7 @@ in
     gparted
     plexamp
     localsend
-    wpsoffice
+    libreoffice
   ];
 
   networking.firewall = {

@@ -5,3 +5,4 @@ allow_images=true
 insensitive=true
 image_size=30
 prompt=Search
+key_expand=Tab
