@@ -22,22 +22,24 @@
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.github.enable = true;
-  mods.hyprland.enable = true;
-  mods.hyprland.monitor = [
-    "eDP-1,1920x1080@60.00Hz,0x1440,1"
-    "HDMI-A-2,2560x1440@120.00Hz,0x0,1"
-  ];
-  mods.hyprland.wallpapers = [
-    "eDP-1,/home/${username}/.background"
-    "HDMI-A-2,/home/${username}/.background-external"
-  ];
-  mods.hyprland.wallpaperPreloads = [
-    "/home/${username}/.background"
-    "/home/${username}/.background-external"
-  ];
-  mods.hyprland.extraBindings = [
-    "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
-  ];
+  mods.hyprland = {
+    enable = true;
+    monitor = [
+      "eDP-1,1920x1080@60.00Hz,0x1440,1"
+      "HDMI-A-2,2560x1440@120.00Hz,0x0,1"
+    ];
+    wallpapers = [
+      "eDP-1,/home/${username}/.background"
+      "HDMI-A-2,/home/${username}/.background-external"
+    ];
+    wallpaperPreloads = [
+      "/home/${username}/.background"
+      "/home/${username}/.background-external"
+    ];
+    extraBindings = [
+      "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
+    ];
+  };
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;

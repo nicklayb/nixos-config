@@ -9,6 +9,8 @@
 # Will start a waybar instance with the current configuration
 # state without need to rebuild the whole NixOS configuration.
 #
+# There's also aliases to speed up rebuilding; `test` and `switch`.
+#
 
 WAYBAR=./modules/desktop_environment/waybar
 WOFI=./modules/desktop_environment/wofi
@@ -21,6 +23,12 @@ case $1 in
     ;;
   wofi)
     wofi --show drun -s $WOFI/style.css -c $WOFI/config
+    ;;
+  switch)
+    sudo nixos-rebuild switch --flake ./
+    ;;
+  test)
+    sudo nixos-rebuild test --flake ./
     ;;
   "")
     echo "Usage ./dev.sh [SOFTWARE]"

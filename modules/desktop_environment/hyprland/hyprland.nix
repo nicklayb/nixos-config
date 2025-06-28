@@ -30,11 +30,7 @@
     rounding = 8;
     active_opacity = 0.98;
     inactive_opacity = 0.96;
-    # drop_shadow = true;
     dim_inactive = true;
-    # shadow_range = 4;
-    # shadow_render_power = 3;
-    # "col.shadow" = "rgba(1a1a1aee)";
     blur = {
         enabled = true;
         size = 3;
@@ -44,14 +40,17 @@
   };
   animations = {
     enabled = true;
-    bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+    # Ease curves: https://easings.net/
+    bezier = [
+      "easeInOut, 0.83, 0, 0.17, 1"
+    ];
     animation = [
-      "windows, 1, 7, myBezier"
-      "windowsOut, 1, 7, default, popin 80%"
+      "windows, 1, 6, easeInOut, slide"
+      "windowsOut, 1, 6, default, slide"
       "border, 1, 10, default"
       "borderangle, 1, 8, default"
-      "fade, 1, 7, default"
-      "workspaces, 1, 6, default"
+      "fade, 1, 6, default"
+      "workspaces, 1, 6, easeInOut"
     ];
   };
   dwindle = {
