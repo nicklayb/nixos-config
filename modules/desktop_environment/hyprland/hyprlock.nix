@@ -26,6 +26,7 @@ in {
     disable_loading_bar = true;
     hide_cursor = true;
     enable_fingerprint = true;
+    immediate_render = true;
   };
 
   background = {
@@ -35,6 +36,9 @@ in {
     color = "$base";
   };
 
+  animations = [
+    "fadeIn, 0, 0, linear"
+  ];
 
   label = ([
     {
