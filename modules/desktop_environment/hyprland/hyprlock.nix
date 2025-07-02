@@ -1,5 +1,17 @@
-{ ... }: {
-
+{ battery, ... }: let
+  batteryLabels = if battery then [
+    {
+      monitor ="";
+      text = "cmd[update:43200000] printf \"Battery: %s%%\" \"$(cat /sys/class/power_supply/BAT0/capacity)\"";
+      color = "$text";
+      font_size = "13";
+      font_family = "$font";
+      position = "30, 30";
+      halign = "left";
+      valign = "bottom";
+    }
+  ] else [];
+in {
   "$alphaAccent" = "dd7878";
   "$accent" = "rgb(dd7878)";
   "$font" = "Menslo Nerd Font";
@@ -24,7 +36,7 @@
   };
 
 
-  label = [
+  label = ([
     {
       monitor = "";
       text = "Layout: $LAYOUT";
@@ -55,7 +67,7 @@
       halign = "right";
       valign = "top";
     }
-  ];
+  ] ++ batteryLabels);
 
   image = {
     monitor ="";

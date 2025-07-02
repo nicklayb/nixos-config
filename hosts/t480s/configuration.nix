@@ -24,6 +24,9 @@
   mods.github.enable = true;
   mods.hyprland = {
     enable = true;
+    hyprlock = {
+      battery = true;
+    };
     monitor = [
       "eDP-1,1920x1080@60.00Hz,0x1440,1"
       "HDMI-A-2,2560x1440@120.00Hz,0x0,1"

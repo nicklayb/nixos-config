@@ -7,6 +7,9 @@
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
+      hyprlock = {
+        battery = lib.mkEnableOption "Enables Battery display in hyprlock";
+      };
       wallpapers = lib.mkOption {
         description = "Hyprpaper wallpapers";
         type = lib.types.listOf lib.types.str;
@@ -90,7 +93,7 @@
       };
       programs.hyprlock = {
         enable = true;
-        settings = import ./hyprlock.nix { };
+        settings = import ./hyprlock.nix { battery = config.mods.hyprland.hyprlock.battery; };
       };
     };
   };
