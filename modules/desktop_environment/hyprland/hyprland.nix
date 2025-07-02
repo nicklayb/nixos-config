@@ -166,6 +166,7 @@
   windowrule = [
     "float,title:Picture-in-Picture"
     "nodim 1,title:Picture-in-Picture"
+    "nodim 1,title:(.*)YouTube(.*)"
     "pin,title:Picture-in-Picture"
     "forcergbx 1,title:Picture-in-Picture"
   ];
