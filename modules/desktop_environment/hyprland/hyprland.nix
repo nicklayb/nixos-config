@@ -100,6 +100,7 @@
     "$mainMod, L, exec, loginctl lock-session"
     "$mainMod, X, exec, hyprshot --clipboard-only -m output"
     "$mainMod SHIFT, X, exec, hyprshot --clipboard-only -m region"
+    ", Print, exec, hyprshot --clipboard-only -m region"
 
     "$mainMod, left, movefocus, l"
     "$mainMod, right, movefocus, r"
@@ -154,6 +155,15 @@
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
   ] ++ config.mods.hyprland.extraBindings;
+
+  # Bind + L (even when locked) + E (repeat when held)
+  bindle = [
+    ", XF86AudioRaiseVolume, exec, pactl set-sink-volume 0 +10%"
+    ", XF86AudioLowerVolume, exec, pactl set-sink-volume 0 -10%"
+  ];
+  bindl = [
+    ", XF86AudioMute, exec, pactl set-sink-mute 0 toggle"
+  ];
 
   # Move/resize windows with mainMod + LMB/RMB and dragging;
   bindm = [

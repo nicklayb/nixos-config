@@ -41,6 +41,8 @@
     ];
     extraBindings = [
       "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
+      ", XF86Display, exec, ~/.config/scripts/monitors.sh"
+      ", XF86Favorites, exec, $menu"
     ];
   };
   mods.inputs.touchpad.enable = true;
