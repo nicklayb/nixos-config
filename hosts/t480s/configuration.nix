@@ -58,6 +58,8 @@
   mods.wofi.enable = true;
   mods.zen.enable = true;
 
+  t480s.enrollingMode = false;
+
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;

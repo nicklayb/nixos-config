@@ -100,6 +100,7 @@
     "$mainMod, L, exec, loginctl lock-session"
     "$mainMod, X, exec, hyprshot --clipboard-only -m output"
     "$mainMod SHIFT, X, exec, hyprshot --clipboard-only -m region"
+    "$mainMod, Space, exec, palet"
     ", Print, exec, hyprshot --clipboard-only -m region"
 
     "$mainMod, left, movefocus, l"
