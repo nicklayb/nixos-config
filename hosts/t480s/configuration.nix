@@ -9,6 +9,7 @@
 
   environment.systemPackages = [
     pkgs.obs-studio
+    pkgs.brightnessctl
     (pkgs.nnn.override { withNerdIcons = true; })
   ];
 
@@ -43,6 +44,8 @@
       "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
       ", XF86Display, exec, ~/.config/scripts/monitors.sh"
       ", XF86Favorites, exec, $menu"
+      ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+      ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
     ];
   };
   mods.inputs.touchpad.enable = true;
