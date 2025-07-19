@@ -353,11 +353,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1752379406,
-        "narHash": "sha256-HIZ85eXbli9DdL0m3VT4AGj90Ipdt0/Df+RIVgZhpXE=",
+        "lastModified": 1752890923,
+        "narHash": "sha256-SdWrOzVjPd71c25m/mGIXS+GQZtFv5T3HyJG/5Ol1z4=",
         "owner": "nicklayb",
         "repo": "palet",
-        "rev": "153a8439df2be0f3d593c6bcca2d7e68e7b69b2d",
+        "rev": "1c8d2887276c6c00b664054eb8d5506b48daa3e4",
         "type": "github"
       },
       "original": {
