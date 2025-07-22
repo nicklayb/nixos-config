@@ -7,9 +7,9 @@
   config = lib.mkIf config.mods.virtualization.qemu.enable {
     virtualisation.libvirtd.enable = true;
     environment.systemPackages = [
-      pkgs.virt-manager
       pkgs.qemu
     ];
+    programs.virt-manager.enable = true;
     users.users.${username}.extraGroups = [ "qemu-libvirtd" "libvirtd" ];
   };
 }
