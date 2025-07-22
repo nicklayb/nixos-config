@@ -54,7 +54,10 @@
   mods.playstation.enable = true;
   mods.printing.enable = true;
   mods.steam.enable = true;
-  mods.virtualbox.enable = true;
+  mods.virtualization = {
+    virtualbox.enable = true;
+    qemu.enable = true;
+  };
   mods.tmux.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
