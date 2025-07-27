@@ -6,8 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-  bundles.music.enable = true;
-
   mods._1password.enable = true;
   mods.alacritty.enable = true;
   mods.bluetooth.enable = true;
