@@ -2,6 +2,7 @@
 
 {
   mods.tmux.enable = true;
+  mods.fonts.enable = true;
 
   users.users.${username} = {
     home = "/Users/${username}";
