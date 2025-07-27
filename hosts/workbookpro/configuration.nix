@@ -10,6 +10,10 @@
     };
   };
 
+  ids.gids.nixbld = 350;
+
+  system.primaryUser = username;
+
   users.users.${username} = {
     home = "/Users/${username}";
   };
@@ -103,8 +107,6 @@
       BatteryShowPercentage = true;
     };
   };
-
-  services.nix-daemon.enable = true;
 
   programs.zsh = {
     enable = true;
