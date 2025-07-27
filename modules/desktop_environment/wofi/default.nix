@@ -13,9 +13,10 @@
     home-manager.users.${username} = {
       programs.wofi = {
         enable = true;
-        settings = import ./config.nix;
         style = lib.readFile ./style.css;
       };
+
+      xdg.configFile."wofi/config".source = ./config;
     };
   };
 }

@@ -69,10 +69,7 @@
   nixpkgs.hostPlatform = lib.mkDefault system;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
-
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;

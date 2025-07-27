@@ -4,6 +4,10 @@ let
   stateVersion = "24.11";
   pkgs = import inputs.nixpkgs {
     inherit system;
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
+    config = { allowUnfree = true; };
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
@@ -18,7 +22,7 @@ in
 hostname: username: inputs.nix-darwin.lib.darwinSystem {
   specialArgs = {
     system = "aarch64-darwin";
-    inherit unstable-pkgs mainUser username;
+    inherit pkgs unstable-pkgs mainUser username;
   };
   modules = [
     ./hosts/${hostname}/configuration.nix

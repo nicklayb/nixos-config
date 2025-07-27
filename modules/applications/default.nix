@@ -1,18 +1,22 @@
-{ pkgs, ... }: let 
+{ pkgs, ... }:
+let
   localsendPort = 53317;
-in {
+in
+{
   imports = [
     ./1password.nix
     ./alacritty
     ./ardour.nix
     ./dbeaver.nix
     ./firefox.nix
+    ./github.nix
     ./insomnia.nix
     ./heroic.nix
     ./nautilus.nix
     ./playstation.nix
     ./reaper.nix
     ./steam.nix
+    ./vscode.nix
     ./wallet.nix
     ./zen.nix
   ];
@@ -26,7 +30,7 @@ in {
     gparted
     plexamp
     localsend
-    wpsoffice
+    libreoffice
   ];
 
   networking.firewall = {

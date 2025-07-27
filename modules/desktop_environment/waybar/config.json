@@ -2,48 +2,62 @@
 	"layer": "top",
 	"modules-left": ["image#logo", "hyprland/submap", "hyprland/window"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "clock"],
+	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "bluetooth", "clock"],
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
 		"size": 20,
 		"on-double-click": "xdg-open https://search.nixos.org/packages"
 	},
-	"hyprland/window": {
-		"rewrite": {
-			"(.*) — Mozilla Firefox": "  $1"
-    }
-	},
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 0.3,
-		"format": "{icon} {volume}%",
+		"format": "{icon} {volume}<span alpha=\"60%\">%</span>",
 		"format-icons": {
-			"default": [" ", " ", " "]
+			"default": [
+				"<span color=\"#c7564a\"> </span>", 
+				"<span color=\"#c7b84a\"> </span>", 
+				"<span color=\"#80c74a\"> </span>"
+			]
 		},
 		"on-double-click": "pavucontrol"
 	},
 	"network": {
 		"tooltip": false,
-		"format-wifi": "  {essid} | {ipaddr}",
-		"format-ethernet": "  {ipaddr}"
+		"format-wifi": "<span color=\"#a4c74a\"></span>  {essid}",
+		"format-ethernet": "<span color=\"#a4c74a\"> </span> {ipaddr}",
+		"family": "ipv4",
+		"on-double-click": "alacritty -e nmtui"
 	},
 	"cpu": {
 		"tooltip": false,
-		"format": " {}%"
+		"format": "<span color=\"#674ac7\"></span> {}<span alpha=\"60%\">%</span>",
+		"on-double-click": "alacritty -e btop"
 	},
 	"memory": {
 		"tooltip": false,
-		"format": " {}%"
+		"format": "<span color=\"#4ac797\"> </span>{}<span alpha=\"60%\">%</span>",
+		"on-double-click": "alacritty -e btop"
 	},
 	"backlight/slider": {
 		"min": 15
 	},
 	"battery": {
-	  "format": "{icon} {capacity}%",
-	  "format-icons": ["", "", "", " ", ""],
+	  "format": "{icon} {capacity}<span alpha=\"60%\">%</span>",
+	  "format-icons": [
+	  	"<span color=\"#c74a4a\"></span>",
+	  	"<span color=\"#c7844a\"></span>",
+	  	"<span color=\"#c7b84a\"></span>",
+	  	"<span color=\"#aac74a\"></span>",
+	  	"<span color=\"#5dc74a\"></span>"
+	  ],
 		"states": {
       "warning": 25,
       "critical": 10
 		}
+	},
+	"bluetooth": {
+		"format": "",
+		"format-connected": "<span color=\"#4a82c7\"></span> {num_connections}",
+		"on-click": "blueman-manager"
 	}
 }

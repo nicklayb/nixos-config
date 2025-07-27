@@ -2,27 +2,30 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
     firefox-firefox-mod-blur = { url = "github:datguypiko/Firefox-Mod-Blur"; flake = false; };
     firefox-textfox = { url = "github:nicklayb/textfox"; flake = false; };
     astronvim-config = { url = "github:nicklayb/astronvim"; flake = false; };
     elixir-extensions = { url = "github:nicklayb/ex_tensions"; flake = false; };
     musnix.url = "github:musnix/musnix";
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser = {
       # Locking to 1.6b
       url = "github:omarcresp/zen-browser-flake/e51913e312a92e47fe90cc3381202b6c9bcaa1ec";
     };
     nixos-06cb-009a-fingerprint-sensor = {
-      url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
+      url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    palet.url = "github:nicklayb/palet";
   };
 
   outputs = inputs:

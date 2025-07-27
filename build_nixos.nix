@@ -6,9 +6,15 @@ let
     inherit system;
     config.allowUnfree = true;
     config.nvidia.acceptLicense = true;
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
   };
   nixos-home-config = username: {
     home-manager.useGlobalPkgs = true;
@@ -29,6 +35,7 @@ hostname: username: inputs.nixpkgs.lib.nixosSystem {
     ./hosts/${hostname}/configuration.nix
     ./hosts/${hostname}/hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
+    inputs.catppuccin.nixosModules.catppuccin
     (nixos-home-config username)
   ];
 }

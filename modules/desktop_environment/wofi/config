@@ -1,0 +1,8 @@
+width=30%
+term=alacritty
+show_icons=true
+allow_images=true
+insensitive=true
+image_size=30
+prompt=Search
+key_expand=Tab
