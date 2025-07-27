@@ -9,6 +9,7 @@
 
   environment.systemPackages = [
     pkgs.obs-studio
+    pkgs.brightnessctl
     (pkgs.nnn.override { withNerdIcons = true; })
   ];
 
@@ -43,6 +44,8 @@
       "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"
       ", XF86Display, exec, ~/.config/scripts/monitors.sh"
       ", XF86Favorites, exec, $menu"
+      ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
+      ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
     ];
   };
   mods.inputs.touchpad.enable = true;
@@ -51,12 +54,17 @@
   mods.playstation.enable = true;
   mods.printing.enable = true;
   mods.steam.enable = true;
-  mods.virtualbox.enable = true;
+  mods.virtualization = {
+    virtualbox.enable = true;
+    qemu.enable = true;
+  };
   mods.tmux.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
   mods.zen.enable = true;
+
+  t480s.enrollingMode = false;
 
   users.users.${username} = {
     isNormalUser = true;

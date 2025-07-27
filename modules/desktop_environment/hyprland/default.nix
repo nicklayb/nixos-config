@@ -1,4 +1,4 @@
-{ config, lib, pkgs, mainUser, username, ... }: {
+{ config, system, lib, pkgs, inputs, username, ... }: {
   options = {
     mods.hyprland = {
       enable = lib.mkEnableOption "Enables Hyprland";
@@ -63,6 +63,7 @@
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
       pkgs.libsForQt5.qt5.qtgraphicaleffects
       pkgs.lxqt.lxqt-policykit
+      inputs.palet.packages.${system}.default
     ];
 
     security.polkit.enable = true;

@@ -11,5 +11,6 @@
     ./inputs
     ./locale
     ./services
+    ./virtualization
   ];
 }
