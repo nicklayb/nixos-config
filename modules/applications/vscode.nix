@@ -6,7 +6,7 @@
     };
   };
   config = lib.mkIf config.mods.vscode.enable {
-    home-manager.users."${username}".programs.vscode =
+    home-manager.users."${username}".programs.vscode.profiles.default =
       let
         extensionsIf = isTrue: whenTrue:
           if isTrue then
