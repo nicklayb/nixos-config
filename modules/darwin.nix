@@ -1,10 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./command_line/tmux
+    ./fonts/darwin.nix
     ./applications/vscode.nix
   ];
-
-  fonts = {
-    packages = import ./fonts/packages.nix pkgs;
-  };
 }

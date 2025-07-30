@@ -1,6 +1,7 @@
 { pkgs, unstable-pkgs, username, system, lib, ... }:
 
 {
+  mods.fonts.enable = true;
   mods = {
     tmux.enable = true;
     vscode = {
@@ -8,6 +9,10 @@
       cycode = true;
     };
   };
+
+  ids.gids.nixbld = 350;
+
+  system.primaryUser = username;
 
   users.users.${username} = {
     home = "/Users/${username}";
@@ -102,8 +107,6 @@
       BatteryShowPercentage = true;
     };
   };
-
-  services.nix-daemon.enable = true;
 
   programs.zsh = {
     enable = true;

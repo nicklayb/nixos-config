@@ -6,6 +6,10 @@
     home = "/Users/${username}";
   };
 
+  system.primaryUser = username;
+
+  ids.gids.nixbld = 350;
+
   environment.systemPackages = with pkgs; [
     wget
     btop
@@ -28,7 +32,6 @@
     lazygit
     rclone
     ffmpeg
-    nerdfonts
     oh-my-zsh
     tree-sitter
     nodejs_22
@@ -59,8 +62,6 @@
     "darktable"
   ];
 
-  services.nix-daemon.enable = true;
-
   programs.zsh = {
     enable = true;
     enableFzfCompletion = true;
@@ -70,7 +71,7 @@
       export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
 
       ZSH_THEME="eastwood"
-      plugins=(git fzf web-search)
+      plugins=(git fzf web-search direnv)
 
       source ${pkgs.oh-my-zsh}/share/oh-my-zsh//oh-my-zsh.sh
       . $(brew --prefix asdf)/libexec/asdf.sh
@@ -79,7 +80,6 @@
   };
 
   system.stateVersion = 4;
-
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   nixpkgs.config.allowUnfree = true;
