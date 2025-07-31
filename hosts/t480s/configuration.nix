@@ -15,7 +15,7 @@
 
   home-manager.users.${username} = {
     xdg.configFile = {
-      ".config/scripts/lidclosed".source = ./scripts/lidclosed.sh;
+      ".config/hypr/scripts/lidclosed".source = ./scripts/lidclosed.sh;
     };
   };
 
