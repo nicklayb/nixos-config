@@ -49,7 +49,7 @@
       "/home/${username}/.background-external"
     ];
     extraBindingsL = [
-      ", switch:on:Lid Switch, exec ~/.config/hypr/scripts/lidclosed"
+      ", switch:on:Lid Switch, exec, ~/.config/hypr/scripts/lidclosed"
       ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"e-DP-1, enable\" & hyprctl reload"
     ];
     extraBindings = [
