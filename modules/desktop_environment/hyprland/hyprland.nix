@@ -164,7 +164,7 @@
   ];
   bindl = [
     ", XF86AudioMute, exec, pactl set-sink-mute 0 toggle"
-  ];
+  ] ++ config.mods.hyprland.extraBindingsL;
 
   # Move/resize windows with mainMod + LMB/RMB and dragging;
   bindm = [

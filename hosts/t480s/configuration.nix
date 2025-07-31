@@ -13,6 +13,12 @@
     (pkgs.nnn.override { withNerdIcons = true; })
   ];
 
+  home-manager.users.${username} = {
+    xdg.configFile = {
+      ".config/scripts/lidclosed".source = ./scripts/lidclosed.sh;
+    };
+  };
+
   mods._1password.enable = true;
   mods.alacritty = {
     enable = true;
@@ -41,6 +47,10 @@
     wallpaperPreloads = [
       "/home/${username}/.background"
       "/home/${username}/.background-external"
+    ];
+    extraBindingsL = [
+      ", switch:on:Lid Switch, exec ~/.config/hypr/scripts/lidclosed"
+      ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"e-DP-1, enable\" & hyprctl reload"
     ];
     extraBindings = [
       "$mainMod SHIFT, M, exec, ~/.config/scripts/monitors.sh"

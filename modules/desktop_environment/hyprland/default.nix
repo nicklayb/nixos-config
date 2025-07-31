@@ -25,6 +25,11 @@
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
+      extraBindingsL = lib.mkOption {
+        description = "Extra bindings (bindl) to register";
+        type = lib.types.listOf lib.types.str;
+        default = [ ];
+      };
       gtkTheme = {
         package = lib.mkOption {
           description = "GTK theme package";
@@ -59,6 +64,7 @@
       pkgs.hyprlock
       pkgs.hypridle
       pkgs.hyprshot
+      pkgs.acpi
       pkgs.libnotify
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
       pkgs.libsForQt5.qt5.qtgraphicaleffects
