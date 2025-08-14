@@ -12,6 +12,7 @@ in
     ./github.nix
     ./insomnia.nix
     ./heroic.nix
+    ./mailspring.nix
     ./nautilus.nix
     ./playstation.nix
     ./reaper.nix
@@ -23,7 +24,6 @@ in
 
   environment.systemPackages = with pkgs; [
     krita
-    mailspring
     obsidian
     pavucontrol
     vlc
