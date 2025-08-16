@@ -23,7 +23,7 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    krita
+    xfce.ristretto
     obsidian
     pavucontrol
     vlc
