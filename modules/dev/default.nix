@@ -7,5 +7,6 @@
     clang
     cargo
     python3
+    jdk
   ];
 }
