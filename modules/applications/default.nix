@@ -19,6 +19,7 @@ in
     ./steam.nix
     ./vscode.nix
     ./wallet.nix
+    ./zed.nix
     ./zen.nix
   ];
 

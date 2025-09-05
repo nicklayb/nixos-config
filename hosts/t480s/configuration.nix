@@ -74,6 +74,7 @@
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
+  mods.zed.enable = true;
   mods.zen.enable = true;
 
   t480s.enrollingMode = false;
