@@ -51,6 +51,7 @@
         "macmini" = build-nixos-system "macmini" "nboisvert";
         "imac" = build-nixos-system "imac" "nboisvert";
         "macpro" = build-nixos-system "macpro" "nboisvert";
+        "garage" = build-nixos-system "garage" "nboisvert";
       };
       darwinConfigurations = {
         "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";
