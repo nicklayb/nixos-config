@@ -1,4 +1,4 @@
-{ ... }: {
+{ timers, ... }: {
   general = {
     lock_cmd = "pidof hyprlock || hyprlock";
     before_sleep_cmd = "loginctl lock-session";
@@ -7,11 +7,11 @@
 
   listener = [
     {
-      timeout = "1800";
+      timeout = timers.sleep;
       on-timeout = "systemctl suspend";
     }
     {
-      timeout = "300";
+      timeout = timers.lock;
       on-timeout = "loginctl lock-session";
     }
   ];
