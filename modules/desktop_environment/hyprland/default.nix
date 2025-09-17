@@ -42,6 +42,20 @@
           default = "Tokyonight-Dark";
         };
       };
+      hypridle = {
+        timers = {
+          sleep = lib.mkOption {
+            description = "Sleep timer";
+            type = lib.types.str;
+            default = "1800";
+          };
+          lock = lib.mkOption {
+            description = "Lock timer";
+            type = lib.types.str;
+            default = "300";
+          };
+        };
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
@@ -96,7 +110,7 @@
       };
       services.hypridle = {
         enable = true;
-        settings = import ./hypridle.nix { };
+        settings = import ./hypridle.nix { timers = config.mods.hyprland.hypridle.timers; };
       };
       programs.hyprlock = {
         enable = true;

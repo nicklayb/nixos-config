@@ -18,6 +18,18 @@
     extraBindings = [
       ", F4, exec, ~/.config/touchscreen/toggle.sh"
     ];
+    wallpapers = [
+      "eDP-1,/home/${username}/.background"
+    ];
+    wallpaperPreloads = [
+      "/home/${username}/.background"
+    ];
+    hypridle = {
+      timers = {
+        lock = "99999";
+        sleep = "99999";
+      };
+    };
   };
   mods.nautilus.enable = true;
   mods.printing.enable = true;
