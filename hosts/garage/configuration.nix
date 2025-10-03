@@ -18,6 +18,7 @@
     ];
     extraBindings = [
       ", F4, exec, ~/.config/touchscreen/toggle.sh"
+      ", F3, exec, ~/dev/photo_boite/kiosk.sh"
     ];
     wallpapers = [
       "eDP-1,/home/${username}/.background"
@@ -35,8 +36,14 @@
   mods.nautilus.enable = true;
   mods.printing.enable = true;
   mods.inputs.touchscreen.enable = true;
+  mods.tmux.enable = true;
   mods.wofi.enable = true;
   mods.zen.enable = true;
+
+  environment.systemPackages = [
+    pkgs.jq
+    pkgs.just
+  ];
 
   users.users.${username} = {
     isNormalUser = true;
