@@ -8,6 +8,7 @@ in
     ./alacritty
     ./ardour.nix
     ./dbeaver.nix
+    ./deluge.nix
     ./firefox.nix
     ./github.nix
     ./insomnia.nix

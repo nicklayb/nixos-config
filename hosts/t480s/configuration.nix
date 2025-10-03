@@ -26,6 +26,7 @@
   };
   mods.bluetooth.enable = true;
   mods.dbeaver.enable = true;
+  mods.deluge.enable = true;
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.github.enable = true;
