@@ -56,6 +56,16 @@
           };
         };
       };
+      gaps = lib.mkOption {
+        description = "Gaps between windows, both in and out";
+        type = lib.types.int;
+        default = 5;
+      };
+      dimInactive = lib.mkOption {
+        description = "Dim inactive windows";
+        type = lib.types.bool;
+        default = true;
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
