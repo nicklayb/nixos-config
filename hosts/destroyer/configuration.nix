@@ -15,6 +15,7 @@ in
   mods.alacritty.enable = true;
   mods.bluetooth.enable = true;
   mods.docker.enable = true;
+  mods.deluge.enable = true;
   mods.firefox.enable = true;
   mods.firefox.theme = "textfox-dev";
   mods.heroic.enable = true;
