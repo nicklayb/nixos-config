@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, username, mainUser, inputs, ... }:
+{ pkgs, stateVersion, username, mainUser, system, inputs, ... }:
 
 {
   imports =
@@ -11,6 +11,7 @@
     pkgs.obs-studio
     pkgs.brightnessctl
     (pkgs.nnn.override { withNerdIcons = true; })
+    inputs.plexm3u.packages.${system}.default
   ];
 
   home-manager.users.${username} = {

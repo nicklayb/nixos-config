@@ -25,7 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    palet.url = "github:nicklayb/palet";
+    plexm3u.url = "github:nicklayb/plexm3u";
   };
 
   outputs = inputs:
