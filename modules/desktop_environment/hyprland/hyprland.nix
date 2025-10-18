@@ -16,8 +16,8 @@
   ];
 
   general = {
-    gaps_in = 5;
-    gaps_out = 5;
+    gaps_in = config.mods.hyprland.gaps;
+    gaps_out = config.mods.hyprland.gaps;
     border_size = 2;
     "col.active_border" = "rgba(ff65baee) rgba(ffab7dee) 45deg";
     "col.inactive_border" = "rgba(595959aa)";
@@ -30,7 +30,7 @@
     rounding = 8;
     active_opacity = 0.98;
     inactive_opacity = 0.96;
-    dim_inactive = true;
+    dim_inactive = config.mods.hyprland.dimInactive;
     blur = {
         enabled = true;
         size = 3;
