@@ -30,6 +30,7 @@ in
     pavucontrol
     vlc
     gparted
+    exfatprogs
     plexamp
     localsend
     libreoffice
