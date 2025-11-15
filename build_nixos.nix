@@ -36,6 +36,7 @@ hostname: username: inputs.nixpkgs.lib.nixosSystem {
     ./hosts/${hostname}/hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.catppuccin.nixosModules.catppuccin
+    inputs.photo-boite.packages.${system}.nixosModule
     (nixos-home-config username)
   ];
 }

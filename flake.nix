@@ -26,6 +26,7 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     palet.url = "github:nicklayb/palet";
+    photo-boite.url = "git+ssh://git@github.com/nicklayb/photo_boite";
   };
 
   outputs = inputs:
