@@ -30,6 +30,11 @@
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
+      extraExecOnce = lib.mkOption {
+        description = "Extra exec one";
+        type = lib.types.listOf lib.types.str;
+        default = [ ];
+      };
       gtkTheme = {
         package = lib.mkOption {
           description = "GTK theme package";

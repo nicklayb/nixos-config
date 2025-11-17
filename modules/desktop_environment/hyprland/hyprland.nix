@@ -8,7 +8,7 @@
   exec-once = [
     "waybar"
     "lxqt-policykit-agent"
-  ];
+  ] ++ config.mods.hyprland.extraExecOnce;
 
   env = [
     "XCURSOR_SIZE,24"

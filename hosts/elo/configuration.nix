@@ -13,6 +13,9 @@
     enable = true;
     gaps = 0;
     dimInactive = false;
+    extraExecOnce = [
+      "firefox http://localhost:4000 --kiosk"
+    ];
     hypridle = {
       timers = {
         lock = "99999";
@@ -24,7 +27,14 @@
   mods.inputs.touchscreen.enable = true;
   mods.tmux.enable = true;
   mods.wofi.enable = true;
-  mods.zen.enable = true;
+
+  services.photo-boite = {
+    enable = true;
+    secretKeyBaseFile = "/home/${username}/photo_boite_config/SECRET_KEY_BASE";
+    liveViewSaltFile = "/home/${username}/photo_boite_config/LIVE_VIEW_SALT";
+    databaseUrlFile = "/home/${username}/photo_boite_config/PHOTO_BOITE_DATABASE_URL";
+    releaseCookieFile = "/home/${username}/photo_boite_config/RELEASE_COOKIE";
+  };
 
   environment.systemPackages = [
     pkgs.jq
