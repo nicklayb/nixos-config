@@ -43,6 +43,14 @@ in
   mods.wofi.enable = true;
   mods.zen.enable = true;
 
+  # services.photo-boite = {
+  #   enable = true;
+  #   secretKeyBaseFile = "/home/${username}/photo_boite_config/SECRET_KEY_BASE";
+  #   liveViewSaltFile = "/home/${username}/photo_boite_config/LIVE_VIEW_SALT";
+  #   databaseUrlFile = "/home/${username}/photo_boite_config/PHOTO_BOITE_DATABASE_URL";
+  #   releaseCookieFile = "/home/${username}/photo_boite_config/RELEASE_COOKIE";
+  # };
+
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
