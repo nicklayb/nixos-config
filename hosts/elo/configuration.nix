@@ -9,6 +9,7 @@ in {
 
   mods._1password.enable = true;
   mods.alacritty.enable = true;
+  mods.bluetooth.enable = true;
   mods.docker.enable = true;
   mods.firefox.enable = true;
   mods.hyprland = {
@@ -49,6 +50,11 @@ in {
     liveViewSaltFile = "/home/${username}/photo_boite_config/LIVE_VIEW_SALT";
     databaseUrlFile = "/home/${username}/photo_boite_config/PHOTO_BOITE_DATABASE_URL";
     releaseCookieFile = "/home/${username}/photo_boite_config/RELEASE_COOKIE";
+    extraEnvironment = {
+      PHOTOS_DIRECTORY = "/var/lib/photo-boite";
+    };
+    user = username;
+    group = "wheel";
   };
 
   environment.systemPackages = [
