@@ -35,6 +35,11 @@
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
+      cursorInactiveTimeout = lib.mkOption {
+        description = "Timeout before the cursor disappears from inactivity";
+        type = lib.types.int;
+        default = 15;
+      };
       gtkTheme = {
         package = lib.mkOption {
           description = "GTK theme package";

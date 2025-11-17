@@ -1,5 +1,7 @@
-{ pkgs, stateVersion, mainUser, username, home-manager, ... }:
-{
+{ pkgs, stateVersion, mainUser, username, ... }:
+let
+  wallpaper = "/home/${username}/.background";
+in {
   imports =
     [
       ./hardware-configuration.nix
@@ -14,8 +16,16 @@
     gaps = 0;
     dimInactive = false;
     extraExecOnce = [
-      "firefox http://localhost:4000 --kiosk"
+      "firefox ~/photo_boite_config/index.html --kiosk"
     ];
+    monitor = [
+      "eDP-1,1280x720@59.86Hz,0x0,1"
+    ];
+    wallpapers = [
+      "eDP-1,${wallpaper}"
+    ];
+    wallpaperPreloads = [ wallpaper ];
+    cursorInactiveTimeout = 1;
     hypridle = {
       timers = {
         lock = "99999";

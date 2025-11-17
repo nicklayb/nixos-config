@@ -38,6 +38,9 @@
         vibrancy = 0.1696;
     };
   };
+  cursor = {
+    inactive_timeout = config.mods.hyprland.cursorInactiveTimeout;
+  };
   animations = {
     enabled = true;
     # Ease curves: https://easings.net/

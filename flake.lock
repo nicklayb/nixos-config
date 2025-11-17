@@ -318,6 +318,22 @@
     },
     "nixpkgs_5": {
       "locked": {
+        "lastModified": 1738824222,
+        "narHash": "sha256-U3SNq+waitGIotmgg/Et3J7o4NvUtP2gb2VhME5QXiw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "550e11f27ba790351d390d9eca3b80ad0f0254e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
         "lastModified": 1751984180,
         "narHash": "sha256-LwWRsENAZJKUdD3SpLluwDmdXY9F45ZEgCb0X+xgOL0=",
         "owner": "NixOS",
@@ -332,7 +348,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1744536153,
         "narHash": "sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg/N38=",
@@ -344,22 +360,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_7": {
-      "locked": {
-        "lastModified": 1738824222,
-        "narHash": "sha256-U3SNq+waitGIotmgg/Et3J7o4NvUtP2gb2VhME5QXiw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "550e11f27ba790351d390d9eca3b80ad0f0254e7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -380,10 +380,29 @@
         "type": "github"
       }
     },
-    "plexm3u": {
+    "photo-boite": {
       "inputs": {
         "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "lastModified": 1763396913,
+        "narHash": "sha256-EbvUBQ4Iz6wlt8VDbw4DySdWk0B+E2+ogFfv44Hy76E=",
+        "ref": "refs/heads/master",
+        "rev": "cd56ee40f87e5bb5d212e3fd799bb9bd2790d6e6",
+        "revCount": 37,
+        "type": "git",
+        "url": "ssh://git@github.com/nicklayb/photo_boite"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/nicklayb/photo_boite"
+      }
+    },
+    "plexm3u": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_6",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
@@ -400,25 +419,6 @@
         "type": "github"
       }
     },
-    "photo-boite": {
-      "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_7"
-      },
-      "locked": {
-        "lastModified": 1763173541,
-        "narHash": "sha256-tqoTGHFrosnUIOSxb8119DZEzm8lymgauVJyD1+K8aA=",
-        "ref": "refs/heads/master",
-        "rev": "330d5d88d304e5ca2adefd55f12b6ef50477bf88",
-        "revCount": 31,
-        "type": "git",
-        "url": "ssh://git@github.com/nicklayb/photo_boite"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/nicklayb/photo_boite"
-      }
-    },
     "root": {
       "inputs": {
         "astronvim-config": "astronvim-config",
@@ -433,14 +433,14 @@
         "nixos-06cb-009a-fingerprint-sensor": "nixos-06cb-009a-fingerprint-sensor",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "plexm3u": "plexm3u",
         "photo-boite": "photo-boite",
+        "plexm3u": "plexm3u",
         "zen-browser": "zen-browser"
       }
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_7"
       },
       "locked": {
         "lastModified": 1752288212,
