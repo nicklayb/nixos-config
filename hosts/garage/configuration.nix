@@ -32,11 +32,6 @@
         sleep = "99999";
       };
     };
-    sddmSettings = {
-      Autologin = {
-        User = "nboisvert";
-      };
-    };
   };
   mods.nautilus.enable = true;
   mods.printing.enable = true;

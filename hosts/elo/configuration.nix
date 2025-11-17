@@ -22,6 +22,11 @@
         sleep = "99999";
       };
     };
+    sddmSettings = {
+      Autologin = {
+        User = username;
+      };
+    };
   };
   mods.nautilus.enable = true;
   mods.inputs.touchscreen.enable = true;
