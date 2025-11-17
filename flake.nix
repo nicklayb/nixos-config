@@ -25,7 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    palet.url = "github:nicklayb/palet";
+    plexm3u.url = "github:nicklayb/plexm3u";
   };
 
   outputs = inputs:
@@ -52,6 +52,7 @@
         "imac" = build-nixos-system "imac" "nboisvert";
         "macpro" = build-nixos-system "macpro" "nboisvert";
         "garage" = build-nixos-system "garage" "nboisvert";
+        "elo" = build-nixos-system "elo" "nboisvert";
       };
       darwinConfigurations = {
         "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";

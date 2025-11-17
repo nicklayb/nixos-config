@@ -1,6 +1,7 @@
-{ config, lib, system, hostname, modulesPath, ... }:
-
-{
+{ config, lib, system, modulesPath, ... }:
+let
+  utils = import ../../utils.nix;
+in {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
@@ -64,8 +65,6 @@
     [ { device = "/dev/disk/by-uuid/f092cf58-36b8-4431-8e2e-8a70b34479f4"; }
     ];
 
-  networking.useDHCP = lib.mkDefault true;
-  networking.hostName = hostname;
   nixpkgs.hostPlatform = lib.mkDefault system;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 

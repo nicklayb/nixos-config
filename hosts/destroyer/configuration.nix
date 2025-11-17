@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, mainUser, username, home-manager, ... }:
+{ pkgs, stateVersion, mainUser, username, hostname, ... }:
 let
   wallpaperLeft = "/home/${username}/.background-left";
   wallpaperRight = "/home/${username}/.background-right";
@@ -15,6 +15,7 @@ in
   mods.alacritty.enable = true;
   mods.bluetooth.enable = true;
   mods.docker.enable = true;
+  mods.deluge.enable = true;
   mods.firefox.enable = true;
   mods.firefox.theme = "textfox-dev";
   mods.heroic.enable = true;
@@ -31,6 +32,10 @@ in
   mods.hyprland.wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
+  mods.networking = {
+    enable = true;
+    hostname = hostname;
+  };
   mods.printing.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;

@@ -346,23 +346,23 @@
         "type": "github"
       }
     },
-    "palet": {
+    "plexm3u": {
       "inputs": {
         "flake-utils": "flake-utils_2",
         "nixpkgs": "nixpkgs_5",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1752890923,
-        "narHash": "sha256-SdWrOzVjPd71c25m/mGIXS+GQZtFv5T3HyJG/5Ol1z4=",
+        "lastModified": 1761740578,
+        "narHash": "sha256-6/JsEi0pRpQ4avcj9OIrOEaqMCyz0xFP0SYeeneIU2k=",
         "owner": "nicklayb",
-        "repo": "palet",
-        "rev": "1c8d2887276c6c00b664054eb8d5506b48daa3e4",
+        "repo": "plexm3u",
+        "rev": "24d7cf25f8954e670beb5c431db5db612bf83f2e",
         "type": "github"
       },
       "original": {
         "owner": "nicklayb",
-        "repo": "palet",
+        "repo": "plexm3u",
         "type": "github"
       }
     },
@@ -380,7 +380,7 @@
         "nixos-06cb-009a-fingerprint-sensor": "nixos-06cb-009a-fingerprint-sensor",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "palet": "palet",
+        "plexm3u": "plexm3u",
         "zen-browser": "zen-browser"
       }
     },
