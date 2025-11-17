@@ -71,13 +71,21 @@
         type = lib.types.bool;
         default = true;
       };
+      sddmSettings = lib.mkOption {
+        description = "Settings for SDDM";
+        type = lib.types.attrs;
+        default = {};
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
     services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.theme = "sugar-candy";
-    services.displayManager.sddm.wayland.enable = true;
+    services.displayManager.sddm = {
+      enable = true;
+      theme = "sugar-candy";
+      wayland.enable = true;
+      settings = config.mods.hyprland.sddmSettings;
+    };
     programs.hyprland = {
       enable = true;
       withUWSM = true;
