@@ -52,7 +52,6 @@ in {
     liveViewSaltFile = "${photoBoite}/LIVE_VIEW_SALT";
     databaseUrlFile = "${photoBoite}/PHOTO_BOITE_DATABASE_URL";
     releaseCookieFile = "${photoBoite}/RELEASE_COOKIE";
-    photosDirectory = "${photoBoite}/photos";
   };
 
   environment.systemPackages = [

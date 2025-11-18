@@ -82,14 +82,6 @@ in {
 
   t480s.enrollingMode = false;
 
-  services.photo-boite = {
-    enable = true;
-    secretKeyBaseFile = "${photoBoite}_config/SECRET_KEY_BASE";
-    liveViewSaltFile = "${photoBoite}_config/LIVE_VIEW_SALT";
-    databaseUrlFile = "${photoBoite}_config/DATABASE_URL";
-    releaseCookieFile = "${photoBoite}_config/RELEASE_COOKIE";
-  };
-
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
