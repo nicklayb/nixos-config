@@ -1,6 +1,8 @@
 { pkgs, stateVersion, mainUser, username, ... }:
 let
+  erlangEpmd = 4369;
   wallpaper = "/home/${username}/.background";
+  photoBoite = "/home/${username}/photo_boite_config";
 in {
   imports =
     [
@@ -46,15 +48,11 @@ in {
 
   services.photo-boite = {
     enable = true;
-    secretKeyBaseFile = "/home/${username}/photo_boite_config/SECRET_KEY_BASE";
-    liveViewSaltFile = "/home/${username}/photo_boite_config/LIVE_VIEW_SALT";
-    databaseUrlFile = "/home/${username}/photo_boite_config/PHOTO_BOITE_DATABASE_URL";
-    releaseCookieFile = "/home/${username}/photo_boite_config/RELEASE_COOKIE";
-    extraEnvironment = {
-      PHOTOS_DIRECTORY = "/var/lib/photo-boite";
-    };
-    user = username;
-    group = "wheel";
+    secretKeyBaseFile = "${photoBoite}/SECRET_KEY_BASE";
+    liveViewSaltFile = "${photoBoite}/LIVE_VIEW_SALT";
+    databaseUrlFile = "${photoBoite}/PHOTO_BOITE_DATABASE_URL";
+    releaseCookieFile = "${photoBoite}/RELEASE_COOKIE";
+    photosDirectory = "${photoBoite}/photos";
   };
 
   environment.systemPackages = [
@@ -68,6 +66,8 @@ in {
     extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
+
+  networking.firewall.allowedTCPPorts = [ erlangEpmd ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
