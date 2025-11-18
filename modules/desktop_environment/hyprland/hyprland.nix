@@ -8,7 +8,7 @@
   exec-once = [
     "waybar"
     "lxqt-policykit-agent"
-  ];
+  ] ++ config.mods.hyprland.extraExecOnce;
 
   env = [
     "XCURSOR_SIZE,24"
@@ -37,6 +37,9 @@
         passes = 1;
         vibrancy = 0.1696;
     };
+  };
+  cursor = {
+    inactive_timeout = config.mods.hyprland.cursorInactiveTimeout;
   };
   animations = {
     enabled = true;

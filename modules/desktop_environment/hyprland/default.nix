@@ -30,6 +30,16 @@
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
+      extraExecOnce = lib.mkOption {
+        description = "Extra exec one";
+        type = lib.types.listOf lib.types.str;
+        default = [ ];
+      };
+      cursorInactiveTimeout = lib.mkOption {
+        description = "Timeout before the cursor disappears from inactivity";
+        type = lib.types.int;
+        default = 15;
+      };
       gtkTheme = {
         package = lib.mkOption {
           description = "GTK theme package";
@@ -66,13 +76,21 @@
         type = lib.types.bool;
         default = true;
       };
+      sddmSettings = lib.mkOption {
+        description = "Settings for SDDM";
+        type = lib.types.attrs;
+        default = {};
+      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
     services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.theme = "sugar-candy";
-    services.displayManager.sddm.wayland.enable = true;
+    services.displayManager.sddm = {
+      enable = true;
+      theme = "sugar-candy";
+      wayland.enable = true;
+      settings = config.mods.hyprland.sddmSettings;
+    };
     programs.hyprland = {
       enable = true;
       withUWSM = true;

@@ -26,6 +26,7 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     plexm3u.url = "github:nicklayb/plexm3u";
+    photo-boite.url = "git+ssh://git@github.com/nicklayb/photo_boite";
   };
 
   outputs = inputs:
@@ -52,6 +53,7 @@
         "imac" = build-nixos-system "imac" "nboisvert";
         "macpro" = build-nixos-system "macpro" "nboisvert";
         "garage" = build-nixos-system "garage" "nboisvert";
+        "elo" = build-nixos-system "elo" "nboisvert";
       };
       darwinConfigurations = {
         "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";
