@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, username, ... }: {
   options = {
     mods.networking = {
       enable = lib.mkEnableOption "Enables Networking";
@@ -17,6 +17,8 @@
     networking.hostName = config.mods.networking.hostname;
     networking.networkmanager.enable = config.mods.networking.networkManager;
     networking.useDHCP = lib.mkDefault true;
+
+    users.users.${username}.extraGroups = ["networkmanager"];
 
     environment.systemPackages = [
       pkgs.inetutils

@@ -33,10 +33,6 @@
     [ { device = "/dev/disk/by-uuid/d74da650-de57-46b5-9e13-ea5ca1d95fea"; }
     ];
 
-  networking.hostName = hostname;
-  networking.networkmanager.enable = true;
-  networking.useDHCP = lib.mkDefault true;
-
   services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
 
