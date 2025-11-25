@@ -1,7 +1,5 @@
-{ pkgs, stateVersion, username, mainUser, system, inputs, ... }:
-let
-  photoBoite = "/home/${username}/photo_boite";
-in {
+{ pkgs, stateVersion, username, hostname, mainUser, system, inputs, ... }:
+{
   imports =
     [
       ./hardware-configuration.nix
@@ -66,6 +64,10 @@ in {
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
   mods.nautilus.enable = true;
+  mods.networking = {
+    enable = true;
+    hostname = hostname;
+  };
   mods.playstation.enable = true;
   mods.printing.enable = true;
   mods.steam.enable = true;
