@@ -386,11 +386,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1763437147,
-        "narHash": "sha256-7rowCy8WkD8Sl+eo17H19dC0Yui4f0aBoIt+CQkIbcA=",
+        "lastModified": 1764040403,
+        "narHash": "sha256-IYB9FYMgU+2WkcO5GvNp8rXORMMo9lWoI0sr7pWKMDM=",
         "ref": "refs/heads/master",
-        "rev": "94a9427d2022895f937a155ef8d13e68f724b1d3",
-        "revCount": 60,
+        "rev": "5e5777de4a6254e7692ff78e5a155a365de31ed3",
+        "revCount": 92,
         "type": "git",
         "url": "ssh://git@github.com/nicklayb/photo_boite"
       },

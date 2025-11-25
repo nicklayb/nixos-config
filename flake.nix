@@ -59,5 +59,8 @@
         "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";
         "StudioMini" = build-darwin-system "StudioMini" "nboisvert";
       };
+      nixosModules = {
+        nicklayb = import ./modules;
+      };
     };
 }

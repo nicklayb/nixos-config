@@ -1,6 +1,7 @@
 { pkgs, stateVersion, mainUser, username, ... }:
 let
   erlangEpmd = 4369;
+  photoBoitePort = 4000;
   wallpaper = "/home/${username}/.background";
   photoBoite = "/home/${username}/photo_boite_config";
 in {
@@ -52,6 +53,10 @@ in {
     liveViewSaltFile = "${photoBoite}/LIVE_VIEW_SALT";
     databaseUrlFile = "${photoBoite}/PHOTO_BOITE_DATABASE_URL";
     releaseCookieFile = "${photoBoite}/RELEASE_COOKIE";
+    nmCli = {
+      interface = "wlp1s0";
+      binary = "${pkgs.networkmanager}/bin/nmcli";
+    };
   };
 
   environment.systemPackages = [
@@ -66,7 +71,7 @@ in {
     shell = pkgs.zsh;
   };
 
-  networking.firewall.allowedTCPPorts = [ erlangEpmd ];
+  networking.firewall.allowedTCPPorts = [ erlangEpmd photoBoitePort ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
