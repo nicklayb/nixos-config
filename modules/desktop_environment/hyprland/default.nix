@@ -106,6 +106,7 @@
       pkgs.hyprlock
       pkgs.hypridle
       pkgs.hyprshot
+      pkgs.hyprpolkitagent
       pkgs.acpi
       pkgs.libnotify
       (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
