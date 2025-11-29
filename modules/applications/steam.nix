@@ -11,7 +11,7 @@ in {
       enable = true;
       remotePlay.openFirewall = true;
     };
-    environments.systemPackages = [
+    environment.systemPackages = [
       pkgs.xwayland
       pkgs.usbutils
     ];
