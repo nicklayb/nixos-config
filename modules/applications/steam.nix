@@ -1,4 +1,6 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }: let
+  vrPorts = [ 10400 10401 ];
+in {
   options = {
     mods.steam = {
       enable = lib.mkEnableOption "Enables Steam";
@@ -9,6 +11,10 @@
       enable = true;
       remotePlay.openFirewall = true;
     };
+    environments.systemPackages = [
+      pkgs.xwayland
+    ];
     programs.gamemode.enable = true;
+    networking.firewall.allowedUDPPorts = vrPorts;
   };
 }

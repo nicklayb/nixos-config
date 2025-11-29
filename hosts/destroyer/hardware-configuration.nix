@@ -1,7 +1,4 @@
-{ config, lib, system, modulesPath, ... }:
-let
-  utils = import ../../utils.nix;
-in {
+{ config, lib, system, modulesPath, ... }: {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
@@ -78,6 +75,6 @@ in {
 
     nvidiaSettings = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 }
