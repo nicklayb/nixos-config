@@ -14,7 +14,6 @@
     EDITOR = "nvim";
     NIXPKGS_ALLOW_INSECURE = "1";
     NIXOS_OZONE_WL = "1";
-    SDL_VIDEODRIVER = "wayland";
   };
 
   programs.zsh = {
