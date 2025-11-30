@@ -26,7 +26,7 @@ in {
         {
           description = "Epson ET-8500";
           name = epson.name;
-          deviceUri = "ipp://${epson.ip}/ipp";
+          deviceUri = "ipp://${epson.ip}/ipp/print";
           model = "epson-inkjet-printer-escpr2/Epson-ET-8500_Series-epson-escpr2-en.ppd";
         }
       ];
