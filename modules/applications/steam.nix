@@ -15,6 +15,7 @@ in {
       pkgs.xwayland
       pkgs.usbutils
     ];
+
     programs.gamemode.enable = true;
     networking.firewall.allowedUDPPorts = vrPorts;
   };

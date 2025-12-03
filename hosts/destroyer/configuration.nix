@@ -13,6 +13,7 @@ in
 
   mods._1password.enable = true;
   mods.alacritty.enable = true;
+  mods.blender.enable = true;
   mods.bluetooth.enable = true;
   mods.docker.enable = true;
   mods.deluge.enable = true;

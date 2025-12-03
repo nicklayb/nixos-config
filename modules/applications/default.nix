@@ -7,6 +7,7 @@ in
     ./1password.nix
     ./alacritty
     ./ardour.nix
+    ./blender.nix
     ./dbeaver.nix
     ./deluge.nix
     ./firefox.nix
