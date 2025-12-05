@@ -34,7 +34,7 @@
     ];
 
   services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -42,7 +42,7 @@
       pkgs.vpl-gpu-rt
       pkgs.intel-media-driver
       pkgs.libva
-      pkgs.vaapiVdpau
+      pkgs.libva-vdpau-driver
     ];
   };
 
