@@ -4,7 +4,7 @@
 
   imports = [ 
     inputs.catppuccin.homeModules.catppuccin
-    inputs.zen-browser.homeModules.default
+    inputs.zen-browser.homeModules.twilight
   ];
 
   programs.git = {

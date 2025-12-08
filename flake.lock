@@ -50,38 +50,6 @@
         "type": "github"
       }
     },
-    "firefox-firefox-mod-blur": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1764180275,
-        "narHash": "sha256-RprADEPNEkuLq05bdQkuhvdQpB/f+JC3SUmUbTDqKgY=",
-        "owner": "datguypiko",
-        "repo": "Firefox-Mod-Blur",
-        "rev": "fe22887e877060a5564dd7eeb5c8f05775f3b694",
-        "type": "github"
-      },
-      "original": {
-        "owner": "datguypiko",
-        "repo": "Firefox-Mod-Blur",
-        "type": "github"
-      }
-    },
-    "firefox-textfox": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1728699829,
-        "narHash": "sha256-2JsBqx4SklfZlFXKpEdlC0EHY4m2rglAW4XEF9PX8So=",
-        "owner": "nicklayb",
-        "repo": "textfox",
-        "rev": "a262baaf793a722e6552f43e8d91cea2f70b69c9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nicklayb",
-        "repo": "textfox",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -117,27 +85,6 @@
       "original": {
         "owner": "nix-community",
         "ref": "release-25.11",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "home-manager_2": {
-      "inputs": {
-        "nixpkgs": [
-          "zen-browser",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1762964643,
-        "narHash": "sha256-RYHN8O/Aja59XDji6WSJZPkJpYVUfpSkyH+PEupBJqM=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "827f2a23373a774a8805f84ca5344654c31f354b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
       }
@@ -336,8 +283,6 @@
         "astronvim-config": "astronvim-config",
         "catppuccin": "catppuccin",
         "elixir-extensions": "elixir-extensions",
-        "firefox-firefox-mod-blur": "firefox-firefox-mod-blur",
-        "firefox-textfox": "firefox-textfox",
         "home-manager": "home-manager",
         "musnix": "musnix",
         "nix-darwin": "nix-darwin",
@@ -383,7 +328,9 @@
     },
     "zen-browser": {
       "inputs": {
-        "home-manager": "home-manager_2",
+        "home-manager": [
+          "home-manager"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
