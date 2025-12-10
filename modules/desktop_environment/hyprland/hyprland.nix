@@ -1,6 +1,6 @@
 { monitor, config, ... }: {
   "$terminal" = "alacritty";
-  "$browser" = "zen";
+  "$browser" = "zen-twilight";
   "$fileManager" = "dolphin";
   "$menu" = "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
   "$mainMod" = "SUPER";
@@ -80,10 +80,6 @@
           natural_scroll = false;
           disable_while_typing = false;
       };
-  };
-
-  gestures = {
-      workspace_swipe = false;
   };
 
   device = {

@@ -22,7 +22,7 @@ in
     ./vscode.nix
     ./wallet.nix
     ./zed.nix
-    ./zen.nix
+    ./zen
   ];
 
   environment.systemPackages = with pkgs; [

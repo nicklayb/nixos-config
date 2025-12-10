@@ -87,9 +87,13 @@
     services.xserver.enable = true;
     services.displayManager.sddm = {
       enable = true;
-      theme = "sugar-candy";
+      extraPackages = [
+        pkgs.sddm-astronaut
+      ];
+      theme = "sddm-astronaut-theme";
       wayland.enable = true;
-      settings = config.mods.hyprland.sddmSettings;
+      package = pkgs.kdePackages.sddm;
+      settings = config.mods.hyprland.sddmSettings // { Theme = { Current = "sddm-astronaut-theme"; }; };
     };
     programs.hyprland = {
       enable = true;
@@ -106,7 +110,8 @@
       pkgs.hyprpolkitagent
       pkgs.acpi
       pkgs.libnotify
-      (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
+      pkgs.kdePackages.qtmultimedia
+      pkgs.sddm-astronaut
       pkgs.libsForQt5.qt5.qtgraphicaleffects
       pkgs.lxqt.lxqt-policykit
     ];

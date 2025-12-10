@@ -3,7 +3,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./fingerprint.nix
     ];
 
   environment.systemPackages = [
@@ -72,8 +71,8 @@
   mods.printing.enable = true;
   mods.steam.enable = true;
   mods.virtualization = {
-    virtualbox.enable = true;
-    qemu.enable = true;
+    virtualbox.enable = false;
+    qemu.enable = false;
   };
   mods.tmux.enable = true;
   mods.waybar.enable = true;
@@ -81,8 +80,6 @@
   mods.wofi.enable = true;
   mods.zed.enable = true;
   mods.zen.enable = true;
-
-  t480s.enrollingMode = false;
 
   users.users.${username} = {
     isNormalUser = true;

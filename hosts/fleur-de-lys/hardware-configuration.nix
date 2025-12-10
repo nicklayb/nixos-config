@@ -27,7 +27,7 @@
     ];
 
   services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
 
   networking.useDHCP = lib.mkDefault true;
   networking.hostName = hostname;

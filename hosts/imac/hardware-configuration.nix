@@ -34,7 +34,7 @@
   networking.hostName = hostname;
 
   services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

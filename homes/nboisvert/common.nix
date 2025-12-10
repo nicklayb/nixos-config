@@ -2,14 +2,18 @@
   programs.home-manager.enable = true;
   home.stateVersion = stateVersion;
 
-  imports = [ inputs.catppuccin.homeModules.catppuccin ];
+  imports = [ 
+    inputs.catppuccin.homeModules.catppuccin
+    inputs.zen-browser.homeModules.twilight
+  ];
 
   programs.git = {
     enable = true;
-    userName = mainUser.githubUsername;
-    userEmail = mainUser.email;
-    diff-so-fancy.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = mainUser.githubUsername;
+        email = mainUser.email;
+      };
       init = {
         defaultBranch = "main";
       };
@@ -20,6 +24,11 @@
         rebase = false;
       };
     };
+  };
+
+  programs.diff-so-fancy = {
+    enable = true;
+    enableGitIntegration = true;
   };
 
   catppuccin = {
