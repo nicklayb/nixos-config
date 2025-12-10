@@ -5,18 +5,20 @@
     id = value.id;
   };
   toContainers = items : builtins.listToAttrs ( map ( { key, ... } @ value: { name = key; value = itemToContainer value; } ) items ) ;
-  itemToSpace = index : value : {
+  itemToSpace = index : { theme ? null, ... }@value : {
     name = value.key;
     value = {
       id = value.uuid;
       icon = value.spaceIcon;
       container = value.id;
       position = index * 1000;
+      theme.type = "gradient";
+      theme.colors = theme;
     };
   };
   itemsToSpaces = items : lib.imap1 itemToSpace items;
   toSpaces = items : builtins.listToAttrs (itemsToSpaces items);
-  itemToPin = container : { folderId ? null, ... } @ pin : {
+  itemToPin = container : { folderId ? null, isEssential ? false, ... } @ pin : {
     name = pin.url;
     value = {
       title = pin.title;
@@ -26,6 +28,7 @@
       workspace = container.uuid;
       editedTitle = true;
       folderParentId = folderId;
+      isEssential = isEssential;
     };
   };
   itemToFolder = container : pin : {
@@ -48,9 +51,11 @@
     uuid = site.uuid;
     folderId = folderId;
   }) sites;
+  mkFolderBuilder = folder: sites: map (site: site // { folderId = folder.uuid; }) sites;
 in{
   toContainers = toContainers;
   toSpaces = toSpaces;
   toPins = toPins;
   multiPins = multiPins;
+  mkFolderBuilder = mkFolderBuilder;
 }
