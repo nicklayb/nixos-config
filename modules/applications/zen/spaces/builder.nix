@@ -18,44 +18,34 @@
   };
   itemsToSpaces = items : lib.imap1 itemToSpace items;
   toSpaces = items : builtins.listToAttrs (itemsToSpaces items);
-  itemToPin = container : { folderId ? null, isEssential ? false, ... } @ pin : {
-    name = pin.url;
+  itemToPin = container : { folderId ? null, isEssential ? false, isGroup ? false, url ? null, ... } @ pin : {
+    name = (if isGroup then pin.title else pin.url);
     value = {
       title = pin.title;
       id = pin.uuid;
-      url = pin.url;
+      url = url;
       container = container.id;
       workspace = container.uuid;
       editedTitle = true;
       folderParentId = folderId;
       isEssential = isEssential;
+      isGroup = isGroup;
     };
   };
-  itemToFolder = container : pin : {
-    name = pin.title;
-    value = {
-      title = pin.title;
-      id = pin.uuid;
-      container = container.id;
-      workspace = container.uuid;
-      isGroup = true;
-    };
+  itemToFolder = pin : {
+    title = pin.title;
+    uuid = pin.uuid;
+    isGroup = true;
   };
   putPositions = items : (lib.imap1 (index : { name, value} : { name = name; value = value // { position = index * 1000; }; })) items;
-  containerToPins = acc : { pins ? [], folders ? [], ... } @ container : acc ++ map (itemToFolder container) folders ++ map (itemToPin container) pins;
+  containerToPins = acc : { pins ? [], ... } @ container : acc ++ map (itemToPin container) pins;
   itemsToPins = items : putPositions (builtins.foldl' containerToPins [] items);
   toPins = items : builtins.listToAttrs (itemsToPins items);
-  multiPins = { title, baseUrl, sites, folderId ? null } : map (site : {
-    title = "${title} - ${site.title}";
-    url = baseUrl site.url;
-    uuid = site.uuid;
-    folderId = folderId;
-  }) sites;
-  mkFolderBuilder = folder: sites: map (site: site // { folderId = folder.uuid; }) sites;
+  putFolder = { baseUrl ? null, ... } @ folder: { url, title ? url, ... } @ site: site // { title = title; folderId = folder.uuid; url = (if isNull baseUrl then site.url else baseUrl site.url); };
+  mkFolder = folder: [ (itemToFolder folder) ] ++ map (putFolder folder) folder.sites;
 in{
   toContainers = toContainers;
   toSpaces = toSpaces;
   toPins = toPins;
-  multiPins = multiPins;
-  mkFolderBuilder = mkFolderBuilder;
+  mkFolder = mkFolder;
 }

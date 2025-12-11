@@ -57,9 +57,9 @@ in
           };
           profiles."default" = {
             settings = {
-              "zen.welcome-screen.seen" = locked true;
-              "zen.view.use-single-toolbar" = locked false;
-              "zen.workspaces.force-container-workspace" = locked true;
+              "zen.welcome-screen.seen" = true;
+              "zen.view.use-single-toolbar" = false;
+              "zen.workspaces.force-container-workspace" = true;
             };
             spacesForce = true;
             containersForce = true;
