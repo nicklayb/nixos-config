@@ -57,6 +57,7 @@ in
           };
           profiles."default" = {
             settings = {
+              "intl.locale.requested" = "fr,en-US";
               "zen.welcome-screen.seen" = true;
               "zen.view.use-single-toolbar" = false;
               "zen.workspaces.force-container-workspace" = true;
