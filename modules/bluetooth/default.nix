@@ -9,14 +9,18 @@
       };
     };
   };
-  config = lib.mkIf config.mods.bluetooth.enable {
+  config = let
+      blueman = 
+        if config.mods.bluetooth.blueman then 
+          [ pkgs.blueman ]
+        else
+          [];
+    in lib.mkIf config.mods.bluetooth.enable {
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
 
-    environment.systemPackages = [
-      pkgs.blueman
-    ];
+    environment.systemPackages = blueman;
   };
 }
