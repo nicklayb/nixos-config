@@ -111,6 +111,7 @@
       pkgs.acpi
       pkgs.libnotify
       pkgs.kdePackages.qtmultimedia
+      pkgs.wl-clipboard
       pkgs.sddm-astronaut
       pkgs.libsForQt5.qt5.qtgraphicaleffects
       pkgs.lxqt.lxqt-policykit
