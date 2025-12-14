@@ -76,25 +76,10 @@
         type = lib.types.bool;
         default = true;
       };
-      sddmSettings = lib.mkOption {
-        description = "Settings for SDDM";
-        type = lib.types.attrs;
-        default = {};
-      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
     services.xserver.enable = true;
-    services.displayManager.sddm = {
-      enable = true;
-      extraPackages = [
-        pkgs.sddm-astronaut
-      ];
-      theme = "sddm-astronaut-theme";
-      wayland.enable = true;
-      package = pkgs.kdePackages.sddm;
-      settings = config.mods.hyprland.sddmSettings // { Theme = { Current = "sddm-astronaut-theme"; }; };
-    };
     programs.hyprland = {
       enable = true;
       withUWSM = true;
@@ -112,7 +97,6 @@
       pkgs.libnotify
       pkgs.kdePackages.qtmultimedia
       pkgs.wl-clipboard
-      pkgs.sddm-astronaut
       pkgs.libsForQt5.qt5.qtgraphicaleffects
       pkgs.lxqt.lxqt-policykit
     ];

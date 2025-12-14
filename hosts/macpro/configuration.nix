@@ -19,6 +19,7 @@
   mods.hyprland.wallpapers = [ "DP-2,/home/${username}/.background" ];
   mods.plasma.enable = true;
   mods.nautilus.enable = false;
+  mods.sddm.enable = true;
   mods.waybar.enable = false;
   mods.wofi.enable = false;
 

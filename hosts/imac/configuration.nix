@@ -8,23 +8,19 @@
 
   mods._1password.enable = true;
   mods.alacritty.enable = true;
-  mods.bluetooth.enable = true;
-  mods.docker.enable = true;
-  mods.firefox.enable = true;
-  mods.hyprland.enable = true;
-  mods.hyprland.monitor = [ "eDP-1,2560x1440@59.95Hz,0x0,1" ];
-  mods.hyprland.wallpapers = [ "eDP-1,/home/${username}/.background" ];
-  mods.nautilus.enable = true;
+  mods.bluetooth = {
+    enable = true;
+    blueman = false;
+  };
   mods.plasma.enable = true;
+  mods.plasma.withSddm = true;
   mods.printing.enable = true;
-  mods.waybar.enable = true;
-  mods.waybar.theme = "rose";
-  mods.wofi.enable = true;
   mods.zen.enable = true;
 
   environment.systemPackages = [
     pkgs.mbpfan
     pkgs.handbrake
+    pkgs.abcde
   ];
 
   systemd.services.mbpfan = {

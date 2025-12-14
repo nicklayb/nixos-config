@@ -75,6 +75,7 @@
     qemu.enable = false;
   };
   mods.tmux.enable = true;
+  mods.sddm.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
