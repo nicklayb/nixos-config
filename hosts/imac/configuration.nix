@@ -13,8 +13,8 @@
   mods.firefox.enable = true;
   mods.nautilus.enable = true;
   mods.plasma.enable = true;
+  mods.plasma.withSddm = true;
   mods.printing.enable = true;
-  mods.sddm.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
