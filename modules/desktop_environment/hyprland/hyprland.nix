@@ -98,6 +98,7 @@
     "$mainMod, J, togglesplit, # dwindle"
     "$mainMod, L, exec, loginctl lock-session"
     "$mainMod, X, exec, hyprshot --clipboard-only -m output"
+    "$mainMod SHIFT, P, exec, 1password --quick-access"
     "$mainMod SHIFT, X, exec, hyprshot --clipboard-only -m region"
     ", Print, exec, hyprshot --clipboard-only -m region"
 

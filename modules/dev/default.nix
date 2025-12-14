@@ -8,5 +8,7 @@
     cargo
     python3
     jdk
+    nil
+    lua-language-server
   ];
 }

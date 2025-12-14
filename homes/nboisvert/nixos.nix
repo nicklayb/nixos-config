@@ -1,4 +1,9 @@
-{ pkgs, mainUser, username, stateVersion, inputs, ... }: {
+{
+  pkgs,
+  username,
+  ...
+}:
+{
   imports = [
     ./common.nix
   ];
@@ -24,7 +29,11 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf" "web-search" ];
+      plugins = [
+        "git"
+        "fzf"
+        "web-search"
+      ];
       theme = "eastwood";
     };
   };
