@@ -11,12 +11,10 @@
   mods.bluetooth.enable = true;
   mods.docker.enable = true;
   mods.firefox.enable = true;
-  mods.hyprland.enable = true;
-  mods.hyprland.monitor = [ "eDP-1,2560x1440@59.95Hz,0x0,1" ];
-  mods.hyprland.wallpapers = [ "eDP-1,/home/${username}/.background" ];
   mods.nautilus.enable = true;
   mods.plasma.enable = true;
   mods.printing.enable = true;
+  mods.sddm.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;

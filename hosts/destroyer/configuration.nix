@@ -38,6 +38,7 @@ in
     hostname = hostname;
   };
   mods.printing.enable = true;
+  mods.sddm.enable = true;
   mods.steam.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";

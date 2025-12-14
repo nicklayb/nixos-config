@@ -16,6 +16,7 @@
   mods.hyprland.wallpapers = [ "HDMI-A-2,/home/${username}/.background" ];
   mods.nautilus.enable = true;
   mods.plasma.enable = true;
+  mods.sddm.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;

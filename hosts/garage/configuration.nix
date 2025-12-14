@@ -37,6 +37,7 @@
   mods.printing.enable = true;
   mods.inputs.touchscreen.enable = true;
   mods.tmux.enable = true;
+  mods.sddm.enable = true;
   mods.wofi.enable = true;
   mods.zen.enable = true;
 
