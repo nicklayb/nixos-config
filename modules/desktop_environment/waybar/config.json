@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["image#logo", "hyprland/submap", "hyprland/window"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["backlight/slider", "network", "pulseaudio", "cpu", "memory", "battery", "bluetooth", "clock"],
+	"modules-right": ["group/group-backlight", "network", "pulseaudio", "group/group-perf", "battery", "clock"],
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
 		"size": 20,
@@ -21,12 +21,33 @@
 		},
 		"on-double-click": "pavucontrol"
 	},
+	"group/group-perf": {
+		"orientation": "horizontal",
+		"drawer": {},
+		"modules": [
+			"memory",
+			"cpu",
+			"disk",
+			"bluetooth"
+		]
+	},
+	"group/group-backlight": {
+		"orientation": "horizontal",
+		"drawer": {},
+		"modules": [
+			"backlight",
+			"backlight/slider"
+		]
+	},
 	"network": {
 		"tooltip": false,
 		"format-wifi": "<span color=\"#a4c74a\"></span>  {essid}",
 		"format-ethernet": "<span color=\"#a4c74a\"> </span> {ipaddr}",
 		"family": "ipv4",
 		"on-double-click": "alacritty -e nmtui"
+	},
+	"disk": {
+		"format": "<span color=\"#9c42f5\">󱛟</span> {percentage_free}%"
 	},
 	"cpu": {
 		"tooltip": false,
@@ -38,13 +59,44 @@
 		"format": "<span color=\"#4ac797\"> </span>{}<span alpha=\"60%\">%</span>",
 		"on-double-click": "alacritty -e btop"
 	},
+	"backlight": {
+		"format": "<span color=\"#f5427e\">{icon}</span> {percent}%",
+		"format-icons": [ "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥" ]
+	},
 	"backlight/slider": {
 		"min": 15
 	},
+	"clock": {
+    "format": "<span color=\"#f542bf\"></span> {:%H:%M}",
+    "format-alt": "<span color=\"#f542bf\"></span> {:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "smooth-scrolling-threshold": 2.5,
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-double-click": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
 	"battery": {
+		"format-charging": "<span color=\"#d742f5\"></span> {capacity}<span alpha=\"60%\">%</span>",
+		"format-full": "<span color=\"#5dc74a\"></span> {capacity}<span alpha=\"60%\">%</span>",
 	  "format": "{icon} {capacity}<span alpha=\"60%\">%</span>",
 	  "format-icons": [
-	  	"<span color=\"#c74a4a\"></span>",
+	  	"<span color=\"#ff6699\"></span>",
 	  	"<span color=\"#c7844a\"></span>",
 	  	"<span color=\"#c7b84a\"></span>",
 	  	"<span color=\"#aac74a\"></span>",
@@ -56,7 +108,7 @@
 		}
 	},
 	"bluetooth": {
-		"format": "",
+		"format": "<span color=\"#4a82c7\"></span>",
 		"format-connected": "<span color=\"#4a82c7\"></span> {num_connections}",
 		"on-click": "blueman-manager"
 	}
