@@ -173,13 +173,23 @@
 
   windowrulev2 = "suppressevent maximize, class:.*";
 
-  windowrule = [
-    "float,title:Picture-in-Picture"
-    "nodim 1,title:Picture-in-Picture"
+  windowrule = 
+    let
+      pipTitles = [
+        "Picture-in-Picture"
+        "Incrustation vidéo"
+      ];
+      makeFloating = title: [
+        "float,title:${title}"
+        "nodim 1,title:${title}"
+        "pin,title:${title}"
+        "forcergbx 1,title:${title}"
+      ];
+
+      floating = builtins.foldl' (acc: title: acc ++ makeFloating title) [] pipTitles;
+    in [
     "nodim 1,title:(.*)YouTube(.*)"
-    "pin,title:Picture-in-Picture"
-    "forcergbx 1,title:Picture-in-Picture"
-  ];
+  ] ++ floating;
 
   monitor = monitor;
 }
