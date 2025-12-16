@@ -1,4 +1,5 @@
-{ monitor, config, ... }: {
+{ monitor, config, ... }:
+{
   "$terminal" = "alacritty";
   "$browser" = "zen-twilight";
   "$fileManager" = "dolphin";
@@ -8,7 +9,8 @@
   exec-once = [
     "waybar"
     "lxqt-policykit-agent"
-  ] ++ config.mods.hyprland.extraExecOnce;
+  ]
+  ++ config.mods.hyprland.extraExecOnce;
 
   env = [
     "XCURSOR_SIZE,24"
@@ -21,7 +23,7 @@
     border_size = 2;
     "col.active_border" = "rgba(ff65baee) rgba(ffab7dee) 45deg";
     "col.inactive_border" = "rgba(595959aa)";
-    resize_on_border = false; 
+    resize_on_border = false;
     allow_tearing = "false";
     layout = "dwindle";
   };
@@ -32,10 +34,10 @@
     inactive_opacity = 0.96;
     dim_inactive = config.mods.hyprland.dimInactive;
     blur = {
-        enabled = true;
-        size = 3;
-        passes = 1;
-        vibrancy = 0.1696;
+      enabled = true;
+      size = 3;
+      passes = 1;
+      vibrancy = 0.1696;
     };
   };
   cursor = {
@@ -57,34 +59,36 @@
     ];
   };
   dwindle = {
-      pseudotile = true;
-      preserve_split = true;
+    pseudotile = true;
+    preserve_split = true;
   };
   master = {
-      new_status = "master";
+    new_status = "master";
   };
 
   misc = {
-      force_default_wallpaper = -1;
-      disable_hyprland_logo = false;
+    force_default_wallpaper = -1;
+    disable_hyprland_logo = false;
   };
   input = {
-      kb_layout = "ca";
-      kb_variant = "multix";
-      kb_model = "";
-      kb_options = "";
-      kb_rules = "";
-      follow_mouse = 1;
-      sensitivity = 0;
-      touchpad = {
-          natural_scroll = false;
-          disable_while_typing = false;
-      };
+    kb_layout = "ca";
+    kb_variant = "multix";
+    kb_model = "";
+    kb_options = "";
+    kb_rules = "";
+    follow_mouse = 1;
+    sensitivity = 0;
+    touchpad = {
+      natural_scroll = false;
+      disable_while_typing = false;
+    };
   };
 
+  gesture = config.mods.hyprland.gestures;
+
   device = {
-      name = "epic-mouse-v1";
-      sensitivity = -0.5;
+    name = "epic-mouse-v1";
+    sensitivity = -0.5;
   };
   bind = [
     "$mainMod, RETURN, exec, uwsm app -- $terminal"
@@ -154,7 +158,8 @@
 
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
-  ] ++ config.mods.hyprland.extraBindings;
+  ]
+  ++ config.mods.hyprland.extraBindings;
 
   # Bind + L (even when locked) + E (repeat when held)
   bindle = [
@@ -163,7 +168,8 @@
   ];
   bindl = [
     ", XF86AudioMute, exec, pactl set-sink-mute 0 toggle"
-  ] ++ config.mods.hyprland.extraBindingsL;
+  ]
+  ++ config.mods.hyprland.extraBindingsL;
 
   # Move/resize windows with mainMod + LMB/RMB and dragging;
   bindm = [
@@ -173,7 +179,7 @@
 
   windowrulev2 = "suppressevent maximize, class:.*";
 
-  windowrule = 
+  windowrule =
     let
       pipTitles = [
         "Picture-in-Picture"
@@ -186,11 +192,12 @@
         "forcergbx 1,title:${title}"
       ];
 
-      floating = builtins.foldl' (acc: title: acc ++ makeFloating title) [] pipTitles;
-    in [
-    "nodim 1,title:(.*)YouTube(.*)"
-  ] ++ floating;
+      floating = builtins.foldl' (acc: title: acc ++ makeFloating title) [ ] pipTitles;
+    in
+    [
+      "nodim 1,title:(.*)YouTube(.*)"
+    ]
+    ++ floating;
 
   monitor = monitor;
 }
-

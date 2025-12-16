@@ -1,4 +1,13 @@
-{ config, system, lib, pkgs, inputs, username, ... }: {
+{
+  config,
+  system,
+  lib,
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
+{
   options = {
     mods.hyprland = {
       enable = lib.mkEnableOption "Enables Hyprland";
@@ -32,6 +41,11 @@
       };
       extraExecOnce = lib.mkOption {
         description = "Extra exec one";
+        type = lib.types.listOf lib.types.str;
+        default = [ ];
+      };
+      gestures = lib.mkOption {
+        description = "Trackpad gestures";
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
@@ -85,7 +99,10 @@
       withUWSM = true;
     };
 
-    environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
+    environment.pathsToLink = [
+      "/share/xdg-desktop-portal"
+      "/share/applications"
+    ];
 
     environment.systemPackages = [
       pkgs.hyprpaper
@@ -105,9 +122,12 @@
 
     home-manager.users.${username} = {
       xdg.configFile = {
-        "gtk-4.0/assets".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
-        "gtk-4.0/gtk.css".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
-        "gtk-4.0/gtk-dark.css".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
+        "gtk-4.0/assets".source =
+          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
+        "gtk-4.0/gtk.css".source =
+          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
+        "gtk-4.0/gtk-dark.css".source =
+          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
       };
 
       xdg.portal = {
@@ -123,7 +143,10 @@
 
       wayland.windowManager.hyprland = {
         enable = true;
-        settings = import ./hyprland.nix { config = config; monitor = config.mods.hyprland.monitor; };
+        settings = import ./hyprland.nix {
+          config = config;
+          monitor = config.mods.hyprland.monitor;
+        };
       };
       services.hyprpaper = {
         enable = true;

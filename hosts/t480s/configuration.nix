@@ -1,9 +1,17 @@
-{ pkgs, stateVersion, username, hostname, mainUser, system, inputs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  pkgs,
+  stateVersion,
+  username,
+  hostname,
+  mainUser,
+  system,
+  inputs,
+  ...
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   environment.systemPackages = [
     pkgs.obs-studio
@@ -59,6 +67,9 @@
       ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
       ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
     ];
+    gestures = [
+      "3, horizontal, workspace"
+    ];
   };
   mods.inputs.touchpad.enable = true;
   mods.insomnia.enable = true;
@@ -85,12 +96,17 @@
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.stateVersion = stateVersion;
 }
-
