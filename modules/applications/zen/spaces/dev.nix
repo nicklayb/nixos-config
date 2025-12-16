@@ -16,11 +16,17 @@
       uuid = "79862301-ec33-4c0d-8b7e-88ea1715643d";
       url = "https://search.nixos.org/packages";
     }
+    {
+      title = "Tailwind CSS";
+      url = "https://tailwindcss.com/";
+      uuid = "a982b677-767d-4368-ab8d-4fb7575bf044";
+    }
   ] ++ (builder.mkFolder {
     title = "Hexdocs";
     baseUrl = path : "https://hexdocs.pm/${path}";
     uuid = "7530ffe6-08cf-428e-9c3c-0782af1afd55";
     sites = [
+      { title = "Elixir"; url = ""; uuid = "d0a3df23-22b3-4a19-9e0a-2326c54a51fd"; }
       { title = "Phoenix Live View"; url = "phoenix_live_view"; uuid = "3b41e401-a7a3-418d-912f-0facbe622cd9"; }
       { title = "Phoenix"; url = "phoenix"; uuid = "7a390e3f-29ea-4092-b8f5-5ebaefc6cd62"; }
       { title = "Ecto"; url = "ecto"; uuid = "70ff468b-3cb7-4dc3-a5f8-42e266618317"; }

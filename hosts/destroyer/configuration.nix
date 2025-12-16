@@ -11,6 +11,11 @@ in
 
   bundles.music.enable = true;
 
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
+  };
+
   mods._1password.enable = true;
   mods.alacritty.enable = true;
   mods.blender.enable = true;
@@ -20,17 +25,22 @@ in
   mods.firefox.enable = true;
   mods.firefox.theme = "textfox-dev";
   mods.heroic.enable = true;
-  mods.hyprland.enable = true;
-  mods.hyprland.monitor = [
-    "DP-2,2560x1440@144.01Hz,0x0,1"
-    "DP-3,2560x1440@144.00Hz,0x1440,1"
-    "Unknown-1,disable"
-  ];
-  mods.hyprland.wallpapers = [
-    "DP-3,${wallpaperLeft}"
-    "DP-2,${wallpaperRight}"
-  ];
-  mods.hyprland.wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
+  mods.hyprland = {
+    enable = true;
+    monitor = [
+      "DP-2,2560x1440@144.01Hz,0x0,1"
+      "DP-3,2560x1440@144.00Hz,0x1440,1"
+      "Unknown-1,disable"
+    ];
+    wallpapers = [
+      "DP-3,${wallpaperLeft}"
+      "DP-2,${wallpaperRight}"
+    ];
+    wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
+    extraBindings = [
+      "CTRL ALT, TAB, hyprexpo:expo, toggle"
+    ];
+  };
   mods.inputs.touchpad.enable = true;
   mods.nautilus.enable = true;
   mods.networking = {
