@@ -124,6 +124,9 @@
       wayland.windowManager.hyprland = {
         enable = true;
         settings = import ./hyprland.nix { config = config; monitor = config.mods.hyprland.monitor; };
+        plugins = [
+          pkgs.hyprlandPlugins.hyprexpo
+        ];
       };
       services.hyprpaper = {
         enable = true;
