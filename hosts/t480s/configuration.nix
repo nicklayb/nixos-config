@@ -68,7 +68,9 @@
       ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
     ];
     gestures = [
-      "3, horizontal, workspace"
+      "4, horizontal, workspace"
+      "4, up, dispatcher, hyprexpo:expo, on"
+      "4, down, dispatcher, hyprexpo:expo, off"
     ];
   };
   mods.inputs.touchpad.enable = true;
