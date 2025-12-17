@@ -1,4 +1,11 @@
-{ config, lib, username, pkgs, ... }: {
+{
+  config,
+  lib,
+  username,
+  pkgs,
+  ...
+}:
+{
   options = {
     mods.alacritty = {
       enable = lib.mkEnableOption "Enables Alacritty";
@@ -26,10 +33,19 @@
           font = {
             size = config.mods.alacritty.fontSize;
           };
-          window = {
-            decorations = "Full";
-            opacity = 1;
-          };
+          window = (
+            if pkgs.stdenv.isLinux then
+              {
+                decorations = "Full";
+                opacity = 1;
+              }
+            else
+              {
+                decorations = "buttonless";
+                opacity = 1;
+                option_as_alt = "OnlyLeft";
+              }
+          );
         };
       };
     };
