@@ -2,6 +2,7 @@
 
 {
   mods.tmux.enable = true;
+  mods.zen.enable = true;
   users.users.${username} = {
     home = "/Users/${username}";
   };
@@ -18,7 +19,7 @@
     unzip
     jq
     neovim
-    gitAndTools.gitFull
+    gitFull
     silver-searcher
     openssh
     direnv
