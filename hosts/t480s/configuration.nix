@@ -66,6 +66,7 @@
       ", XF86Favorites, exec, $menu"
       ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
       ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+      "CTRL ALT, TAB, hyprexpo:expo, toggle"
     ];
     gestures = [
       "4, horizontal, workspace"
@@ -88,6 +89,7 @@
     qemu.enable = false;
   };
   mods.tmux.enable = true;
+  mods.thunderbird.enable = true;
   mods.sddm.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";

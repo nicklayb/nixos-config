@@ -1,8 +1,8 @@
 {
 	"layer": "top",
 	"modules-left": ["image#logo", "hyprland/submap", "hyprland/window"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["group/group-backlight", "network", "pulseaudio", "group/group-perf", "battery", "clock"],
+	"modules-center": ["hyprland/workspaces", "task"],
+	"modules-right": ["group/group-backlight", "pulseaudio", "network", "group/group-perf", "battery", "clock"],
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
 		"size": 20,
@@ -12,6 +12,7 @@
 		"tooltip": false,
 		"scroll-step": 0.3,
 		"format": "{icon} {volume}<span alpha=\"60%\">%</span>",
+		"format-muted": "<span color=\"#ff0040\">󰖁 </span> <span alpha=\"50%\">{volume}</span><span alpha=\"30%\">%</span>",
 		"format-icons": {
 			"default": [
 				"<span color=\"#c7564a\"> </span>", 

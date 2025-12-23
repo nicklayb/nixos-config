@@ -1,4 +1,11 @@
-{ config, lib, pkgs, username, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  username,
+  ...
+}:
+{
   options = {
     mods.waybar = {
       enable = lib.mkEnableOption "Enables Waybar";
@@ -13,6 +20,7 @@
 
     environment.systemPackages = [
       pkgs.waybar
+      pkgs.libappindicator
     ];
 
     home-manager.users.${username} = {

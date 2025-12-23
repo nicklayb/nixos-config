@@ -10,6 +10,7 @@ in
     ./blender.nix
     ./dbeaver.nix
     ./deluge.nix
+    ./thunderbird.nix
     ./firefox.nix
     ./github.nix
     ./insomnia.nix
