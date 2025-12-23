@@ -17,7 +17,15 @@
     };
   };
   config = lib.mkIf config.mods.waybar.enable {
-
+    # nixpkgs.overlays =
+    #   let
+    #     waybarOverlay = self: super: {
+    #       waybar = super.waybar.overrideAttrs (oldAttrs: {
+    #         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    #       });
+    #     };
+    #   in
+    #   [ waybarOverlay ];
     environment.systemPackages = [
       pkgs.waybar
       pkgs.libappindicator

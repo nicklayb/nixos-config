@@ -1,4 +1,10 @@
-{ pkgs, username, system, lib, ... }:
+{
+  pkgs,
+  username,
+  system,
+  lib,
+  ...
+}:
 
 {
   mods = {
@@ -129,9 +135,10 @@
 
   system.stateVersion = 4;
 
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault system;
 }

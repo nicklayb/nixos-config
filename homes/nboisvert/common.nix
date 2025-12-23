@@ -1,8 +1,15 @@
-{ inputs, stateVersion, mainUser, config, ... }: {
+{
+  inputs,
+  stateVersion,
+  mainUser,
+  config,
+  ...
+}:
+{
   programs.home-manager.enable = true;
   home.stateVersion = stateVersion;
 
-  imports = [ 
+  imports = [
     inputs.catppuccin.homeModules.catppuccin
     inputs.zen-browser.homeModules.twilight
   ];
@@ -35,8 +42,6 @@
     enable = true;
     flavor = "frappe";
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   xdg.configFile."nvim".source = inputs.astronvim-config;
 

@@ -13,6 +13,7 @@
   config = lib.mkIf config.mods.thunderbird.enable {
     environment.systemPackages = [
       pkgs.thunderbird
+      pkgs.birdtray
     ];
   };
 }
