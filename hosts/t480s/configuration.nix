@@ -47,15 +47,19 @@
       "HDMI-A-2,2560x1440@120.00Hz,0x0,1"
       "DP-1,3440x1440@120.00Hz,0x0,1"
     ];
-    wallpapers = [
-      "eDP-1,/home/${username}/.background"
-      "HDMI-A-2,/home/${username}/.background-external"
-      "DP-1,/home/${username}/.background-external"
-    ];
-    wallpaperPreloads = [
-      "/home/${username}/.background"
-      "/home/${username}/.background-external"
-    ];
+    hyprpaper = {
+      randomWallpapers = {
+        enable = true;
+        query = "mountains";
+        mapping = {
+          "/home/${username}/.background" = [ "eDP-1" ];
+          "/home/${username}/.background-external" = [
+            "HDMI-A-2"
+            "DP-1"
+          ];
+        };
+      };
+    };
     extraBindingsL = [
       ", switch:on:Lid Switch, exec, ~/.config/hypr/scripts/lidclosed"
       ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"e-DP-1, enable\" & hyprctl reload"

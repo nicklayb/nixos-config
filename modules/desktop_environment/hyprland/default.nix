@@ -1,9 +1,7 @@
 {
   config,
-  system,
   lib,
   pkgs,
-  inputs,
   username,
   ...
 }:
@@ -18,6 +16,44 @@
       };
       hyprlock = {
         battery = lib.mkEnableOption "Enables Battery display in hyprlock";
+      };
+      hyprpaper = {
+        randomWallpapers = {
+          enable = lib.mkEnableOption "Enables random wallpapers";
+          query = lib.mkOption {
+            description = "Query to use with Unsplash";
+            type = lib.types.str;
+          };
+          mapping =
+            let
+              innerMapping = lib.types.submodule {
+                options = {
+                  wallpaper = lib.mkOption {
+                    type = lib.types.str;
+                    description = "Wallpaper path";
+                  };
+                  monitors = lib.mkOption {
+                    type = lib.types.listOf lib.types.str;
+                    description = "Monitors that shows the wallpaper";
+                  };
+                };
+              };
+            in
+            lib.mkOption {
+              description = "Monitor / wallpaper mapping";
+              #type = lib.types.listOf innerMapping;
+              type = lib.types.attrsOf (lib.types.listOf lib.types.str);
+            };
+          timerConfig = lib.mkOption {
+            description = "Timer to update the wallpapers";
+            type = lib.types.attrs;
+            default = {
+              OnBootSec = "5min";
+              OnUnitActiveSec = "2h";
+              Persistent = true;
+            };
+          };
+        };
       };
       wallpapers = lib.mkOption {
         description = "Hyprpaper wallpapers";
@@ -143,18 +179,41 @@
 
       wayland.windowManager.hyprland = {
         enable = true;
-        settings = import ./hyprland.nix { config = config; monitor = config.mods.hyprland.monitor; };
+        settings = import ./hyprland.nix {
+          config = config;
+          monitor = config.mods.hyprland.monitor;
+        };
         plugins = [
           pkgs.hyprlandPlugins.hyprexpo
         ];
       };
-      services.hyprpaper = {
-        enable = true;
-        settings = import ./hyprpaper.nix {
-          preloads = config.mods.hyprland.wallpaperPreloads;
-          wallpapers = config.mods.hyprland.wallpapers;
+      services.hyprpaper =
+        let
+          randomWallpapers = config.mods.hyprland.hyprpaper.randomWallpapers;
+          preloads =
+            if randomWallpapers.enable then
+              lib.mapAttrsToList (name: value: name) randomWallpapers.mapping
+            else
+              config.mods.hyprland.wallpapers;
+
+          wallpapers =
+            if randomWallpapers.enable then
+
+              lib.concatLists (
+                lib.mapAttrsToList (
+                  wallpaper: monitors: map (monitor: "${monitor},${wallpaper}") monitors
+                ) randomWallpapers.mapping
+              )
+            else
+              config.mods.hyprland.wallpapers;
+        in
+        {
+          enable = true;
+          settings = import ./hyprpaper.nix {
+            preloads = preloads; # config.mods.hyprland.wallpaperPreloads;
+            wallpapers = wallpapers; # config.mods.hyprland.wallpapers;
+          };
         };
-      };
       services.hypridle = {
         enable = true;
         settings = import ./hypridle.nix { timers = config.mods.hyprland.hypridle.timers; };
@@ -164,5 +223,46 @@
         settings = import ./hyprlock.nix { battery = config.mods.hyprland.hyprlock.battery; };
       };
     };
+    systemd.user.services.switch-wallpapers =
+      lib.mkIf config.mods.hyprland.hyprpaper.randomWallpapers.enable
+        {
+          description = "Update wallpaper";
+          serviceConfig =
+            let
+              localScript = pkgs.writeShellScript "change-wallpaper" (builtins.readFile ./pull-wallpaper.sh);
+              scriptBody = builtins.concatStringsSep "\n" (
+                lib.concatLists (
+                  lib.mapAttrsToList (wallpaper: monitors: [
+                    "${localScript} \"${config.mods.hyprland.hyprpaper.randomWallpapers.query}\" \"${wallpaper}\""
+                  ]) config.mods.hyprland.hyprpaper.randomWallpapers.mapping
+                )
+              );
+              script = pkgs.writeShellApplication {
+                name = "change-wallpapers";
+                runtimeInputs = [
+                  pkgs.curl
+                  pkgs.jq
+                ];
+                text = ''
+                  #!/usr/bin/env sh
+                  ${scriptBody}
+                '';
+              };
+            in
+            {
+              type = "oneshot";
+              ExecStart = "${script}/bin/change-wallpapers";
+            };
+        };
+
+    systemd.user.timers.switch-wallpapers =
+      lib.mkIf config.mods.hyprland.hyprpaper.randomWallpapers.enable
+        {
+          description = "Update wallpapers automatically";
+
+          timerConfig = config.mods.hyprland.hyprpaper.randomWallpapers.timerConfig;
+
+          wantedBy = [ "timers.target" ];
+        };
   };
 }
