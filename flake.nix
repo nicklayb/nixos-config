@@ -9,8 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    astronvim-config = { url = "github:nicklayb/astronvim/v5"; flake = false; };
-    elixir-extensions = { url = "github:nicklayb/ex_tensions"; flake = false; };
+    astronvim-config = {
+      url = "github:nicklayb/astronvim/v5";
+      flake = false;
+    };
+    elixir-extensions = {
+      url = "github:nicklayb/ex_tensions";
+      flake = false;
+    };
     musnix.url = "github:musnix/musnix";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,9 +25,12 @@
     zen-browser.inputs.home-manager.follows = "home-manager";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     plexm3u.url = "github:nicklayb/plexm3u";
+    t480s-fingerprint.url = "github:iedame/nixos-06cb-009a-fingerprint-sensor";
+    t480s-fingerprint.inputs.nixpkgs.follows = "home-manager";
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     let
       mainUser = {
         githubUsername = "nicklayb";
