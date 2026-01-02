@@ -46,6 +46,7 @@
       "eDP-1,1920x1080@60.00Hz,0x1440,1"
       "HDMI-A-2,2560x1440@120.00Hz,0x0,1"
       "DP-1,3440x1440@120.00Hz,0x0,1"
+      "DP-3,3440x1440@120.00Hz,0x0,1"
     ];
     hyprpaper = {
       randomWallpapers = {
@@ -56,6 +57,7 @@
           "/home/${username}/.background-external" = [
             "HDMI-A-2"
             "DP-1"
+            "DP-3"
           ];
         };
       };
