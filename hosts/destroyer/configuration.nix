@@ -22,8 +22,7 @@ in
   mods.bluetooth.enable = true;
   mods.docker.enable = true;
   mods.deluge.enable = true;
-  mods.firefox.enable = true;
-  mods.firefox.theme = "textfox-dev";
+  mods.matrix.enable = true;
   mods.heroic.enable = true;
   mods.hyprland = {
     enable = true;
