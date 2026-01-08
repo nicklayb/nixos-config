@@ -50,6 +50,7 @@ in
   mods.printing.enable = true;
   mods.sddm.enable = true;
   mods.steam.enable = true;
+  mods.thunderbird.enable = true;
   mods.waybar.enable = true;
   mods.waybar.theme = "rose";
   mods.wofi.enable = true;
