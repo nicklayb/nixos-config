@@ -12,6 +12,7 @@ in
     ./deluge.nix
     ./matrix.nix
     ./firefox.nix
+    ./gimp.nix
     ./github.nix
     ./heroic.nix
     ./insomnia.nix

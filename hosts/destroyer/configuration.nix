@@ -1,13 +1,19 @@
-{ pkgs, stateVersion, mainUser, username, hostname, ... }:
+{
+  pkgs,
+  stateVersion,
+  mainUser,
+  username,
+  hostname,
+  ...
+}:
 let
   wallpaperLeft = "/home/${username}/.background-left";
   wallpaperRight = "/home/${username}/.background-right";
 in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   bundles.music.enable = true;
 
@@ -16,57 +22,69 @@ in
     enableGraphical = true;
   };
 
-  mods._1password.enable = true;
-  mods.alacritty.enable = true;
-  mods.blender.enable = true;
-  mods.bluetooth.enable = true;
-  mods.docker.enable = true;
-  mods.deluge.enable = true;
-  mods.matrix.enable = true;
-  mods.heroic.enable = true;
-  mods.hyprland = {
-    enable = true;
-    monitor = [
-      "DP-2,2560x1440@144.01Hz,0x0,1"
-      "DP-3,2560x1440@144.00Hz,0x1440,1"
-      "Unknown-1,disable"
-    ];
-    wallpapers = [
-      "DP-3,${wallpaperLeft}"
-      "DP-2,${wallpaperRight}"
-    ];
-    wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
-    extraBindings = [
-      "CTRL ALT, TAB, hyprexpo:expo, toggle"
-    ];
+  mods = {
+    _1password.enable = true;
+    alacritty.enable = true;
+    blender.enable = true;
+    bluetooth.enable = true;
+    docker.enable = true;
+    deluge.enable = true;
+    matrix.enable = true;
+    gimp.enable = true;
+    heroic.enable = true;
+    hyprland = {
+      enable = true;
+      monitor = [
+        "DP-2,2560x1440@144.01Hz,0x0,1"
+        "DP-3,2560x1440@144.00Hz,0x1440,1"
+        "Unknown-1,disable"
+      ];
+      wallpapers = [
+        "DP-3,${wallpaperLeft}"
+        "DP-2,${wallpaperRight}"
+      ];
+      wallpaperPreloads = [
+        wallpaperLeft
+        wallpaperRight
+      ];
+      extraBindings = [
+        "CTRL ALT, TAB, hyprexpo:expo, toggle"
+      ];
+    };
+    inputs.touchpad.enable = true;
+    nautilus.enable = true;
+    networking = {
+      enable = true;
+      hostname = hostname;
+    };
+    obs_studio = {
+      enable = true;
+      gpu = "nvidia";
+    };
+    printing.enable = true;
+    sddm.enable = true;
+    steam.enable = true;
+    thunderbird.enable = true;
+    waybar.enable = true;
+    waybar.theme = "rose";
+    wofi.enable = true;
+    zen.enable = true;
   };
-  mods.inputs.touchpad.enable = true;
-  mods.nautilus.enable = true;
-  mods.networking = {
-    enable = true;
-    hostname = hostname;
-  };
-  mods.obs_studio = {
-    enable = true;
-    gpu = "nvidia";
-  };
-  mods.printing.enable = true;
-  mods.sddm.enable = true;
-  mods.steam.enable = true;
-  mods.thunderbird.enable = true;
-  mods.waybar.enable = true;
-  mods.waybar.theme = "rose";
-  mods.wofi.enable = true;
-  mods.zen.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.systemPackages = [
     pkgs.godot_4
@@ -74,4 +92,3 @@ in
 
   system.stateVersion = stateVersion;
 }
-
