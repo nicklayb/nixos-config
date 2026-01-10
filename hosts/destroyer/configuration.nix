@@ -46,6 +46,10 @@ in
     enable = true;
     hostname = hostname;
   };
+  mods.obs_studio = {
+    enable = true;
+    gpu = "nvidia";
+  };
   mods.printing.enable = true;
   mods.sddm.enable = true;
   mods.steam.enable = true;

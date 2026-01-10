@@ -17,6 +17,7 @@ in
     ./insomnia.nix
     ./mailspring.nix
     ./nautilus.nix
+    ./obs_studio.nix
     ./playstation.nix
     ./reaper.nix
     ./steam.nix
