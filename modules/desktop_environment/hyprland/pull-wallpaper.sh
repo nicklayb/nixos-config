@@ -14,4 +14,3 @@ fi
 
 curl -L "$RAW_URL" -o "$DESTINATION"
 
-systemctl restart hyprpaper --user

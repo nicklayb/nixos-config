@@ -246,11 +246,13 @@
                 text = ''
                   #!/usr/bin/env sh
                   ${scriptBody}
+
+                  systemctl restart hyprpaper --user
                 '';
               };
             in
             {
-              type = "oneshot";
+              Type = "oneshot";
               ExecStart = "${script}/bin/change-wallpapers";
             };
         };
