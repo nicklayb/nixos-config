@@ -10,16 +10,19 @@ in
     ./blender.nix
     ./dbeaver.nix
     ./deluge.nix
-    ./thunderbird.nix
+    ./matrix.nix
     ./firefox.nix
+    ./gimp.nix
     ./github.nix
-    ./insomnia.nix
     ./heroic.nix
+    ./insomnia.nix
     ./mailspring.nix
     ./nautilus.nix
+    ./obs_studio.nix
     ./playstation.nix
     ./reaper.nix
     ./steam.nix
+    ./thunderbird.nix
     ./vscode.nix
     ./wallet.nix
     ./zed.nix

@@ -22,6 +22,13 @@
       uuid = "a982b677-767d-4368-ab8d-4fb7575bf044";
     }
   ] ++ (builder.mkFolder {
+    title = "Nix";
+    uuid = "bc0f314a-9102-41bf-86c1-d76e3788d5b7";
+    sites = [
+      { title = "NixOS Option Types"; url = "https://nlewo.github.io/nixos-manual-sphinx/development/option-types.xml.html"; uuid = "194f5593-2b1b-4db9-a931-1f7b2f05f424"; }
+      { title = "Home Manager"; url = "https://nix-community.github.io/home-manager/"; uuid = "f73bba16-985b-4730-9378-09abe6c34e57"; }
+    ];
+  }) ++ (builder.mkFolder {
     title = "Hexdocs";
     baseUrl = path : "https://hexdocs.pm/${path}";
     uuid = "7530ffe6-08cf-428e-9c3c-0782af1afd55";
