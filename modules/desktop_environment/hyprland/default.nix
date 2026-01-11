@@ -210,8 +210,8 @@
         {
           enable = true;
           settings = import ./hyprpaper.nix {
-            preloads = preloads; # config.mods.hyprland.wallpaperPreloads;
-            wallpapers = wallpapers; # config.mods.hyprland.wallpapers;
+            preloads = preloads;
+            wallpapers = wallpapers;
           };
         };
       services.hypridle = {
