@@ -39,6 +39,8 @@ in
     plexamp
     localsend
     libreoffice
+    rclone
+    ticktick
   ];
 
   networking.firewall = {

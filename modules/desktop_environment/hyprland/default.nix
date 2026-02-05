@@ -194,7 +194,7 @@
             if randomWallpapers.enable then
               lib.mapAttrsToList (name: value: name) randomWallpapers.mapping
             else
-              config.mods.hyprland.wallpapers;
+              config.mods.hyprland.wallpaperPreloads;
 
           wallpapers =
             if randomWallpapers.enable then

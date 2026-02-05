@@ -114,7 +114,7 @@
     printing.enable = true;
     steam.enable = true;
     virtualization = {
-      virtualbox.enable = false;
+      virtualbox.enable = true;
       qemu.enable = false;
     };
     tmux.enable = true;
