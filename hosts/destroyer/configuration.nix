@@ -35,8 +35,8 @@ in
     hyprland = {
       enable = true;
       monitor = [
-        "DP-2,2560x1440@144.01Hz,0x0,1"
-        "DP-3,2560x1440@144.00Hz,0x1440,1"
+        "DP-2,2560x1440@144.01Hz,1440x600,1" # ASUS
+        "DP-3,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI
         "Unknown-1,disable"
       ];
       wallpapers = [
