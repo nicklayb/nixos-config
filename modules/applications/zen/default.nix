@@ -5,10 +5,6 @@ let
     installation_mode = "force_installed";
   });
   fileSpaces = import ./spaces { lib = lib; };
-  locked = value: {
-    "Value" = value;
-    "Status" = "locked";
-  };
   linuxSpecific = (if pkgs.stdenv.isLinux then
     {
       environment.etc."1password/custom_allowed_browsers" = {
