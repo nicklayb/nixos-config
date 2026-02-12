@@ -24,6 +24,11 @@
       isNvidia = config.mods.obs_studio.gpu == "nvidia";
     in
     lib.mkIf config.mods.obs_studio.enable {
+      environment.systemPackages = [
+        pkgs.ffmpeg
+        pkgs.gphoto2
+        pkgs.kdePackages.kdenlive
+      ];
       programs.obs-studio = {
         enable = true;
 
