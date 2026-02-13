@@ -1,9 +1,8 @@
-{
-  inputs,
-  stateVersion,
-  mainUser,
-  config,
-  ...
+{ inputs
+, stateVersion
+, mainUser
+, config
+, ...
 }:
 {
   programs.home-manager.enable = true;
@@ -12,6 +11,7 @@
   imports = [
     inputs.catppuccin.homeModules.catppuccin
     inputs.zen-browser.homeModules.twilight
+    inputs.astronvim-config.homeManagerModules.default
   ];
 
   programs.git = {
@@ -42,8 +42,6 @@
     enable = true;
     flavor = "frappe";
   };
-
-  xdg.configFile."nvim".source = inputs.astronvim-config;
 
   home.file.".git/hooks/prepare-commit-msg" = {
     source = ./scripts/prepare-commit-msg;

@@ -1,13 +1,17 @@
 {
   "nodes": {
     "astronvim-config": {
-      "flake": false,
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1770304784,
-        "narHash": "sha256-3yIXiSTt8SedUVUdOCdwVYJrd4P6ABUHmrCPqUENXBk=",
+        "lastModified": 1771006199,
+        "narHash": "sha256-vj/qADUJYTGJ50Uti3Y8dbj9u/UsdJwnJjv1ZPsaTbw=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "ea12f13dd1ee2dbc095626f2b1bbf474bd2f6f84",
+        "rev": "662883f2731d9b94029a9a153e75fcba5a574464",
         "type": "github"
       },
       "original": {

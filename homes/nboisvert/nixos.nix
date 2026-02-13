@@ -1,9 +1,4 @@
-{
-  pkgs,
-  username,
-  ...
-}:
-{
+{ pkgs, username, ... }: {
   imports = [
     ./common.nix
   ];
