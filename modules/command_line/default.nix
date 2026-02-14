@@ -1,8 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./tmux
   ];
 
+  programs.gnupg.agent.enable = true;
   programs.zsh.enable = true;
   services.openssh.enable = true;
 
