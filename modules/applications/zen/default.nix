@@ -1,21 +1,31 @@
-{ config, lib, username, pkgs, inputs, system, ... }:
+{
+  config,
+  lib,
+  username,
+  pkgs,
+  ...
+}:
 let
-  mkExtensionSettings = builtins.mapAttrs (_: pluginId: {
-    install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginId}/latest.xpi";
-    installation_mode = "force_installed";
-  });
-  fileSpaces = import ./spaces { lib = lib; };
-  linuxSpecific = (if pkgs.stdenv.isLinux then
-    {
-      environment.etc."1password/custom_allowed_browsers" = {
-        text = ''
-          .zen-wrapped
-        '';
-        mode = "0755";
-      };
+  mkExtensionSettings = builtins.mapAttrs (
+    _: pluginId: {
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginId}/latest.xpi";
+      installation_mode = "force_installed";
     }
-  else
-    { });
+  );
+  fileSpaces = import ./spaces { lib = lib; };
+  linuxSpecific = (
+    if pkgs.stdenv.isLinux then
+      {
+        environment.etc."1password/custom_allowed_browsers" = {
+          text = ''
+            .zen-wrapped
+          '';
+          mode = "0755";
+        };
+      }
+    else
+      { }
+  );
 in
 {
   options = {
@@ -23,8 +33,8 @@ in
       enable = lib.mkEnableOption "Enables Zen Browser";
     };
   };
-  config = lib.mkIf config.mods.zen.enable
-    {
+  config =
+    lib.mkIf config.mods.zen.enable {
       home-manager.users.${username} = {
         programs.zen-browser = {
           enable = true;
@@ -71,5 +81,6 @@ in
           };
         };
       };
-    } // linuxSpecific;
+    }
+    // linuxSpecific;
 }

@@ -9,19 +9,30 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    astronvim-config = { url = "github:nicklayb/astronvim/v5"; inputs.nixpkgs.follows = "nixpkgs"; };
-    elixir-extensions = { url = "github:nicklayb/ex_tensions"; flake = false; };
+    astronvim-config = {
+      url = "github:nicklayb/astronvim/v5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    elixir-extensions = {
+      url = "github:nicklayb/ex_tensions";
+      flake = false;
+    };
     musnix.url = "github:musnix/musnix";
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.11";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.inputs.home-manager.follows = "home-manager";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin/nix-darwin-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     plexm3u.url = "github:nicklayb/plexm3u";
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     let
       mainUser = {
         githubUsername = "nicklayb";
