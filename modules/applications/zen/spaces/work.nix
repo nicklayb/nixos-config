@@ -11,15 +11,16 @@
   pins = [
     { title = "Microsoft Apps"; url = "https://myapps.microsoft.com"; uuid = "6d85b089-df5f-47ca-a56f-40db18bc4351"; }
   ] ++ (builder.mkFolder {
-    title = "Atlassian"; 
+    title = "Atlassian";
     uuid = "f554887d-ce01-4f08-9174-6f41710a838a";
     sites = [
       { title = "Atlassian"; url = "https://home.atlassian.com/"; uuid = "e85c4e54-ae5e-45ed-84f1-742d5525ede5"; }
       { title = "Confluence"; url = "https://thescore.atlassian.net/wiki/home"; uuid = "e03136a5-ca51-4be9-8438-e1e5105998bd"; }
       { title = "Jira"; url = "https://thescore.atlassian.net/jira"; uuid = "b3cccda2-184c-40aa-b832-25c2105f7302"; }
+      { title = "Roadmap"; url = "https://thescore.atlassian.net/jira/polaris/projects/KP/ideas/view/8840709"; uuid = "aa779113-0b2a-46c6-a58e-61e56088dbd3"; }
     ];
   }) ++ (builder.mkFolder {
-    title = "HR"; 
+    title = "HR";
     uuid = "dccbad97-b665-425a-a8be-25e248dcb556";
     sites = [
       { title = "UKG"; url = "https://pngaming.ultipro.com"; uuid = "7703144c-2af6-4fe8-b726-92c26aa50066"; }

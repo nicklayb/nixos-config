@@ -1,6 +1,16 @@
-{ config, lib, pkgs, ... }: let
-  vrPorts = [ 10400 10401 ];
-in {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  vrPorts = [
+    10400
+    10401
+  ];
+in
+{
   options = {
     mods.steam = {
       enable = lib.mkEnableOption "Enables Steam";
@@ -10,6 +20,12 @@ in {
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
+      package = pkgs.steam.override {
+        extraPkgs = pkgs: [
+          pkgs.libpng
+          pkgs.icu
+        ];
+      };
     };
     environment.systemPackages = [
       pkgs.xwayland

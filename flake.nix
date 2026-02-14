@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    astronvim-config = { url = "github:nicklayb/astronvim/v5"; flake = false; };
+    astronvim-config = { url = "github:nicklayb/astronvim/v5"; inputs.nixpkgs.follows = "nixpkgs"; };
     elixir-extensions = { url = "github:nicklayb/ex_tensions"; flake = false; };
     musnix.url = "github:musnix/musnix";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.11";
