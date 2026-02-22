@@ -1,37 +1,54 @@
-{ pkgs, stateVersion, username, mainUser, ... }:
-
+{ pkgs, stateVersion, mainUser, username, hostname, ... }:
+let
+  wallpaperLeft = "/home/${username}/.background-left";
+  wallpaperRight = "/home/${username}/.background-right";
+in
 {
   imports =
     [
       ./hardware-configuration.nix
     ];
 
+  bundles.music.enable = true;
+
   mods._1password.enable = true;
   mods.alacritty.enable = true;
+  mods.blender.enable = true;
   mods.bluetooth.enable = true;
   mods.docker.enable = true;
-  mods.firefox.enable = true;
-  mods.flatpak.enable = true;
-  mods.hyprland.enable = false;
+  mods.deluge.enable = true;
+  mods.hyprland.enable = true;
   mods.hyprland.monitor = [
     "DP-2,2560x1440@144.01Hz,0x0,1"
+    "DP-3,2560x1440@144.00Hz,0x1440,1"
+    "Unknown-1,disable"
   ];
-  mods.hyprland.wallpapers = [ "DP-2,/home/${username}/.background" ];
-  mods.plasma.enable = true;
-  mods.nautilus.enable = false;
-  mods.waybar.enable = false;
-  mods.wofi.enable = false;
-
+  mods.hyprland.wallpapers = [
+    "DP-3,${wallpaperLeft}"
+    "DP-2,${wallpaperRight}"
+  ];
+  mods.hyprland.wallpaperPreloads = [ wallpaperLeft wallpaperRight ];
+  mods.nautilus.enable = true;
+  mods.networking = {
+    enable = true;
+    hostname = hostname;
+  };
+  mods.printing.enable = true;
+  mods.steam.enable = true;
+  mods.waybar.enable = true;
+  mods.waybar.theme = "rose";
+  mods.wofi.enable = true;
+  mods.zen.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
-    extraGroups = [ "wheel" "docker" "jackaudio" "audio" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = stateVersion;
+  system.stateVersion = "25.11";
 }
 

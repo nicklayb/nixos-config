@@ -14,29 +14,22 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4a158cf1-7e9e-40ca-a87f-b4960e4ede0f";
+    { device = "/dev/disk/by-uuid/d849a473-2322-4544-af66-77f27755974b";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/64AA-D0C8";
+    { device = "/dev/disk/by-uuid/12CE-A600";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/sda2"; }
+    [ { device = "/dev/disk/by-uuid/f4ff513c-8fa1-493d-81fe-c070d7e5b4b7"; }
     ];
 
   networking.useDHCP = lib.mkDefault true;
   networking.hostName = hostname;
-
-  services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
-  services.jack = {
-    jackd.enable = true;
-    alsa.enable = true;
-  };
 
   hardware.graphics.enable = true;
 
