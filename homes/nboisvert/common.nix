@@ -1,15 +1,26 @@
-{ inputs, stateVersion, mainUser, config, ... }: {
+{ inputs
+, stateVersion
+, mainUser
+, config
+, ...
+}:
+{
   programs.home-manager.enable = true;
   home.stateVersion = stateVersion;
 
-  imports = [ inputs.catppuccin.homeModules.catppuccin ];
+  imports = [
+    inputs.catppuccin.homeModules.catppuccin
+    inputs.zen-browser.homeModules.twilight
+    inputs.astronvim-config.homeManagerModules.default
+  ];
 
   programs.git = {
     enable = true;
-    userName = mainUser.githubUsername;
-    userEmail = mainUser.email;
-    diff-so-fancy.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = mainUser.githubUsername;
+        email = mainUser.email;
+      };
       init = {
         defaultBranch = "main";
       };
@@ -22,14 +33,15 @@
     };
   };
 
+  programs.diff-so-fancy = {
+    enable = true;
+    enableGitIntegration = true;
+  };
+
   catppuccin = {
     enable = true;
     flavor = "frappe";
   };
-
-  nixpkgs.config.allowUnfree = true;
-
-  xdg.configFile."nvim".source = inputs.astronvim-config;
 
   home.file.".git/hooks/prepare-commit-msg" = {
     source = ./scripts/prepare-commit-msg;

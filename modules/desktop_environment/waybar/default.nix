@@ -1,4 +1,11 @@
-{ config, lib, pkgs, username, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  username,
+  ...
+}:
+{
   options = {
     mods.waybar = {
       enable = lib.mkEnableOption "Enables Waybar";
@@ -10,9 +17,18 @@
     };
   };
   config = lib.mkIf config.mods.waybar.enable {
-
+    # nixpkgs.overlays =
+    #   let
+    #     waybarOverlay = self: super: {
+    #       waybar = super.waybar.overrideAttrs (oldAttrs: {
+    #         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    #       });
+    #     };
+    #   in
+    #   [ waybarOverlay ];
     environment.systemPackages = [
       pkgs.waybar
+      pkgs.libappindicator
     ];
 
     home-manager.users.${username} = {

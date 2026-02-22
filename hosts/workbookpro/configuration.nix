@@ -1,13 +1,20 @@
-{ pkgs, unstable-pkgs, username, system, lib, ... }:
+{
+  pkgs,
+  username,
+  system,
+  lib,
+  ...
+}:
 
 {
-  mods.fonts.enable = true;
   mods = {
+    fonts.enable = true;
     tmux.enable = true;
     vscode = {
       enable = true;
       cycode = true;
     };
+    zen.enable = true;
   };
 
   ids.gids.nixbld = 350;
@@ -27,11 +34,11 @@
       pkgs.unzip
       pkgs.jq
       pkgs.neovim
-      pkgs.gitAndTools.gitFull
+      pkgs.gitFull
       pkgs.silver-searcher
       pkgs.openssh
       pkgs.direnv
-      unstable-pkgs.k9s
+      pkgs.k9s
       pkgs.kubectx
       pkgs.kubectl
       pkgs.docker
@@ -128,9 +135,10 @@
 
   system.stateVersion = 4;
 
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault system;
 }

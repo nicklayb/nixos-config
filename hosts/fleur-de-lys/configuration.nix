@@ -16,6 +16,7 @@
   ];
   mods.hyprland.wallpapers = [ "DP-3,/home/${username}/.background" ];
   mods.nautilus.enable = true;
+  mods.sddm.enable = true;
   mods.waybar.enable = true;
   mods.wofi.enable = true;
 

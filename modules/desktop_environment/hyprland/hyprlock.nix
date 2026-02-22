@@ -25,7 +25,6 @@ in {
   general = {
     disable_loading_bar = true;
     hide_cursor = true;
-    enable_fingerprint = true;
     immediate_render = true;
   };
 

@@ -46,7 +46,7 @@
       environment.systemPackages = defaultPackages ++ bitwig ++ reaper ++ ardour;
 
       services.pipewire.enable = true;
-      hardware.pulseaudio.enable = false;
+      services.pulseaudio.enable = false;
 
       services.jack = {
         jackd.enable = true;

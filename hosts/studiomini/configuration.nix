@@ -1,7 +1,16 @@
-{ pkgs, system, username, lib, inputs, home-manager, ... }:
+{
+  pkgs,
+  system,
+  username,
+  lib,
+  inputs,
+  home-manager,
+  ...
+}:
 
 {
   mods.tmux.enable = true;
+  mods.zen.enable = true;
   users.users.${username} = {
     home = "/Users/${username}";
   };
@@ -18,7 +27,7 @@
     unzip
     jq
     neovim
-    gitAndTools.gitFull
+    gitFull
     silver-searcher
     openssh
     direnv
@@ -82,9 +91,10 @@
   system.stateVersion = 4;
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault system;
 }

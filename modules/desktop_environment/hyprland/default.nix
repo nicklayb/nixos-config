@@ -1,4 +1,11 @@
-{ config, system, lib, pkgs, inputs, username, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  username,
+  ...
+}:
+{
   options = {
     mods.hyprland = {
       enable = lib.mkEnableOption "Enables Hyprland";
@@ -9,6 +16,44 @@
       };
       hyprlock = {
         battery = lib.mkEnableOption "Enables Battery display in hyprlock";
+      };
+      hyprpaper = {
+        randomWallpapers = {
+          enable = lib.mkEnableOption "Enables random wallpapers";
+          query = lib.mkOption {
+            description = "Query to use with Unsplash";
+            type = lib.types.str;
+          };
+          mapping =
+            let
+              innerMapping = lib.types.submodule {
+                options = {
+                  wallpaper = lib.mkOption {
+                    type = lib.types.str;
+                    description = "Wallpaper path";
+                  };
+                  monitors = lib.mkOption {
+                    type = lib.types.listOf lib.types.str;
+                    description = "Monitors that shows the wallpaper";
+                  };
+                };
+              };
+            in
+            lib.mkOption {
+              description = "Monitor / wallpaper mapping";
+              #type = lib.types.listOf innerMapping;
+              type = lib.types.attrsOf (lib.types.listOf lib.types.str);
+            };
+          timerConfig = lib.mkOption {
+            description = "Timer to update the wallpapers";
+            type = lib.types.attrs;
+            default = {
+              OnBootSec = "5min";
+              OnUnitActiveSec = "2h";
+              Persistent = true;
+            };
+          };
+        };
       };
       wallpapers = lib.mkOption {
         description = "Hyprpaper wallpapers";
@@ -32,6 +77,11 @@
       };
       extraExecOnce = lib.mkOption {
         description = "Extra exec one";
+        type = lib.types.listOf lib.types.str;
+        default = [ ];
+      };
+      gestures = lib.mkOption {
+        description = "Trackpad gestures";
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
@@ -76,27 +126,19 @@
         type = lib.types.bool;
         default = true;
       };
-      sddmSettings = lib.mkOption {
-        description = "Settings for SDDM";
-        type = lib.types.attrs;
-        default = {};
-      };
     };
   };
   config = lib.mkIf config.mods.hyprland.enable {
     services.xserver.enable = true;
-    services.displayManager.sddm = {
-      enable = true;
-      theme = "sugar-candy";
-      wayland.enable = true;
-      settings = config.mods.hyprland.sddmSettings;
-    };
     programs.hyprland = {
       enable = true;
       withUWSM = true;
     };
 
-    environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
+    environment.pathsToLink = [
+      "/share/xdg-desktop-portal"
+      "/share/applications"
+    ];
 
     environment.systemPackages = [
       pkgs.hyprpaper
@@ -106,7 +148,8 @@
       pkgs.hyprpolkitagent
       pkgs.acpi
       pkgs.libnotify
-      (pkgs.callPackage ./sugar_candy.nix { }).sddm-sugar-candy-theme
+      pkgs.kdePackages.qtmultimedia
+      pkgs.wl-clipboard
       pkgs.libsForQt5.qt5.qtgraphicaleffects
       pkgs.lxqt.lxqt-policykit
     ];
@@ -115,9 +158,12 @@
 
     home-manager.users.${username} = {
       xdg.configFile = {
-        "gtk-4.0/assets".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
-        "gtk-4.0/gtk.css".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
-        "gtk-4.0/gtk-dark.css".source = "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
+        "gtk-4.0/assets".source =
+          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
+        "gtk-4.0/gtk.css".source =
+          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
+        "gtk-4.0/gtk-dark.css".source =
+          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
       };
 
       xdg.portal = {
@@ -133,15 +179,41 @@
 
       wayland.windowManager.hyprland = {
         enable = true;
-        settings = import ./hyprland.nix { config = config; monitor = config.mods.hyprland.monitor; };
-      };
-      services.hyprpaper = {
-        enable = true;
-        settings = import ./hyprpaper.nix {
-          preloads = config.mods.hyprland.wallpaperPreloads;
-          wallpapers = config.mods.hyprland.wallpapers;
+        settings = import ./hyprland.nix {
+          config = config;
+          monitor = config.mods.hyprland.monitor;
         };
+        plugins = [
+          pkgs.hyprlandPlugins.hyprexpo
+        ];
       };
+      services.hyprpaper =
+        let
+          randomWallpapers = config.mods.hyprland.hyprpaper.randomWallpapers;
+          preloads =
+            if randomWallpapers.enable then
+              lib.mapAttrsToList (name: value: name) randomWallpapers.mapping
+            else
+              config.mods.hyprland.wallpaperPreloads;
+
+          wallpapers =
+            if randomWallpapers.enable then
+
+              lib.concatLists (
+                lib.mapAttrsToList (
+                  wallpaper: monitors: map (monitor: "${monitor},${wallpaper}") monitors
+                ) randomWallpapers.mapping
+              )
+            else
+              config.mods.hyprland.wallpapers;
+        in
+        {
+          enable = true;
+          settings = import ./hyprpaper.nix {
+            preloads = preloads;
+            wallpapers = wallpapers;
+          };
+        };
       services.hypridle = {
         enable = true;
         settings = import ./hypridle.nix { timers = config.mods.hyprland.hypridle.timers; };
@@ -151,5 +223,48 @@
         settings = import ./hyprlock.nix { battery = config.mods.hyprland.hyprlock.battery; };
       };
     };
+    systemd.user.services.switch-wallpapers =
+      lib.mkIf config.mods.hyprland.hyprpaper.randomWallpapers.enable
+        {
+          description = "Update wallpaper";
+          serviceConfig =
+            let
+              localScript = pkgs.writeShellScript "change-wallpaper" (builtins.readFile ./pull-wallpaper.sh);
+              scriptBody = builtins.concatStringsSep "\n" (
+                lib.concatLists (
+                  lib.mapAttrsToList (wallpaper: monitors: [
+                    "${localScript} \"${config.mods.hyprland.hyprpaper.randomWallpapers.query}\" \"${wallpaper}\""
+                  ]) config.mods.hyprland.hyprpaper.randomWallpapers.mapping
+                )
+              );
+              script = pkgs.writeShellApplication {
+                name = "change-wallpapers";
+                runtimeInputs = [
+                  pkgs.curl
+                  pkgs.jq
+                ];
+                text = ''
+                  #!/usr/bin/env sh
+                  ${scriptBody}
+
+                  systemctl restart hyprpaper --user
+                '';
+              };
+            in
+            {
+              Type = "oneshot";
+              ExecStart = "${script}/bin/change-wallpapers";
+            };
+        };
+
+    systemd.user.timers.switch-wallpapers =
+      lib.mkIf config.mods.hyprland.hyprpaper.randomWallpapers.enable
+        {
+          description = "Update wallpapers automatically";
+
+          timerConfig = config.mods.hyprland.hyprpaper.randomWallpapers.timerConfig;
+
+          wantedBy = [ "timers.target" ];
+        };
   };
 }

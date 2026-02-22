@@ -10,19 +10,23 @@ in
     ./blender.nix
     ./dbeaver.nix
     ./deluge.nix
+    ./matrix.nix
     ./firefox.nix
+    ./gimp.nix
     ./github.nix
-    ./insomnia.nix
     ./heroic.nix
+    ./insomnia.nix
     ./mailspring.nix
     ./nautilus.nix
+    ./obs_studio.nix
     ./playstation.nix
     ./reaper.nix
     ./steam.nix
+    ./thunderbird.nix
     ./vscode.nix
     ./wallet.nix
     ./zed.nix
-    ./zen.nix
+    ./zen
   ];
 
   environment.systemPackages = with pkgs; [
@@ -35,6 +39,8 @@ in
     plexamp
     localsend
     libreoffice
+    rclone
+    ticktick
   ];
 
   networking.firewall = {

@@ -7,7 +7,7 @@
 	font-size: 12px;
 }
 
-#backlight-slider, #network, #bluetooth, #pulseaudio, #cpu, #memory, #clock, #battery {
+#backlight-slider, #backlight, #disk, #network, #bluetooth, #pulseaudio, #cpu, #memory, #clock, #battery, #group-power {
 	border-radius: 1px;
 	padding-left: 8px;
 	padding-right: 8px;
@@ -16,6 +16,11 @@
 	border-right: 1px solid gray;
 	border: 2px solid transparent;
 	border-radius: 4px;
+}
+
+#custom-quit, #custom-power, #custom-reboot {
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 #clock {
@@ -46,6 +51,8 @@
 	color: #b5b5b5;
 	margin-top: 4px;
 	padding: 3px;
+	background-color: #232136;
+	border-radius: 100px;
 }
 
 window#waybar {
@@ -72,7 +79,6 @@ window#waybar.empty #window {
 }
 
 #workspaces {
-	background: transparent;
 	transition: none;
 }
 
@@ -82,13 +88,8 @@ window#waybar.empty #window {
 	padding-left: 4px;
 	padding-right: 4px;
 	font-size: 16px;
-	margin-left: 8px;
 	border-radius: 1000px;
 	color: #999;
-}
-
-#workspaces button.active {
-	color: #fa7282;
 }
 
 #workspaces button:hover {
@@ -96,6 +97,11 @@ window#waybar.empty #window {
 	box-shadow: inherit;
 	text-shadow: inherit;
 	color: #fa7282;
+}
+
+#workspaces button.active, #workspaces button.active:hover {
+	background-color: #fa7282;
+	color: white;
 }
 
 #backlight-slider {

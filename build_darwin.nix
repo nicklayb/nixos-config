@@ -17,6 +17,7 @@ let
     home-manager.useUserPackages = true;
     home-manager.users.${username} = import ./homes/nboisvert/darwin.nix;
     home-manager.extraSpecialArgs = { inherit pkgs username mainUser stateVersion inputs; };
+    home-manager.backupFileExtension = "hm.bak";
   };
 in
 hostname: username: inputs.nix-darwin.lib.darwinSystem {
