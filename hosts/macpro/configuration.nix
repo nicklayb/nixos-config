@@ -5,10 +5,6 @@
   hostname,
   ...
 }:
-let
-  wallpaperLeft = "/home/${username}/.background-left";
-  wallpaperRight = "/home/${username}/.background-right";
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -30,14 +26,16 @@ in
         "DP-1,2560x1440@144.01Hz,1440x600,1" # ASUS
         "DP-2,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI
       ];
-      wallpapers = [
-        "DP-2,${wallpaperLeft}"
-        "DP-1,${wallpaperRight}"
-      ];
-      wallpaperPreloads = [
-        wallpaperLeft
-        wallpaperRight
-      ];
+      hyprpaper = {
+        randomWallpapers = {
+          enable = true;
+          query = "mountains";
+          mapping = {
+            "/home/${username}/.background-left" = [ "DP-2" ];
+            "/home/${username}/.background-right" = [ "DP-1" ];
+          };
+        };
+      };
       extraBindings = [
         "CTRL ALT, TAB, hyprexpo:expo, toggle"
       ];

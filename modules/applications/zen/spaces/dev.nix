@@ -107,6 +107,11 @@
         url = "credo";
         uuid = "d9c8e5b7-1a0c-4f2b-9a3c-1e7e5c8f0a6b";
       }
+      {
+        title = "Absinthe";
+        url = "absinthe";
+        uuid = "ec9efe3b-2c84-437f-b07a-e5ad4df43a20";
+      }
     ];
   })
   ++ (builder.mkFolder {
