@@ -11,6 +11,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "wl" "kvm-amd" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta  ];
+  boot.kernelParams = [ "mem_sleep_default=s2idle" "pcie_aspm=off" ];
   boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
