@@ -22,7 +22,6 @@
     nfs-utils
     unzip
     jq
-    neovim
     lazygit
   ];
 }

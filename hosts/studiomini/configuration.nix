@@ -26,7 +26,6 @@
     fzf
     unzip
     jq
-    neovim
     gitFull
     silver-searcher
     openssh

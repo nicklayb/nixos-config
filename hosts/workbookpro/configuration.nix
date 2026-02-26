@@ -33,7 +33,6 @@
       pkgs.fzf
       pkgs.unzip
       pkgs.jq
-      pkgs.neovim
       pkgs.gitFull
       pkgs.silver-searcher
       pkgs.openssh
