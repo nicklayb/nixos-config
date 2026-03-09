@@ -3,10 +3,12 @@
   stateVersion,
   mainUser,
   config,
+  username,
   ...
 }:
 {
   programs.home-manager.enable = true;
+  home.username = username;
   home.stateVersion = stateVersion;
 
   imports = [

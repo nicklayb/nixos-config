@@ -8,6 +8,10 @@
 
 {
   mods = {
+    alacritty = {
+      enable = true;
+      fontSize = 13;
+    };
     fonts.enable = true;
     tmux.enable = true;
     vscode = {
