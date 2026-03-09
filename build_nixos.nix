@@ -19,18 +19,39 @@ let
       inputs.nix-vscode-extensions.overlays.default
     ];
   };
+  utils = import ./utils.nix { };
   nixos-home-config = username: {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.nboisvert = import ./homes/nboisvert/nixos.nix;
-    home-manager.extraSpecialArgs = { inherit pkgs username mainUser stateVersion inputs; };
+    home-manager.extraSpecialArgs = {
+      inherit
+        pkgs
+        username
+        mainUser
+        stateVersion
+        inputs
+        utils
+        ;
+    };
   };
   self = inputs.self;
 in
-hostname: username: inputs.nixpkgs.lib.nixosSystem {
+hostname: username:
+inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     hostname = hostname;
-    inherit stateVersion pkgs self system inputs mainUser username unstable-pkgs;
+    inherit
+      stateVersion
+      pkgs
+      self
+      system
+      inputs
+      mainUser
+      username
+      unstable-pkgs
+      utils
+      ;
   };
   inherit system;
   modules = [

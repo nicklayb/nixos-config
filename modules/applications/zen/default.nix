@@ -3,6 +3,7 @@
   lib,
   username,
   pkgs,
+  utils,
   ...
 }:
 let
@@ -12,7 +13,10 @@ let
       installation_mode = "force_installed";
     }
   );
-  fileSpaces = import ./spaces { lib = lib; };
+  fileSpaces = import ./spaces {
+    lib = lib;
+    utils = utils;
+  };
   linuxSpecific = (
     if pkgs.stdenv.isLinux then
       {
@@ -75,9 +79,6 @@ in
             containers = fileSpaces.containers;
             pins = fileSpaces.pins;
             spaces = fileSpaces.spaces;
-            # containers = containers;
-            # pins = pins;
-            # spaces = spaces;
           };
         };
       };

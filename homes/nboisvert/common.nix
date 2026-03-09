@@ -1,8 +1,9 @@
-{ inputs
-, stateVersion
-, mainUser
-, config
-, ...
+{
+  inputs,
+  stateVersion,
+  mainUser,
+  config,
+  ...
 }:
 {
   programs.home-manager.enable = true;

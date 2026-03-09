@@ -7,23 +7,42 @@ let
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
     ];
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
   };
+  utils = import ./utils.nix { };
   darwin-home-config = username: {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.${username} = import ./homes/nboisvert/darwin.nix;
-    home-manager.extraSpecialArgs = { inherit pkgs username mainUser stateVersion inputs; };
+    home-manager.extraSpecialArgs = {
+      inherit
+        pkgs
+        username
+        mainUser
+        stateVersion
+        inputs
+        utils
+        ;
+    };
     home-manager.backupFileExtension = "hm.bak";
   };
 in
-hostname: username: inputs.nix-darwin.lib.darwinSystem {
+hostname: username:
+inputs.nix-darwin.lib.darwinSystem {
   specialArgs = {
     system = "aarch64-darwin";
-    inherit pkgs unstable-pkgs mainUser username;
+    inherit
+      pkgs
+      unstable-pkgs
+      mainUser
+      username
+      utils
+      ;
   };
   modules = [
     ./hosts/${hostname}/configuration.nix
