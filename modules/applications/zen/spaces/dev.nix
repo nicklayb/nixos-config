@@ -98,6 +98,10 @@
         title = "Absinthe";
         url = "absinthe";
       })
+      (builder.mkPin {
+        title = "Livebook";
+        url = "livebook";
+      })
     ];
   })
   ++ (builder.mkFolder {

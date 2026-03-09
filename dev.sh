@@ -18,6 +18,9 @@ WOFI=./modules/desktop_environment/wofi
 THEME=rose.css
 
 case $1 in
+  repl)
+    nix repl --flake ./
+    ;;
   waybar)
     waybar --config $WAYBAR/config.json --style $WAYBAR/$THEME
     ;;

@@ -24,7 +24,7 @@
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.home-manager.follows = "home-manager";
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
