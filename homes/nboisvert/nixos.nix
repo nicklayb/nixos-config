@@ -16,23 +16,6 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "fzf"
-        "web-search"
-      ];
-      theme = "eastwood";
-    };
-  };
-
   # Scripts
   xdg.configFile."scripts/power-menu.sh".source = ./scripts/power-menu.sh;
   xdg.configFile."scripts/wikis.sh".source = ./scripts/wikis.sh;
