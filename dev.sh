@@ -19,7 +19,7 @@ THEME=rose.css
 
 case $1 in
   repl)
-    nix repl --flake ./
+    nix repl --file repl.nix
     ;;
   waybar)
     waybar --config $WAYBAR/config.json --style $WAYBAR/$THEME
