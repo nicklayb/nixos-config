@@ -122,7 +122,6 @@
       BatteryShowPercentage = true;
     };
     NSGlobalDomain = {
-      _HIHideMenuBar = true;
       AppleShowScrollBars = "Always";
     };
   };
