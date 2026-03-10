@@ -1,10 +1,15 @@
-{ pkgs, stateVersion, username, mainUser, ... }:
+{
+  pkgs,
+  stateVersion,
+  username,
+  mainUser,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   mods._1password.enable = true;
   mods.alacritty.enable = true;
@@ -24,7 +29,10 @@
   users.users.${username} = {
     isNormalUser = true;
     description = mainUser.name;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -33,8 +41,10 @@
     description = "Eve-Lynn Laforme";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.stateVersion = stateVersion;
 }
-

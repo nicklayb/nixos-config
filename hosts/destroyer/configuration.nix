@@ -78,7 +78,6 @@ in
       "wheel"
       "docker"
     ];
-    shell = pkgs.zsh;
   };
 
   nix.settings.experimental-features = [

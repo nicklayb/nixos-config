@@ -27,7 +27,11 @@
 
   users.users.${username} = {
     home = "/Users/${username}";
+    shell = pkgs.zsh;
+    uid = 502;
   };
+
+  users.knownUsers = [ username ];
 
   environment = {
     systemPackages = [

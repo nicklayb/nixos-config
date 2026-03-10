@@ -4,6 +4,7 @@
   mainUser,
   config,
   username,
+  pkgs,
   ...
 }:
 {
