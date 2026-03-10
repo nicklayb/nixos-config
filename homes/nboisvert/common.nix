@@ -52,6 +52,9 @@
       ];
       theme = "eastwood";
     };
+    initContent = ''
+      source ~/.zsh/init || true
+    '';
   };
 
   programs.diff-so-fancy = {
