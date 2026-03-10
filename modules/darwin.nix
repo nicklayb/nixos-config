@@ -7,5 +7,6 @@
     ./applications/vscode.nix
     ./applications/alacritty
     ./applications/zen
+    ./desktop_environment/darwin_tiling
   ];
 }

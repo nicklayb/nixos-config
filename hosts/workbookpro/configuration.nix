@@ -18,6 +18,11 @@
       enable = true;
       cycode = true;
     };
+    darwin_tiling = {
+      yabai.enable = true;
+      skhd.enable = true;
+      sketchybar.enable = true;
+    };
     zen.enable = true;
   };
 
@@ -100,10 +105,6 @@
       "cycode"
       "platformio"
     ];
-
-    casks = [
-      "amethyst"
-    ];
   };
 
   system.defaults = {
@@ -119,6 +120,10 @@
 
     controlcenter = {
       BatteryShowPercentage = true;
+    };
+    NSGlobalDomain = {
+      _HIHideMenuBar = true;
+      AppleShowScrollBars = "Always";
     };
   };
 
