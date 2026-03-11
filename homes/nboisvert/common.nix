@@ -50,7 +50,7 @@
         "fzf"
         "web-search"
       ];
-      theme = "eastwood";
+      theme = "theunraveler";
     };
     initContent = ''
       source ~/.zsh/init || true
