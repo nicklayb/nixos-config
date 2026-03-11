@@ -4,7 +4,6 @@
   mainUser,
   config,
   username,
-  pkgs,
   ...
 }:
 {
@@ -50,7 +49,7 @@
         "fzf"
         "web-search"
       ];
-      theme = "theunraveler";
+      theme = "sunaku";
     };
     initContent = ''
       source ~/.zsh/init || true
