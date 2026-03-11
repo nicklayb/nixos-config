@@ -44,6 +44,7 @@ inputs.nix-darwin.lib.darwinSystem {
       utils
       ;
   };
+
   modules = [
     ./hosts/${hostname}/configuration.nix
     ./modules/darwin.nix

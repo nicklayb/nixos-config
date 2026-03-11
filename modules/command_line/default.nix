@@ -2,6 +2,7 @@
 {
   imports = [
     ./tmux
+    ./shells
   ];
 
   programs.gnupg.agent.enable = true;

@@ -53,6 +53,7 @@ inputs.nixpkgs.lib.nixosSystem {
       utils
       ;
   };
+
   inherit system;
   modules = [
     ./modules

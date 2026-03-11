@@ -3,6 +3,7 @@
   imports = [
     ./dev/tools.nix
     ./command_line/tmux
+    ./command_line/shells
     ./fonts/darwin.nix
     ./applications/vscode.nix
     ./applications/alacritty
