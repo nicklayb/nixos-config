@@ -2,7 +2,7 @@
 let
   builder = import ./builder.nix {
     lib = lib;
-    utils = box;
+    box = box;
   };
   args = {
     builder = builder;

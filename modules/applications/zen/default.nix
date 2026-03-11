@@ -15,7 +15,7 @@ let
   );
   fileSpaces = import ./spaces {
     lib = lib;
-    utils = box;
+    box = box;
   };
   linuxSpecific = (
     if pkgs.stdenv.isLinux then
