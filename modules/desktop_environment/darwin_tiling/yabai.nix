@@ -11,8 +11,13 @@
         enable = lib.mkEnableOption "Enables yabai";
         gaps = lib.mkOption {
           type = lib.types.int;
-          default = 3;
+          default = 5;
           description = "The size of the gaps between windows in pixels.";
+        };
+        topBarPadding = lib.mkOption {
+          type = lib.types.int;
+          default = 35;
+          description = "The size of the top padding in pixels.";
         };
       };
     };
@@ -38,6 +43,7 @@
           right_padding = yabai.gaps;
           window_gap = yabai.gaps;
           window_placement = "second_child";
+          external_bar = "all:${toString yabai.topBarPadding}:0";
         };
       };
     };

@@ -14,7 +14,11 @@ let
       (builtins.substring 16 4 hex)
       (builtins.substring 20 12 hex)
     ];
+
+  invoke = command: arguments: ''
+    ${command} ${builtins.concatStringsSep " " arguments}
+  '';
 in
 {
-  inherit uuidv5;
+  inherit uuidv5 invoke;
 }

@@ -19,9 +19,11 @@
       cycode = true;
     };
     darwin_tiling = {
-      yabai.enable = true;
+      yabai = {
+        enable = true;
+        topBarPadding = 0;
+      };
       skhd.enable = true;
-      sketchybar.enable = true;
     };
     zen.enable = true;
   };
