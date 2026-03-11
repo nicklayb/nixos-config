@@ -1,6 +1,6 @@
-{ lib, utils, ... }:
+{ lib, box, ... }:
 let
-  uuid = utils.uuidv5 "zen";
+  uuid = box.uuidv5 "zen";
   itemToContainer = value: {
     color = value.color;
     icon = value.icon;
