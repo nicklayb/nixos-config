@@ -95,7 +95,12 @@
     etc."pam.d/sudo_local".text = ''
       # Managed by Nix Darwin
       auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so ignore_ssh
+
+      # Allows Touch ID authentication for sudo
       auth       sufficient     pam_tid.so
+
+      # Allows Apple Watch authentication for sudo
+      auth       sufficient     ${pkgs.pam-watchid}/lib/pam_watchid.so  
     '';
   };
 
