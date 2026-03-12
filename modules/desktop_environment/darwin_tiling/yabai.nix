@@ -14,10 +14,10 @@
           default = 5;
           description = "The size of the gaps between windows in pixels.";
         };
-        topBarPadding = lib.mkOption {
-          type = lib.types.int;
-          default = 35;
-          description = "The size of the top padding in pixels.";
+        statusBar = lib.mkOption {
+          type = lib.types.str;
+          default = "main:0:0";
+          description = "The status bar configuration";
         };
       };
     };
@@ -27,7 +27,7 @@
       yabai = config.mods.darwin_tiling.yabai;
     in
     lib.mkIf yabai.enable {
-      environment.systemPackages = [ pkgs.yabai ];
+      #environment.systemPackages = [ pkgs.yabai ];
       services.yabai = {
         enable = true;
         enableScriptingAddition = true;
@@ -43,7 +43,7 @@
           right_padding = yabai.gaps;
           window_gap = yabai.gaps;
           window_placement = "second_child";
-          external_bar = "all:${toString yabai.topBarPadding}:0";
+          external_bar = yabai.statusBar;
         };
       };
     };

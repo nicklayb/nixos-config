@@ -21,9 +21,10 @@
     darwin_tiling = {
       yabai = {
         enable = true;
-        topBarPadding = 0;
+        statusBar = "all:0:26";
       };
       skhd.enable = true;
+      spacebar.enable = true;
     };
     zen.enable = true;
   };
@@ -132,24 +133,6 @@
       AppleShowScrollBars = "Always";
     };
   };
-
-  # programs.zsh = {
-  #   enable = true;
-  #   enableFzfCompletion = true;
-  #   enableFzfGit = true;
-  #   enableSyntaxHighlighting = true;
-  #   interactiveShellInit = ''
-  #     export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
-  #
-  #     ZSH_THEME="eastwood"
-  #     plugins=(git fzf web-search)
-  #
-  #     source ${pkgs.oh-my-zsh}/share/oh-my-zsh/oh-my-zsh.sh
-  #     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  #     . $(brew --prefix asdf)/libexec/asdf.sh
-  #   '';
-  #   promptInit = "";
-  # };
 
   system.stateVersion = 4;
 

@@ -42,6 +42,7 @@ inputs.nix-darwin.lib.darwinSystem {
       mainUser
       username
       utils
+      inputs
       ;
   };
 
