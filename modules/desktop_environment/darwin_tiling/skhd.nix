@@ -2,6 +2,8 @@
   config,
   lib,
   pkgs,
+  inputs,
+  system,
   ...
 }:
 {
@@ -40,10 +42,15 @@
           cmd + alt - up : yabai -m window --warp north
           cmd + alt - right : yabai -m window --warp east
 
+          cmd - left : yabai -m window --focus west
+          cmd - down : yabai -m window --focus south
+          cmd - up : yabai -m window --focus north
+          cmd - right : yabai -m window --focus east
+
           ${builtins.concatStringsSep "\n" (
             map (space: ''
-              cmd - ${space} : yabai -m space --focus ${space}
-              cmd + shift - ${space} : yabai -m window --space ${space}
+              lalt - ${space} : yabai -m space --focus ${space}
+              lalt + shift - ${space} : yabai -m window --space ${space}
             '') spaces
           )}
         '';
