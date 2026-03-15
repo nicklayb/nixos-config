@@ -3,6 +3,7 @@
   lib,
   pkgs,
   username,
+  inputs,
   ...
 }:
 {
@@ -13,6 +14,11 @@
         description = "Hyprland monitor configuration";
         type = lib.types.listOf lib.types.str;
         default = [ ];
+      };
+      theme = lib.mkOption {
+        description = "Hyprland theme";
+        type = lib.types.enum ["rosalina" "retroism"];
+        default = "rosalina";
       };
       hyprlock = {
         battery = lib.mkEnableOption "Enables Battery display in hyprlock";
@@ -25,23 +31,8 @@
             type = lib.types.str;
           };
           mapping =
-            let
-              innerMapping = lib.types.submodule {
-                options = {
-                  wallpaper = lib.mkOption {
-                    type = lib.types.str;
-                    description = "Wallpaper path";
-                  };
-                  monitors = lib.mkOption {
-                    type = lib.types.listOf lib.types.str;
-                    description = "Monitors that shows the wallpaper";
-                  };
-                };
-              };
-            in
             lib.mkOption {
               description = "Monitor / wallpaper mapping";
-              #type = lib.types.listOf innerMapping;
               type = lib.types.attrsOf (lib.types.listOf lib.types.str);
             };
           timerConfig = lib.mkOption {
@@ -155,15 +146,29 @@
     ];
 
     security.polkit.enable = true;
-
     home-manager.users.${username} = {
-      xdg.configFile = {
-        "gtk-4.0/assets".source =
-          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
-        "gtk-4.0/gtk.css".source =
-          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
-        "gtk-4.0/gtk-dark.css".source =
-          "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
+      # xdg.configFile = {
+      #   "gtk-4.0/assets".source =
+      #     "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/assets";
+      #   "gtk-4.0/gtk.css".source =
+      #     "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
+      #   "gtk-4.0/gtk-dark.css".source =
+      #     "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
+      # };
+
+      catppuccin = {
+        gtk.icon = {
+          enable = true;
+          flavor = "frappe";
+        };
+        hyprland = {
+          enable = true;
+          flavor = "frappe";
+        };
+        qt5ct = {
+          enable = true;
+          flavor = "frappe";
+        };
       };
 
       xdg.portal = {
@@ -182,6 +187,7 @@
         settings = import ./hyprland.nix {
           config = config;
           monitor = config.mods.hyprland.monitor;
+          lib = lib;
         };
         plugins = [
           pkgs.hyprlandPlugins.hyprexpo
@@ -190,6 +196,7 @@
       services.hyprpaper =
         let
           randomWallpapers = config.mods.hyprland.hyprpaper.randomWallpapers;
+
           preloads =
             if randomWallpapers.enable then
               lib.mapAttrsToList (name: value: name) randomWallpapers.mapping

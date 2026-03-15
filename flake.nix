@@ -29,6 +29,10 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     plexm3u.url = "github:nicklayb/plexm3u";
+    retroism = {
+      url = "github:nicklayb/linux-retroism";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =

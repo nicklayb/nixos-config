@@ -1,0 +1,73 @@
+/* Waybar - Classic Platinum Streamlined (Mac OS 9) - Version compatible */
+
+#window {
+    background-color: #DFDFDF; /* Gris platine clair */
+    border: 1px solid #FFFFFF;
+    border-radius: 0;
+    padding: 0;
+    font-family: "Monospace", sans-serif;
+    font-size: 11px;
+    box-shadow: inset -1px -1px 0px #FFFFFF,
+                inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+/* Modules */
+#modules {
+    margin: 0 5px;
+}
+
+/* Boutons (style Mac OS 9) */
+button {
+    background-color: #E5E5E5;
+    border: 1px solid;
+    border-color: #AAAAAA #FFFFFF #FFFFFF #AAAAAA;
+    border-radius: 0;
+    color: #000000;
+    padding: 1px 6px;
+    margin: 0 2px;
+    font-weight: bold;
+    box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+    background-color: #0066CC;
+    color: white;
+}
+
+/* Horloge */
+#clock {
+    background-color: #CCCCCC;
+    border: 1px solid #FFFFFF;
+    padding: 1px 8px;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: inset -1px -1px 0px #FFFFFF,
+                inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+/* Menu */
+#menu {
+    background-color: #CCCCCC;
+    border: 1px solid #FFFFFF;
+    padding: 1px 8px;
+    box-shadow: inset -1px -1px 0px #FFFFFF,
+                inset 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+#menu:hover {
+    background-color: #0066CC;
+    color: white;
+}
+
+/* Workspaces */
+#workspaces button {
+    min-width: 24px;
+    padding: 1px;
+    margin: 0 1px;
+}
+
+#workspaces button.active {
+    background-color: #0066CC;
+    color: white;
+}
+

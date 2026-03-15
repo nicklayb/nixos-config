@@ -15,7 +15,7 @@
 WAYBAR=./modules/desktop_environment/waybar
 WOFI=./modules/desktop_environment/wofi
 
-THEME=rose.css
+THEME=retroism.css
 
 case $1 in
   repl)

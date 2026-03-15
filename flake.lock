@@ -283,6 +283,26 @@
         "type": "github"
       }
     },
+    "retroism": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773600652,
+        "narHash": "sha256-1EWlKTl53LBUQrPNfRYBSiFrPN9p8DwXLuN/4NvjSlM=",
+        "owner": "nicklayb",
+        "repo": "linux-retroism",
+        "rev": "42bbb563bb7541821e48c2b6318d2a0fafacfb2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "linux-retroism",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "astronvim-config": "astronvim-config",
@@ -295,6 +315,7 @@
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "plexm3u": "plexm3u",
+        "retroism": "retroism",
         "zen-browser": "zen-browser"
       }
     },

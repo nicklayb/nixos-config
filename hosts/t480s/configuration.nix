@@ -60,6 +60,7 @@
     github.enable = true;
     hyprland = {
       enable = true;
+      theme = "retroism";
       hyprlock = {
         battery = true;
       };
@@ -126,6 +127,8 @@
     zed.enable = true;
     zen.enable = true;
   };
+
+  programs.linux-retroism.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
