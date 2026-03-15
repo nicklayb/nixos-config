@@ -3,7 +3,7 @@
   lib,
   username,
   pkgs,
-  utils,
+  box,
   ...
 }:
 let
@@ -15,7 +15,7 @@ let
   );
   fileSpaces = import ./spaces {
     lib = lib;
-    utils = utils;
+    box = box;
   };
   linuxSpecific = (
     if pkgs.stdenv.isLinux then

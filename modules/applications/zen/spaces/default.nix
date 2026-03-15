@@ -1,8 +1,8 @@
-{ lib, utils, ... }:
+{ lib, box, ... }:
 let
   builder = import ./builder.nix {
     lib = lib;
-    utils = utils;
+    box = box;
   };
   args = {
     builder = builder;

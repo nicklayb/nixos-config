@@ -1,10 +1,10 @@
 let
   flake = builtins.getFlake (toString ./.);
   lib = flake.inputs.nixpkgs.lib;
-  utils = import ./utils.nix { };
+  box = import ./box.nix { };
 in
 {
   flake = flake;
-  utils = utils;
+  box = box;
   lib = lib;
 }
