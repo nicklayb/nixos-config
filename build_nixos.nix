@@ -19,7 +19,7 @@ let
       inputs.nix-vscode-extensions.overlays.default
     ];
   };
-  utils = import ./utils.nix { };
+  box = import ./box.nix { };
   nixos-home-config = username: {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
@@ -31,7 +31,7 @@ let
         mainUser
         stateVersion
         inputs
-        utils
+        box
         ;
     };
   };
@@ -50,7 +50,7 @@ inputs.nixpkgs.lib.nixosSystem {
       mainUser
       username
       unstable-pkgs
-      utils
+      box
       ;
   };
 

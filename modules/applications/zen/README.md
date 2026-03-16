@@ -5,6 +5,6 @@
 ```
 :r # Reload if changes were made since
 :lf ./ # Loads flake
-utils = import ./utils.nix {} # Imports local utils
-zen = import ./modules/applications/zen/spaces/default.nix { lib = inputs.nixpkgs.lib; utils = utils; }
+box = import ./box.nix {} # Imports local box
+zen = import ./modules/applications/zen/spaces/default.nix { lib = inputs.nixpkgs.lib; box = box; }
 ```

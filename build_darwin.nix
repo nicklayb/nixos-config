@@ -14,7 +14,7 @@ let
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
   };
-  utils = import ./utils.nix { };
+  box = import ./box.nix { };
   darwin-home-config = username: {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
@@ -26,7 +26,7 @@ let
         mainUser
         stateVersion
         inputs
-        utils
+        box
         ;
     };
     home-manager.backupFileExtension = "hm.bak";
@@ -41,7 +41,7 @@ inputs.nix-darwin.lib.darwinSystem {
       unstable-pkgs
       mainUser
       username
-      utils
+      box
       inputs
       ;
   };
