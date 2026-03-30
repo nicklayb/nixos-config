@@ -27,6 +27,10 @@
       spacebar.enable = true;
     };
     zen.enable = true;
+    local_llm = {
+      enable = true;
+      dataDir = "/Users/${username}/.local_ai";
+    };
   };
 
   ids.gids.nixbld = 350;
