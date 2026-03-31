@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs,
+  unstable-pkgs,
   ...
 }:
 {
@@ -31,9 +31,9 @@
       services.yabai = {
         enable = true;
         enableScriptingAddition = true;
-        package = pkgs.yabai;
+        package = unstable-pkgs.yabai;
         config = {
-          focus_follows_mouse = "autofocus";
+          #         focus_follows_mouse = "autofocus";
           layout = "bsp";
           split_ratio = 0.5;
           auto_balance = "off";

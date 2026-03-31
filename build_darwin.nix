@@ -10,6 +10,10 @@ let
     config = {
       allowUnfree = true;
     };
+    config.permittedInsecurePackages = [
+      "lima-full-1.2.2"
+      "lima-additional-guestagents-1.2.2"
+    ];
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;

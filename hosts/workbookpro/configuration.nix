@@ -21,10 +21,10 @@
     darwin_tiling = {
       yabai = {
         enable = true;
-        statusBar = "all:0:26";
+        # statusBar = "all:0:26";
       };
-      skhd.enable = true;
-      spacebar.enable = true;
+      skhd.enable = false;
+      spacebar.enable = false;
     };
     zen.enable = true;
   };
