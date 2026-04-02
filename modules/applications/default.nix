@@ -41,6 +41,7 @@ in
     libreoffice
     rclone
     ticktick
+    yazi
   ];
 
   networking.firewall = {

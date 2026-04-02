@@ -8,7 +8,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     astronvim-config = {
       url = "github:nicklayb/astronvim/v5";
       inputs.nixpkgs.follows = "nixpkgs";
