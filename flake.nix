@@ -32,6 +32,10 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     plexm3u.url = "github:nicklayb/plexm3u";
+    squix = {
+      url = "github:eduardofuncao/squix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
