@@ -183,6 +183,7 @@
           config = config;
           monitor = config.mods.hyprland.monitor;
         };
+        configType = "hyprlang";
         plugins = [
           # pkgs.hyprlandPlugins.hyprspace
         ];
@@ -201,7 +202,11 @@
 
               lib.concatLists (
                 lib.mapAttrsToList (
-                  wallpaper: monitors: map (monitor: "${monitor},${wallpaper}") monitors
+                  wallpaper: monitors:
+                  map (monitor: {
+                    monitor = monitor;
+                    path = wallpaper;
+                  }) monitors
                 ) randomWallpapers.mapping
               )
             else
