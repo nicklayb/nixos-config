@@ -95,12 +95,12 @@
         ", XF86Favorites, exec, $menu"
         ", XF86MonBrightnessUp, exec, brightnessctl set +10%"
         ", XF86MonBrightnessDown, exec, brightnessctl set 10%-"
-        "CTRL ALT, TAB, hyprexpo:expo, toggle"
+        # "CTRL ALT, TAB, hyprexpo:expo, toggle"
       ];
       gestures = [
         "4, horizontal, workspace"
-        "4, up, dispatcher, hyprexpo:expo, on"
-        "4, down, dispatcher, hyprexpo:expo, off"
+        # "4, up, dispatcher, hyprexpo:expo, on"
+        # "4, down, dispatcher, hyprexpo:expo, off"
       ];
     };
     inputs.touchpad.enable = true;

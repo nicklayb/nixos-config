@@ -184,7 +184,7 @@
           monitor = config.mods.hyprland.monitor;
         };
         plugins = [
-          pkgs.hyprlandPlugins.hyprexpo
+          # pkgs.hyprlandPlugins.hyprspace
         ];
       };
       services.hyprpaper =

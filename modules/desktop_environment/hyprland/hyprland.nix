@@ -59,7 +59,6 @@
     ];
   };
   dwindle = {
-    pseudotile = true;
     preserve_split = true;
   };
   master = {
@@ -99,7 +98,7 @@
     "$mainMod, D, exec, $menu"
     "$mainMod, P, exec, ~/.config/scripts/power-menu.sh"
     "$mainMod, W, exec, ~/.config/scripts/wikis.sh"
-    "$mainMod, J, togglesplit, # dwindle"
+    "$mainMod, J, layoutmsg, togglesplit, # dwindle"
     "$mainMod, L, exec, loginctl lock-session"
     "$mainMod, X, exec, hyprshot --clipboard-only -m output"
     "$mainMod SHIFT, P, exec, 1password --quick-access"
@@ -122,15 +121,15 @@
     "$mainMod, 9, workspace, 9"
     "$mainMod, 0, workspace, 10"
 
-    "$mainMod ALT, 1, splitratio, exact 0.2"
-    "$mainMod ALT, 2, splitratio, exact 0.4"
-    "$mainMod ALT, 3, splitratio, exact 0.6"
-    "$mainMod ALT, 4, splitratio, exact 0.8"
-    "$mainMod ALT, 5, splitratio, exact 1.0"
-    "$mainMod ALT, 6, splitratio, exact 1.2"
-    "$mainMod ALT, 7, splitratio, exact 1.4"
-    "$mainMod ALT, 8, splitratio, exact 1.6"
-    "$mainMod ALT, 9, splitratio, exact 1.8"
+    "$mainMod ALT, 1, layoutmsg, mfact exact 0.2"
+    "$mainMod ALT, 2, layoutmsg, mfact exact 0.4"
+    "$mainMod ALT, 3, layoutmsg, mfact exact 0.6"
+    "$mainMod ALT, 4, layoutmsg, mfact exact 0.8"
+    "$mainMod ALT, 5, layoutmsg, mfact exact 1.0"
+    "$mainMod ALT, 6, layoutmsg, mfact exact 1.2"
+    "$mainMod ALT, 7, layoutmsg, mfact exact 1.4"
+    "$mainMod ALT, 8, layoutmsg, mfact exact 1.6"
+    "$mainMod ALT, 9, layoutmsg, mfact exact 1.8"
 
     "$mainMod SHIFT, 1, movetoworkspace, 1"
     "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -177,8 +176,6 @@
     "$mainMod, mouse:273, resizewindow"
   ];
 
-  windowrulev2 = "suppressevent maximize, class:.*";
-
   windowrule =
     let
       pipTitles = [
@@ -186,16 +183,17 @@
         "Incrustation vidéo"
       ];
       makeFloating = title: [
-        "float,title:${title}"
-        "nodim 1,title:${title}"
-        "pin,title:${title}"
-        "forcergbx 1,title:${title}"
+        "match:title ${title}, float on"
+        "match:title ${title}, no_dim 1"
+        "match:title ${title}, pin on"
+        "match:title ${title}, force_rgbx 1"
       ];
 
       floating = builtins.foldl' (acc: title: acc ++ makeFloating title) [ ] pipTitles;
     in
     [
-      "nodim 1,title:(.*)YouTube(.*)"
+      "match:class .*, suppress_event maximize"
+      "match:title title:(.*)YouTube(.*), no_dim 1"
     ]
     ++ floating;
 

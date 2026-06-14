@@ -48,7 +48,7 @@ in
         wallpaperRight
       ];
       extraBindings = [
-        "CTRL ALT, TAB, hyprexpo:expo, toggle"
+        # "CTRL ALT, TAB, hyprexpo:expo, toggle"
       ];
     };
     inputs.touchpad.enable = true;

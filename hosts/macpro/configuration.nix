@@ -37,7 +37,7 @@
         };
       };
       extraBindings = [
-        "CTRL ALT, TAB, hyprexpo:expo, toggle"
+        # "CTRL ALT, TAB, hyprexpo:expo, toggle"
       ];
     };
     nautilus.enable = true;
