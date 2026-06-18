@@ -29,6 +29,7 @@
   users.users.${username} = {
     home = "/Users/${username}";
     shell = pkgs.zsh;
+    uid = 501;
   };
 
   users.knownUsers = [ username ];
