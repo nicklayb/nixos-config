@@ -3,6 +3,7 @@
   username,
   system,
   lib,
+  inputs,
   ...
 }:
 
@@ -21,12 +22,18 @@
     darwin_tiling = {
       yabai = {
         enable = true;
-        statusBar = "all:0:26";
+        # statusBar = "all:0:26";
       };
-      skhd.enable = true;
-      spacebar.enable = true;
+      skhd.enable = false;
+      spacebar.enable = false;
     };
     zen.enable = true;
+    zsh = {
+      enable = true;
+      extraContent = ''
+        export PATH="''${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+      '';
+    };
   };
 
   ids.gids.nixbld = 350;
@@ -82,6 +89,8 @@
       pkgs.just
       pkgs.postgresql_15
       pkgs.cargo
+      pkgs.asdf-vm
+      inputs.squix.packages.${system}.default
     ];
 
     variables = {
@@ -109,7 +118,6 @@
     enable = true;
 
     brews = [
-      "asdf"
       "cycode"
       "platformio"
     ];
@@ -122,7 +130,7 @@
     };
 
     dock = {
-      orientation = "right";
+      orientation = "left";
       show-recents = false;
     };
 

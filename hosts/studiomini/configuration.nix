@@ -3,92 +3,107 @@
   system,
   username,
   lib,
-  inputs,
-  home-manager,
   ...
 }:
 
 {
-  mods.tmux.enable = true;
-  mods.zen.enable = true;
+  mods = {
+    alacritty = {
+      enable = true;
+      fontSize = 13;
+    };
+    fonts.enable = true;
+    tmux.enable = true;
+    darwin_tiling = {
+      yabai = {
+        enable = true;
+      };
+      skhd.enable = false;
+      spacebar.enable = false;
+    };
+    zen.enable = true;
+    zsh = {
+      enable = true;
+    };
+  };
   users.users.${username} = {
     home = "/Users/${username}";
+    shell = pkgs.zsh;
   };
+
+  users.knownUsers = [ username ];
 
   system.primaryUser = username;
 
   ids.gids.nixbld = 350;
 
-  environment.systemPackages = with pkgs; [
-    wget
-    btop
-    ripgrep
-    fzf
-    unzip
-    jq
-    gitFull
-    silver-searcher
-    openssh
-    direnv
-    obsidian
-    curl
-    efm-langserver
-    gnupg
-    glow
-    unrar
-    nodePackages.serve
-    lazygit
-    rclone
-    ffmpeg
-    oh-my-zsh
-    tree-sitter
-    nodejs_22
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      wget
+      btop
+      ripgrep
+      fzf
+      unzip
+      jq
+      gitFull
+      silver-searcher
+      openssh
+      direnv
+      obsidian
+      curl
+      efm-langserver
+      gnupg
+      glow
+      unrar
+      nodePackages.serve
+      lazygit
+      rclone
+      ffmpeg
+      oh-my-zsh
+      tree-sitter
+      nodejs_22
+    ];
 
-  environment.variables = {
-    EDITOR = "nvim";
+    variables = {
+      EDITOR = "nvim";
+    };
+    systemPath = [
+      "/opt/homebrew/bin"
+    ];
   };
 
-  environment.systemPath = [
-    "/opt/homebrew/bin"
-  ];
-
-  homebrew.enable = true;
-
-  homebrew.brews = [
-    "asdf"
-  ];
-
-  homebrew.casks = [
-    "amethyst"
-    "raycast"
-    "reaper"
-    "1password"
-    "slack"
-    "alacritty"
-    "the-unarchiver"
-    "darktable"
-  ];
-
-  programs.zsh = {
+  homebrew = {
     enable = true;
-    enableFzfCompletion = true;
-    enableFzfGit = true;
-    enableSyntaxHighlighting = true;
-    interactiveShellInit = ''
-      export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
 
-      ZSH_THEME="eastwood"
-      plugins=(git fzf web-search direnv)
+    brews = [
+      "asdf"
+    ];
 
-      source ${pkgs.oh-my-zsh}/share/oh-my-zsh//oh-my-zsh.sh
-      . $(brew --prefix asdf)/libexec/asdf.sh
-    '';
-    promptInit = "";
+    casks = [
+      "raycast"
+      "reaper"
+      "1password"
+      "slack"
+      "alacritty"
+      "the-unarchiver"
+      "darktable"
+    ];
+  };
+
+  system.defaults = {
+    trackpad = {
+      Clicking = true;
+      TrackpadThreeFingerDrag = true;
+    };
+
+    dock = {
+      orientation = "bottom";
+      show-recents = false;
+    };
+
   };
 
   system.stateVersion = 4;
-  system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   nix.settings.experimental-features = [
     "nix-command"

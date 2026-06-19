@@ -16,7 +16,17 @@
     _1password.enable = true;
     alacritty.enable = true;
     blender.enable = true;
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          Privacy = "device";
+          JustWorksRepairing = "always";
+          Class = "0x000100";
+          FastConnectable = "true";
+        };
+      };
+    };
     docker.enable = true;
     deluge.enable = true;
     gimp.enable = true;
@@ -53,6 +63,7 @@
     sddm.enable = true;
     steam.enable = true;
     thunderbird.enable = true;
+    tmux.enable = true;
     waybar.enable = true;
     waybar.theme = "rose";
     wofi.enable = true;

@@ -10,7 +10,7 @@ let
       inputs.nix-vscode-extensions.overlays.default
     ];
     config.permittedInsecurePackages = [
-      "broadcom-sta-6.30.223.271-59-6.12.66"
+      "broadcom-sta-6.30.223.271-59-6.12.78"
     ];
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {

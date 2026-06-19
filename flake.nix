@@ -9,7 +9,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     astronvim-config = {
       url = "github:nicklayb/astronvim/v5";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +33,10 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     plexm3u.url = "github:nicklayb/plexm3u";
+    squix = {
+      url = "github:eduardofuncao/squix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
