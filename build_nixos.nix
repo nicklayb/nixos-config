@@ -19,7 +19,7 @@ let
       inputs.nix-vscode-extensions.overlays.default
     ];
   };
-  pkgs-25-11 = import inputs.nixpkgs-unstable {
+  pkgs-25-11 = import inputs.nixpkgs-25-11 {
     inherit system;
   };
   box = import ./box.nix { };
