@@ -23,6 +23,7 @@ in
     ./reaper.nix
     ./steam.nix
     ./thunderbird.nix
+    ./thunar.nix
     ./vscode.nix
     ./wallet.nix
     ./zed.nix

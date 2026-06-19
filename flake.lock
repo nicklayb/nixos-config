@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772112620,
-        "narHash": "sha256-07Nbt6f82zrPmGPq7aBfSfveoYDI1yuft8S54cbWhM8=",
+        "lastModified": 1781880525,
+        "narHash": "sha256-J5sq90IZ+T4bP2Ym6XXZiLxoJviw6UZS9I1KhLf8gek=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "fdfcde4a75c26be48cb2a893214e22d1b41177f4",
+        "rev": "8c75cad6a3793d94a5665176a6b5ee0ec3470d78",
         "type": "github"
       },
       "original": {
@@ -167,6 +167,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-25-11": {
+      "locked": {
+        "lastModified": 1781509190,
+        "narHash": "sha256-uJZs9Di8I6ciTp6jiojj0HzlNpBkud8ax5aT/O5aJkw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d6df3513510aa548c83868fd22bfddd0a8c0a0d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1769018530,
@@ -293,6 +309,7 @@
         "nix-darwin": "nix-darwin",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_4",
+        "nixpkgs-25-11": "nixpkgs-25-11",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "plexm3u": "plexm3u",
         "zen-browser": "zen-browser"

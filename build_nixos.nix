@@ -19,6 +19,9 @@ let
       inputs.nix-vscode-extensions.overlays.default
     ];
   };
+  pkgs-25-11 = import inputs.nixpkgs-unstable {
+    inherit system;
+  };
   box = import ./box.nix { };
   nixos-home-config = username: {
     home-manager.useGlobalPkgs = true;
@@ -50,6 +53,7 @@ inputs.nixpkgs.lib.nixosSystem {
       mainUser
       username
       unstable-pkgs
+      pkgs-25-11
       box
       ;
   };

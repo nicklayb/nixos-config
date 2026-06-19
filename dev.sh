@@ -22,7 +22,7 @@ case $1 in
     nix repl --file repl.nix
     ;;
   waybar)
-    waybar --config $WAYBAR/config.json --style $WAYBAR/$THEME
+    waybar --config $WAYBAR/config.json --style $WAYBAR/$THEME -l debug
     ;;
   wofi)
     wofi --show drun -s $WOFI/style.css -c $WOFI/config

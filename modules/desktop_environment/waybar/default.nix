@@ -3,6 +3,7 @@
   lib,
   pkgs,
   username,
+  pkgs-25-11,
   ...
 }:
 {
@@ -27,7 +28,7 @@
     #   in
     #   [ waybarOverlay ];
     environment.systemPackages = [
-      pkgs.waybar
+      #     pkgs.waybar
       pkgs.libappindicator
     ];
 
@@ -35,6 +36,7 @@
       catppuccin.waybar.enable = false;
       programs.waybar = {
         enable = true;
+        package = pkgs-25-11.waybar;
         style = ./${config.mods.waybar.theme}.css;
       };
       xdg.configFile."waybar/config".source = ./config.json;
