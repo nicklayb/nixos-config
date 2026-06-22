@@ -26,10 +26,10 @@
     let
       yabai = config.mods.darwin_tiling.yabai;
     in
-    lib.mkIf yabai.enable {
+    {
       #environment.systemPackages = [ pkgs.yabai ];
       services.yabai = {
-        enable = true;
+        enable = yabai.enable;
         enableScriptingAddition = true;
         package = unstable-pkgs.yabai;
         config = {

@@ -288,6 +288,26 @@
         "type": "github"
       }
     },
+    "recording-monitor": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781806383,
+        "narHash": "sha256-B0Ki5bzIirnxRG2e/I8bdt7mEJ6J936xg+AdQ/iRuDo=",
+        "owner": "nicklayb",
+        "repo": "recording-monitor",
+        "rev": "19929cf516c797f389be2a461fda6c2a4e2acd1e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "recording-monitor",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "astronvim-config": "astronvim-config",
@@ -300,6 +320,7 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "plexm3u": "plexm3u",
+        "recording-monitor": "recording-monitor",
         "squix": "squix",
         "zen-browser": "zen-browser"
       }

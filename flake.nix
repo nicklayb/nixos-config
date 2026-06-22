@@ -36,6 +36,10 @@
       url = "github:eduardofuncao/squix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    recording-monitor = {
+      url = "github:nicklayb/recording-monitor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

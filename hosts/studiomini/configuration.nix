@@ -38,6 +38,11 @@
 
   ids.gids.nixbld = 350;
 
+  services.recording-monitor = {
+    enable = true;
+    configFile = "/Users/${username}/.config/recording-monitor.yaml";
+  };
+
   environment = {
     systemPackages = with pkgs; [
       wget
