@@ -54,6 +54,7 @@ inputs.nix-darwin.lib.darwinSystem {
     ./hosts/${hostname}/configuration.nix
     ./modules/darwin.nix
     inputs.home-manager.darwinModules.home-manager
+    inputs.recording-monitor.darwinModules.recording-monitor
     (darwin-home-config username)
   ];
 }
