@@ -17,6 +17,7 @@
   environment.systemPackages = [
     pkgs.obs-studio
     pkgs.brightnessctl
+    pkgs.bambu-studio
     (pkgs.nnn.override { withNerdIcons = true; })
     inputs.plexm3u.packages.${system}.default
   ];
