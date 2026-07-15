@@ -1,4 +1,9 @@
-{ config, lib, ... }: {
+{
+  config,
+  lib,
+  ...
+}:
+{
   options = {
     mods.docker = {
       enable = lib.mkEnableOption "Enables docker";
