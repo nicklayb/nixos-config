@@ -41,6 +41,10 @@
       url = "github:nicklayb/recording-monitor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mutty = {
+      url = "github:nicklayb/mutty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
