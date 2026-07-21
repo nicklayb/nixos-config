@@ -17,7 +17,6 @@
   environment.systemPackages = [
     pkgs.obs-studio
     pkgs.brightnessctl
-    pkgs.bambu-studio
     (pkgs.nnn.override { withNerdIcons = true; })
     inputs.plexm3u.packages.${system}.default
   ];
@@ -111,13 +110,10 @@
       enable = true;
       hostname = hostname;
     };
+    platformio.enable = true;
     playstation.enable = true;
     printing.enable = true;
     steam.enable = true;
-    # virtualization = {
-    #   virtualbox.enable = true;
-    #   qemu.enable = false;
-    # };
     tmux.enable = true;
     thunderbird.enable = true;
     sddm.enable = true;
