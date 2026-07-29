@@ -59,6 +59,7 @@
       enable = true;
       gpu = "amd";
     };
+    platformio.enable = true;
     printing.enable = true;
     sddm.enable = true;
     steam.enable = true;
