@@ -142,6 +142,8 @@
     };
   };
 
+  services.mutty-companion.enable = true;
+
   system.stateVersion = 4;
 
   nix.settings.experimental-features = [

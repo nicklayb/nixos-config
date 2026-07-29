@@ -55,6 +55,7 @@ inputs.nix-darwin.lib.darwinSystem {
     ./modules/darwin.nix
     inputs.home-manager.darwinModules.home-manager
     inputs.recording-monitor.darwinModules.recording-monitor
+    inputs.mutty.darwinModules.mutty-companion
     (darwin-home-config username)
   ];
 }

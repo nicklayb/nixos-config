@@ -110,13 +110,10 @@
       enable = true;
       hostname = hostname;
     };
+    platformio.enable = true;
     playstation.enable = true;
     printing.enable = true;
     steam.enable = true;
-    # virtualization = {
-    #   virtualbox.enable = true;
-    #   qemu.enable = false;
-    # };
     tmux.enable = true;
     thunderbird.enable = true;
     sddm.enable = true;

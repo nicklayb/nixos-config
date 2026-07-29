@@ -41,6 +41,10 @@
       url = "github:nicklayb/recording-monitor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mutty = {
+      url = "github:nicklayb/mutty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -70,7 +74,7 @@
         "garage" = build-nixos-system "garage" "nboisvert";
       };
       darwinConfigurations = {
-        "WorkBookPro" = build-darwin-system "WorkBookPro" "nicolas.boisvert";
+        "WorkbookPro" = build-darwin-system "WorkbookPro" "nicolas.boisvert";
         "StudioMini" = build-darwin-system "StudioMini" "nboisvert";
       };
       nixosModules = {
