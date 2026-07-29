@@ -87,6 +87,7 @@
 
   environment.systemPackages = [
     pkgs.godot_4
+    pkgs.bambu-studio
   ];
 
   system.stateVersion = "25.11";
