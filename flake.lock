@@ -295,11 +295,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782776902,
-        "narHash": "sha256-NzMKiX3T0AoUr9wEEwPqNofBcTgtTU+qVcQsCfR0PmE=",
+        "lastModified": 1782777368,
+        "narHash": "sha256-/vYyKVtVGU2QuCAM6tv5nN8KbpWql8i/gzv5xqTZ91I=",
         "owner": "nicklayb",
         "repo": "recording-monitor",
-        "rev": "d9f152088e0f7ac7decb88030dfbc7c51d60578e",
+        "rev": "b4bcfa281f53ce4543bc903f2df1ad2d3975d66b",
         "type": "github"
       },
       "original": {
