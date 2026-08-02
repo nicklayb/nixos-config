@@ -61,9 +61,10 @@
       gnupg
       glow
       unrar
-      nodePackages.serve
+      serve
       lazygit
       rclone
+      colima
       ffmpeg
       oh-my-zsh
       tree-sitter
