@@ -33,7 +33,7 @@
     hyprland = {
       enable = true;
       monitor = [
-        "DP-1,2560x1440@144.01Hz,1440x600,1" # ASUS
+        "DP-1,2560x1440@144.00Hz,1440x600,1" # ASUS
         "DP-2,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI
       ];
       hyprpaper = {
