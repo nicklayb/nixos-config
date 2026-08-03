@@ -43,6 +43,9 @@
       };
       initContent = ''
         source ~/.zsh/init || true
+        if [[ -n "$SSH_CONNECTION" ]] && [[ "$PROMPT" != *'(%m)'* ]]; then
+          PROMPT="%F{yellow}(%m) %f$PROMPT"
+        fi
       ''
       + config.mods.zsh.extraContent;
     };

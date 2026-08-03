@@ -155,8 +155,7 @@ in
     launchd.user.agents.local-ai-open-webui = {
       serviceConfig = {
         ProgramArguments = [
-          "/usr/bin/env"
-          "docker"
+          "${pkgs.docker}/bin/docker"
           "run"
           "--rm"
           "--name"

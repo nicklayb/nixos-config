@@ -21,6 +21,18 @@
       skhd.enable = false;
       spacebar.enable = false;
     };
+    local_llm = {
+      enable = true;
+
+      ollama = {
+        host = "0.0.0.0";
+      };
+
+      models = [
+        "qwen3:8b"
+        "nomic-embed-text"
+      ];
+    };
     zen.enable = true;
     zsh = {
       enable = true;
@@ -64,6 +76,7 @@
       serve
       lazygit
       rclone
+      docker
       colima
       ffmpeg
       oh-my-zsh
