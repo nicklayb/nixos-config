@@ -33,7 +33,7 @@
     hyprland = {
       enable = true;
       monitor = [
-        "DP-1,2560x1440@144.01Hz,1440x600,1" # ASUS
+        "DP-1,2560x1440@144.00Hz,1440x600,1" # ASUS
         "DP-2,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI
       ];
       hyprpaper = {
@@ -59,6 +59,7 @@
       enable = true;
       gpu = "amd";
     };
+    platformio.enable = true;
     printing.enable = true;
     sddm.enable = true;
     steam.enable = true;
@@ -87,6 +88,8 @@
 
   environment.systemPackages = [
     pkgs.godot_4
+    pkgs.bambu-studio
+    pkgs.freecad
   ];
 
   system.stateVersion = "25.11";

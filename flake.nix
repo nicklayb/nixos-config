@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     astronvim-config = {
-      url = "github:nicklayb/astronvim/v5";
+      url = "github:nicklayb/astronvim/v6";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     elixir-extensions = {
