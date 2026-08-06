@@ -13,7 +13,7 @@
       custom = false;
       algorithm = "complementary";
       primary = false;
-      lightness = 80;
+      lightness = 255;
       position = {
         x = 192;
         y = 137;

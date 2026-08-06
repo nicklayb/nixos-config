@@ -13,7 +13,7 @@
       custom = false;
       algorithm = "floating";
       primary = true;
-      lightness = 70;
+      lightness = 255;
       position = {
         x = 134;
         y = 142;
@@ -31,7 +31,7 @@
     title = "Atlassian";
     sites = [
       (builder.mkPin {
-        title = "Atlassian";
+        title = "Atlassian Home";
         url = "https://home.atlassian.com/";
       })
       (builder.mkPin {

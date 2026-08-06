@@ -35,7 +35,7 @@
       red = 232;
       green = 125;
       blue = 131;
-      lightness = 70;
+      lightness = 255;
       position = {
         x = 237;
         y = 178;

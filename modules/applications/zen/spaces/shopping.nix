@@ -13,7 +13,7 @@
       custom = false;
       algorithm = "floating";
       primary = true;
-      lightness = 60;
+      lightness = 255;
       position = {
         x = 100;
         y = 231;
