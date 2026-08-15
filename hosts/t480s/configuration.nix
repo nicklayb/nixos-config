@@ -103,6 +103,7 @@
         # "4, down, dispatcher, hyprexpo:expo, off"
       ];
     };
+    inputs.logitech.enable = true;
     inputs.touchpad.enable = true;
     insomnia.enable = true;
     nautilus.enable = true;
