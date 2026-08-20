@@ -3,6 +3,7 @@
   mainUser,
   username,
   hostname,
+  inputs,
   ...
 }:
 {
@@ -11,6 +12,10 @@
   ];
 
   bundles.music.enable = true;
+
+  home-manager.users.${username} = {
+    astronvim.features.copilot = false;
+  };
 
   mods = {
     _1password.enable = true;
@@ -50,6 +55,7 @@
         # "CTRL ALT, TAB, hyprexpo:expo, toggle"
       ];
     };
+    inputs.logitech.enable = true;
     nautilus.enable = true;
     networking = {
       enable = true;

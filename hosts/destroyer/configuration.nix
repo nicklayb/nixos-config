@@ -17,11 +17,6 @@ in
 
   bundles.music.enable = true;
 
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical = true;
-  };
-
   mods = {
     _1password.enable = true;
     alacritty.enable = true;
