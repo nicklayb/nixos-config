@@ -15,6 +15,7 @@
       daemon.settings = {
         insecure-registries = [
           "hal:5000"
+          "registry.k8s.home.arpa"
         ];
       };
     };
