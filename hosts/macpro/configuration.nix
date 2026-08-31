@@ -71,6 +71,7 @@
     steam.enable = true;
     thunderbird.enable = true;
     tmux.enable = true;
+    virtualization.qemu.enable = true;
     waybar.enable = true;
     waybar.theme = "rose";
     wofi.enable = true;
@@ -91,6 +92,8 @@
     "nix-command"
     "flakes"
   ];
+
+  services.envfs.enable = true;
 
   environment.systemPackages = [
     pkgs.godot_4

@@ -12,6 +12,9 @@
   };
   config = lib.mkIf config.mods.platformio.enable {
     environment.systemPackages = [ pkgs.platformio ];
-    services.udev.packages = [ pkgs.platformio ];
+    services.udev.packages = [
+      pkgs.platformio
+      pkgs.platformio-core.udev
+    ];
   };
 }
