@@ -24,26 +24,10 @@
             description = "Query to use with Unsplash";
             type = lib.types.str;
           };
-          mapping =
-            let
-              innerMapping = lib.types.submodule {
-                options = {
-                  wallpaper = lib.mkOption {
-                    type = lib.types.str;
-                    description = "Wallpaper path";
-                  };
-                  monitors = lib.mkOption {
-                    type = lib.types.listOf lib.types.str;
-                    description = "Monitors that shows the wallpaper";
-                  };
-                };
-              };
-            in
-            lib.mkOption {
-              description = "Monitor / wallpaper mapping";
-              #type = lib.types.listOf innerMapping;
-              type = lib.types.attrsOf (lib.types.listOf lib.types.str);
-            };
+          mapping = lib.mkOption {
+            description = "Monitor / wallpaper mapping";
+            type = lib.types.attrsOf (lib.types.listOf lib.types.str);
+          };
           timerConfig = lib.mkOption {
             description = "Timer to update the wallpapers";
             type = lib.types.attrs;
