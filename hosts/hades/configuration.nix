@@ -38,16 +38,16 @@
     hyprland = {
       enable = true;
       monitor = [
-        "DP-3,2560x1440@144.00Hz,1440x600,1" # ASUS
-        "DP-2,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI
+        "DP-2,2560x1440@144.00Hz,1440x600,1" # ASUS
+        "DP-3,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI
       ];
       hyprpaper = {
         randomWallpapers = {
           enable = true;
           query = "mountains";
           mapping = {
-            "/home/${username}/.background-left" = [ "DP-2" ];
-            "/home/${username}/.background-right" = [ "DP-3" ];
+            "/home/${username}/.background-left" = [ "DP-3" ];
+            "/home/${username}/.background-right" = [ "DP-2" ];
           };
         };
       };
