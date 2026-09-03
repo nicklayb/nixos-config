@@ -16,11 +16,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.availableKernelModules = [
-    "uhci_hcd"
-    "ehci_pci"
     "ahci"
     "xhci_pci"
-    "firewire_ohci"
     "usb_storage"
     "usbhid"
     "sd_mod"
@@ -29,13 +26,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [
     "kvm-intel"
-    "wl"
-    "kvm-amd"
-  ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-  boot.kernelParams = [
-    "mem_sleep_default=s2idle"
-    "pcie_aspm=off"
   ];
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -75,7 +65,7 @@
         };
 
         ethernet = {
-          cloned-mac-address = "02:00:00:00:00:59";
+          cloned-mac-address = "02:00:00:00:00:58";
         };
 
         ipv4 = {
@@ -87,11 +77,11 @@
         };
       };
 
-      bridge0-enp9s0 = {
+      bridge0-eno1 = {
         connection = {
-          id = "bridge0-enp9s0";
+          id = "bridge0-eno1";
           type = "ethernet";
-          interface-name = "enp9s0";
+          interface-name = "eno1";
           master = "bridge0";
           slave-type = "bridge";
           autoconnect = true;
