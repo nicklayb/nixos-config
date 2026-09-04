@@ -16,10 +16,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.availableKernelModules = [
-    "ahci"
     "xhci_pci"
-    "usb_storage"
+    "ahci"
+    "vmd"
     "usbhid"
+    "usb_storage"
     "sd_mod"
     "sr_mod"
   ];
