@@ -62,7 +62,7 @@
         };
 
         bridge = {
-          stp = true;
+          stp = false;
         };
 
         ethernet = {

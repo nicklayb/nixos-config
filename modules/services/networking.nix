@@ -1,4 +1,11 @@
-{ config, lib, pkgs, username, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  username,
+  ...
+}:
+{
   options = {
     mods.networking = {
       enable = lib.mkEnableOption "Enables Networking";
@@ -16,9 +23,10 @@
   config = lib.mkIf config.mods.networking.enable {
     networking.hostName = config.mods.networking.hostname;
     networking.networkmanager.enable = config.mods.networking.networkManager;
+    systemd.network.wait-online.enable = false;
     networking.useDHCP = lib.mkDefault true;
 
-    users.users.${username}.extraGroups = ["networkmanager"];
+    users.users.${username}.extraGroups = [ "networkmanager" ];
 
     environment.systemPackages = [
       pkgs.inetutils
