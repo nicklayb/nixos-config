@@ -36,61 +36,32 @@
     }
   ];
   pins = [
-    (builder.mkPin {
-      title = "GitHub";
-      url = "https://github.com";
-      isEssential = true;
-    })
-    (builder.mkPin {
-      title = "Reddit";
-      url = "https://reddit.com";
-      isEssential = true;
-    })
-    (builder.mkPin {
-      title = "Plex";
-      url = "https://app.plex.tv";
-    })
-    (builder.mkPin {
-      title = "Samply";
-      url = "https://samply.app";
-    })
+    (builder.essential "GitHub" "https://github.com")
+    (builder.essential "Reddit" "https://reddit.com")
+    (builder.pin "Plex" "https://app.plex.tv")
+    (builder.pin "Samply" "https://samply.app")
   ]
   ++ (builder.mkFolder {
     title = "Finance";
     sites = [
-      (builder.mkPin {
-        title = "AccesD";
-        url = "https://accweb.mouv.desjardins.com/identifiantunique/securite-garantie/authentification/auth/manuel";
-      })
-      (builder.mkPin {
-        title = "BNC";
-        url = "https://app.bnc.ca/?lang=fr";
-      })
-      (builder.mkPin {
-        title = "Wealthsimple";
-        url = "https://my.wealthsimple.com/app/login?locale=en-ca";
-      })
+      (builder.pin "AccesD" "https://accweb.mouv.desjardins.com/identifiantunique/securite-garantie/authentification/auth/manuel")
+      (builder.pin "BNC" "https://app.bnc.ca/?lang=fr")
+      (builder.pin "Wealthsimple" "https://my.wealthsimple.com/app/login?locale=en-ca")
     ];
   })
   ++ (builder.mkFolder {
     title = "Social";
     sites = [
-      (builder.mkPin {
-        title = "Facebook";
-        url = "https://facebook.com";
-      })
-      (builder.mkPin {
-        title = "Messenger";
-        url = "https://messenger.com";
-      })
-      (builder.mkPin {
-        title = "Slack";
-        url = "https://slack.com";
-      })
-      (builder.mkPin {
-        title = "YouTube";
-        url = "https://youtube.com";
-      })
+      (builder.pin "Facebook" "https://facebook.com")
+      (builder.pin "Messenger" "https://messenger.com")
+      (builder.pin "Slack" "https://slack.com")
+      (builder.pin "YouTube" "https://youtube.com")
+    ];
+  })
+  ++ (builder.mkFolder {
+    title = "Home lab";
+    sites = [
+      (builder.pin "Grafana" "http://monitor.nboisvert.local:3000")
     ];
   });
 }

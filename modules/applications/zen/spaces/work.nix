@@ -22,47 +22,23 @@
     }
   ];
   pins = [
-    (builder.mkPin {
-      title = "Microsoft Apps";
-      url = "https://myapps.microsoft.com";
-    })
+    (builder.pin "Microsoft Apps" "https://myapps.microsoft.com")
   ]
   ++ (builder.mkFolder {
     title = "Atlassian";
     sites = [
-      (builder.mkPin {
-        title = "Atlassian Home";
-        url = "https://home.atlassian.com/";
-      })
-      (builder.mkPin {
-        title = "Confluence";
-        url = "https://thescore.atlassian.net/wiki/home";
-      })
-      (builder.mkPin {
-        title = "Jira";
-        url = "https://thescore.atlassian.net/jira";
-      })
-      (builder.mkPin {
-        title = "Roadmap";
-        url = "https://thescore.atlassian.net/jira/polaris/projects/KP/ideas/view/8840709";
-      })
+      (builder.pin "Atlassian Home" "https://home.atlassian.com/")
+      (builder.pin "Confluence" "https://thescore.atlassian.net/wiki/home")
+      (builder.pin "Jira" "https://thescore.atlassian.net/jira")
+      (builder.pin "Roadmap" "https://thescore.atlassian.net/jira/polaris/projects/KP/ideas/view/8840709")
     ];
   })
   ++ (builder.mkFolder {
     title = "HR";
     sites = [
-      (builder.mkPin {
-        title = "UKG";
-        url = "https://pngaming.ultipro.com";
-      })
-      (builder.mkPin {
-        title = "Canadian UKG";
-        url = "https://secure60.saashr.com/ta/6176628.login";
-      })
-      (builder.mkPin {
-        title = "Dayforce";
-        url = "https://us252.dayforcehcm.com";
-      })
+      (builder.pin "UKG" "https://pngaming.ultipro.com")
+      (builder.pin "Canadian UKG" "https://secure60.saashr.com/ta/6176628.login")
+      (builder.pin "Dayforce" "https://us252.dayforcehcm.com")
     ];
   });
 }

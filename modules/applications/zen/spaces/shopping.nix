@@ -22,33 +22,12 @@
     }
   ];
   pins = [
-    (builder.mkPin {
-      title = "Aliexpress";
-      url = "https://aliexpress.com";
-    })
-    (builder.mkPin {
-      title = "Amazon";
-      url = "https://amazon.ca";
-    })
-    (builder.mkPin {
-      title = "Apple";
-      url = "https://apple.ca/store";
-    })
-    (builder.mkPin {
-      title = "eBay";
-      url = "https://ebay.ca";
-    })
-    (builder.mkPin {
-      title = "Kickstarter";
-      url = "https://kickstarter.com";
-    })
-    (builder.mkPin {
-      title = "Newegg";
-      url = "https://newegg.ca";
-    })
-    (builder.mkPin {
-      title = "Reverb";
-      url = "https://reverb.com";
-    })
+    (builder.pin "Aliexpress" "https://aliexpress.com")
+    (builder.pin "Amazon" "https://amazon.ca")
+    (builder.pin "Apple" "https://apple.ca/store")
+    (builder.pin "eBay" "https://ebay.ca")
+    (builder.pin "Kickstarter" "https://kickstarter.com")
+    (builder.pin "Newegg" "https://newegg.ca")
+    (builder.pin "Reverb" "https://reverb.com")
   ];
 }

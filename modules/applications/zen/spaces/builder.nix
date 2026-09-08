@@ -128,4 +128,17 @@ in
   toPins = toPins;
   mkFolder = mkFolder;
   mkPin = mkPin;
+  pin =
+    title: url:
+    (mkPin {
+      title = title;
+      url = url;
+    });
+  essential =
+    title: url:
+    (mkPin {
+      title = title;
+      url = url;
+      isEssential = true;
+    });
 }

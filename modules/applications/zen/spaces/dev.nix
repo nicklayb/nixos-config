@@ -44,64 +44,28 @@
     }
   ];
   pins = [
-    (builder.mkPin {
-      title = "Nixpkgs";
-      url = "https://search.nixos.org/packages";
-    })
-    (builder.mkPin {
-      title = "Tailwind CSS";
-      url = "https://tailwindcss.com/";
-    })
+    (builder.pin "Nixpkgs" "https://search.nixos.org/packages")
+    (builder.pin "Tailwind CSS" "https://tailwindcss.com/")
   ]
   ++ (builder.mkFolder {
     title = "Nix";
     sites = [
-      (builder.mkPin {
-        title = "NixOS Option Types";
-        url = "https://nlewo.github.io/nixos-manual-sphinx/development/option-types.xml.html";
-      })
-      (builder.mkPin {
-        title = "Home Manager";
-        url = "https://nix-community.github.io/home-manager/";
-      })
+      (builder.pin "NixOS Option Types" "https://nlewo.github.io/nixos-manual-sphinx/development/option-types.xml.html")
+      (builder.pin "Home Manager" "https://nix-community.github.io/home-manager/")
     ];
   })
   ++ (builder.mkFolder {
     title = "Hexdocs";
     baseUrl = path: "https://hexdocs.pm/${path}";
     sites = [
-      (builder.mkPin {
-        title = "Elixir";
-        url = "";
-      })
-      (builder.mkPin {
-        title = "Phoenix Live View";
-        url = "phoenix_live_view";
-      })
-      (builder.mkPin {
-        title = "Phoenix";
-        url = "phoenix";
-      })
-      (builder.mkPin {
-        title = "Ecto";
-        url = "ecto";
-      })
-      (builder.mkPin {
-        title = "Oban";
-        url = "oban";
-      })
-      (builder.mkPin {
-        title = "Credo";
-        url = "credo";
-      })
-      (builder.mkPin {
-        title = "Absinthe";
-        url = "absinthe";
-      })
-      (builder.mkPin {
-        title = "Livebook";
-        url = "livebook";
-      })
+      (builder.pin "Elixir" "")
+      (builder.pin "Phoenix Live View" "phoenix_live_view")
+      (builder.pin "Phoenix" "phoenix")
+      (builder.pin "Ecto" "ecto")
+      (builder.pin "Oban" "oban")
+      (builder.pin "Credo" "credo")
+      (builder.pin "Absinthe" "absinthe")
+      (builder.pin "Livebook" "livebook")
     ];
   })
   ++ (builder.mkFolder {
