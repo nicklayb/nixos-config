@@ -91,6 +91,17 @@
     };
   };
 
+  systemd.services.disable-xhci-wakeup = {
+    description = "Disable XHCI wakeup";
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo XHCI > /proc/acpi/wakeup'";
+      RemainAfterExit = true;
+    };
+  };
+
   hardware.graphics.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault system;
