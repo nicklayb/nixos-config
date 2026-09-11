@@ -39,7 +39,7 @@
       enable = true;
       monitor = [
         "DP-3,2560x1440@144.00Hz,0x0,1" # KOORUI Horizontal
-        "DP-2,2560x1440@144.00Hz,2560x230,1" # ASUS
+        "DP-2,2560x1440@144.00Hz,2560x0,1" # ASUS
         # "DP-3,2560x1440@144.00Hz,0x0,1,transform, 3" # KOORUI Vertical
       ];
       hyprpaper = {
