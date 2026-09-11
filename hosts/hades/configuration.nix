@@ -3,7 +3,6 @@
   mainUser,
   username,
   hostname,
-  inputs,
   ...
 }:
 {
@@ -34,6 +33,7 @@
     };
     docker.enable = true;
     deluge.enable = true;
+    flatpak.enable = true;
     gimp.enable = true;
     hyprland = {
       enable = true;
@@ -98,7 +98,6 @@
 
   environment.systemPackages = [
     pkgs.godot_4
-    pkgs.bambu-studio
     pkgs.freecad
   ];
 

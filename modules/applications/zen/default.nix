@@ -17,19 +17,7 @@ let
     lib = lib;
     box = box;
   };
-  linuxSpecific = (
-    if pkgs.stdenv.isLinux then
-      {
-        environment.etc."1password/custom_allowed_browsers" = {
-          text = ''
-            .zen-wrapped
-          '';
-          mode = "0755";
-        };
-      }
-    else
-      { }
-  );
+  setup1Password = config.mods._1password.enable && pkgs.stdenv.isLinux;
 in
 {
   options = {
@@ -37,8 +25,8 @@ in
       enable = lib.mkEnableOption "Enables Zen Browser";
     };
   };
-  config =
-    lib.mkIf config.mods.zen.enable {
+  config = lib.mkMerge [
+    (lib.mkIf config.mods.zen.enable {
       home-manager.users.${username} = {
         programs.zen-browser = {
           enable = true;
@@ -82,6 +70,14 @@ in
           };
         };
       };
-    }
-    // linuxSpecific;
+    })
+    (lib.mkIf setup1Password {
+      environment.etc."1password/custom_allowed_browsers" = {
+        text = ''
+          zen
+        '';
+        mode = "0755";
+      };
+    })
+  ];
 }
