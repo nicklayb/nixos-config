@@ -29,10 +29,9 @@
     "kvm-intel"
   ];
   boot.supportedFilesystems = [ "ntfs" ];
-  # boot.kernelParams = [
-  #   "mem_sleep_default=s2idle"
-  # ];
-
+  boot.binfmt.emulatedSystems = [
+    # "aarch64-linux"
+  ];
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/d849a473-2322-4544-af66-77f27755974b";
     fsType = "ext4";

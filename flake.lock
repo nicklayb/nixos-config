@@ -243,22 +243,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-bambu": {
-      "locked": {
-        "lastModified": 1772198003,
-        "narHash": "sha256-I45esRSssFtJ8p/gLHUZ1OUaaTaVLluNkABkk6arQwE=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "dd9b079222d43e1943b6ebd802f04fd959dc8e61",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "dd9b079222d43e1943b6ebd802f04fd959dc8e61",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1789006805,
@@ -391,7 +375,6 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-25-11": "nixpkgs-25-11",
-        "nixpkgs-bambu": "nixpkgs-bambu",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "plexm3u": "plexm3u",
         "recording-monitor": "recording-monitor",
