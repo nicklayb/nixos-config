@@ -68,6 +68,7 @@
     };
     platformio.enable = true;
     printing.enable = true;
+    remmina.enable = true;
     sddm.enable = true;
     steam.enable = true;
     thunderbird.enable = true;
@@ -100,6 +101,18 @@
     pkgs.godot_4
     pkgs.freecad
   ];
+
+  nix.buildMachines = [
+    {
+      hostName = "nix-aarch.nboisvert.local";
+      system = "aarch64-linux";
+      sshUser = "builder";
+      sshKey = "/root/.ssh/nix-builder";
+      maxJobs = 8;
+      protocol = "ssh-ng";
+    }
+  ];
+  nix.settings.builders = "@/etc/nix/machines";
 
   system.stateVersion = "25.11";
 }

@@ -21,6 +21,7 @@ in
     ./obs_studio.nix
     ./playstation.nix
     ./reaper.nix
+    ./remmina.nix
     ./steam.nix
     ./thunderbird.nix
     ./thunar.nix
