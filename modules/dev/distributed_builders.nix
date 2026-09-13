@@ -24,5 +24,6 @@
         protocol = config.mods.distributedBuilders.protocol;
       }
     ];
+    nix.settings.builders-use-substitutes = true;
   };
 }
