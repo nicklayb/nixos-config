@@ -17,7 +17,7 @@ let
     lib = lib;
     box = box;
   };
-  setup1Password = config.mods._1password.enable && pkgs.stdenv.isLinux;
+  setup1Password = pkgs.stdenv.isLinux && config.mods._1password.enable;
 in
 {
   options = {
