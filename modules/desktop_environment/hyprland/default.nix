@@ -158,6 +158,15 @@
           "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
       };
 
+      gtk = {
+        enable = true;
+
+        iconTheme = {
+          package = pkgs.adwaita-icon-theme;
+          name = "Adwaita";
+        };
+      };
+
       xdg.portal = {
         enable = true;
         xdgOpenUsePortal = true;
