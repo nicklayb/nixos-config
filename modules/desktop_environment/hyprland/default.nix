@@ -39,6 +39,14 @@
           };
         };
       };
+      launcher = lib.mkOption {
+        description = "Sets launcher";
+        type = lib.types.enum [
+          "wofi"
+          "anyrun"
+        ];
+        default = "wofi";
+      };
       wallpapers = lib.mkOption {
         description = "Hyprpaper wallpapers";
         type = lib.types.listOf lib.types.str;
