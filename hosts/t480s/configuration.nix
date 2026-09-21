@@ -55,6 +55,7 @@
     bluetooth.enable = true;
     dbeaver.enable = true;
     deluge.enable = true;
+    distributedBuilders.enable = true;
     docker.enable = true;
     firefox.enable = true;
     github.enable = true;
