@@ -52,6 +52,7 @@
       enable = true;
       fontSize = 10;
     };
+    anyrun.enable = true;
     bluetooth.enable = true;
     dbeaver.enable = true;
     deluge.enable = true;
@@ -61,6 +62,7 @@
     github.enable = true;
     hyprland = {
       enable = true;
+      launcher = "anyrun";
       hyprlock = {
         battery = true;
       };
