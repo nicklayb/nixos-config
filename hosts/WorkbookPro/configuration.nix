@@ -15,6 +15,7 @@
     };
     fonts.enable = true;
     tmux.enable = true;
+    mise.enable = true;
     vscode = {
       enable = true;
       cycode = true;
@@ -74,7 +75,6 @@
       pkgs.kubectx
       pkgs.lazygit
       pkgs.mas
-      pkgs.mise
       pkgs.obsidian
       pkgs.openssh
       pkgs.pam-reattach
