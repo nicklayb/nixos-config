@@ -38,7 +38,6 @@ in
     vlc
     gparted
     exfatprogs
-    plexamp
     localsend
     libreoffice
     rclone

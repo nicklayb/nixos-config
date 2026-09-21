@@ -18,6 +18,7 @@
 
   mods = {
     _1password.enable = true;
+    anyrun.enable = true;
     alacritty.enable = true;
     blender.enable = true;
     bluetooth = {
@@ -38,6 +39,7 @@
     gimp.enable = true;
     hyprland = {
       enable = true;
+      launcher = "anyrun";
       monitor = [
         "DP-3,2560x1440@144.00Hz,0x0,1" # KOORUI Horizontal
         "DP-2,2560x1440@144.00Hz,2560x0,1" # ASUS

@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./mise.nix
     ./tmux
     ./shells
   ];

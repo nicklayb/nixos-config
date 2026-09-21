@@ -44,6 +44,7 @@
   catppuccin = {
     enable = true;
     flavor = "frappe";
+    gtk.icon.enable = false;
   };
 
   home.file.".git/hooks/prepare-commit-msg" = {
