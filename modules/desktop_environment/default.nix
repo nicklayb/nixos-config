@@ -1,5 +1,6 @@
-{ ... } : {
+{ ... }: {
   imports = [
+    ./anyrun
     ./hyprland
     ./plasma
     ./sddm

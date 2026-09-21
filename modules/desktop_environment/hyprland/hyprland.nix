@@ -1,9 +1,17 @@
 { monitor, config, ... }:
+let
+  configLauncher = config.mods.hyprland.launcher;
+  launcher =
+    if configLauncher == "anyrun" then
+      "anyrun"
+    else
+      "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
+in
 {
   "$terminal" = "alacritty";
   "$browser" = "zen-twilight";
   "$fileManager" = "dolphin";
-  "$menu" = "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
+  "$menu" = launcher;
   "$mainMod" = "SUPER";
 
   exec-once = [

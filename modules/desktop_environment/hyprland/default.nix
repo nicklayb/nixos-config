@@ -39,6 +39,14 @@
           };
         };
       };
+      launcher = lib.mkOption {
+        description = "Sets launcher";
+        type = lib.types.enum [
+          "wofi"
+          "anyrun"
+        ];
+        default = "wofi";
+      };
       wallpapers = lib.mkOption {
         description = "Hyprpaper wallpapers";
         type = lib.types.listOf lib.types.str;
@@ -148,6 +156,15 @@
           "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk.css";
         "gtk-4.0/gtk-dark.css".source =
           "${config.mods.hyprland.gtkTheme.package}/share/themes/${config.mods.hyprland.gtkTheme.name}/gtk-4.0/gtk-dark.css";
+      };
+
+      gtk = {
+        enable = true;
+
+        iconTheme = {
+          package = pkgs.adwaita-icon-theme;
+          name = "Adwaita";
+        };
       };
 
       xdg.portal = {
