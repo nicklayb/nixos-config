@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787965438,
-        "narHash": "sha256-/oorJhxcLsNCjYttxDc87fu8MRwQvKb4LzM7HMOEpI4=",
+        "lastModified": 1790176615,
+        "narHash": "sha256-eP30ECSnMJV6e39BgyipJXk5yQHg7pSSxz57aFNXCzU=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "b407fe8edfeb87ea59e6f156beb21fd7792235e6",
+        "rev": "bc6475254615c6f2cf55e9553a7e79502465de64",
         "type": "github"
       },
       "original": {
