@@ -1,5 +1,6 @@
 {
   pkgs,
+  unstable-pkgs,
   username,
   system,
   lib,
@@ -55,6 +56,8 @@
       pkgs.awscli2
       pkgs.btop
       pkgs.cargo
+      pkgs.cmake
+      unstable-pkgs.claude-code
       pkgs.colima
       pkgs.coreutils
       pkgs.curl

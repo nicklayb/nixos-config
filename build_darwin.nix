@@ -17,6 +17,9 @@ let
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
+    config = {
+      allowUnfree = true;
+    };
   };
   box = import ./box.nix { };
   darwin-home-config = username: {

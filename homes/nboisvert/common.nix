@@ -19,6 +19,10 @@
 
   programs.git = {
     enable = true;
+    ignores = [
+      ".nix-mix"
+      ".nix-hex"
+    ];
     settings = {
       user = {
         name = mainUser.githubUsername;
