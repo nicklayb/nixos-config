@@ -40,6 +40,7 @@
     (builder.essential "Reddit" "https://reddit.com")
     (builder.pin "Plex" "https://app.plex.tv")
     (builder.pin "Samply" "https://samply.app")
+    (builder.pin "YouTube" "https://youtube.com")
   ]
   ++ (builder.mkFolder {
     title = "Finance";
@@ -55,7 +56,13 @@
       (builder.pin "Facebook" "https://facebook.com")
       (builder.pin "Messenger" "https://messenger.com")
       (builder.pin "Slack" "https://slack.com")
-      (builder.pin "YouTube" "https://youtube.com")
+    ];
+  })
+  ++ (builder.mkFolder {
+    title = "AI";
+    sites = [
+      (builder.pin "ChatGPT" "https://chatgpt.com")
+      (builder.pin "Claude" "https://claude.ai")
     ];
   })
   ++ (builder.mkFolder {
