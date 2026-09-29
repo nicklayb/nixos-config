@@ -1,5 +1,6 @@
 {
   pkgs,
+  unstable-pkgs,
   username,
   system,
   lib,
@@ -15,6 +16,7 @@
     };
     fonts.enable = true;
     tmux.enable = true;
+    mise.enable = true;
     vscode = {
       enable = true;
       cycode = true;
@@ -54,6 +56,8 @@
       pkgs.awscli2
       pkgs.btop
       pkgs.cargo
+      pkgs.cmake
+      unstable-pkgs.claude-code
       pkgs.colima
       pkgs.coreutils
       pkgs.curl
@@ -74,7 +78,6 @@
       pkgs.kubectx
       pkgs.lazygit
       pkgs.mas
-      pkgs.mise
       pkgs.obsidian
       pkgs.openssh
       pkgs.pam-reattach
