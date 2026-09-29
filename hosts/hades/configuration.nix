@@ -103,6 +103,7 @@
   environment.systemPackages = [
     pkgs.godot_4
     pkgs.freecad
+    pkgs.kicad
   ];
 
   system.stateVersion = "25.11";
