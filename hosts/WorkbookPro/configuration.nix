@@ -32,9 +32,6 @@
     zen.enable = true;
     zsh = {
       enable = true;
-      extraContent = ''
-        export PATH="''${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-      '';
     };
   };
 
