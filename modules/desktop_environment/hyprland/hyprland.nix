@@ -203,6 +203,7 @@ in
     [
       "match:class .*, suppress_event maximize"
       "match:title title:(.*)YouTube(.*), no_dim 1"
+      "match:title title:Plex(.*), no_dim 1"
     ]
     ++ floating;
 
