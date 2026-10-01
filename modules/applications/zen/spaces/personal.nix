@@ -41,6 +41,7 @@
     (builder.pin "Plex" "https://app.plex.tv")
     (builder.pin "Samply" "https://samply.app")
     (builder.pin "YouTube" "https://youtube.com")
+    (builder.pin "Patreon" "https://patreon.com")
   ]
   ++ (builder.mkFolder {
     title = "Finance";
@@ -68,7 +69,9 @@
   ++ (builder.mkFolder {
     title = "Home lab";
     sites = [
+      (builder.pin "OPNSense" "http://192.168.1.1")
       (builder.pin "Grafana" "http://monitor.nboisvert.local:3000")
+      (builder.pin "Adguard" "http://adguard.nboisvert.local")
     ];
   });
 }
