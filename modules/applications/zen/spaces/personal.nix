@@ -38,6 +38,8 @@
   pins = [
     (builder.essential "GitHub" "https://github.com")
     (builder.essential "Reddit" "https://reddit.com")
+
+    (builder.pin "GitLab" "https://gitlab.com")
     (builder.pin "Plex" "https://app.plex.tv")
     (builder.pin "Samply" "https://samply.app")
     (builder.pin "YouTube" "https://youtube.com")
@@ -67,11 +69,21 @@
     ];
   })
   ++ (builder.mkFolder {
+    title = "Tools";
+    sites = [
+      (builder.pin "TinkerCAD" "https://tinkercad.com")
+      (builder.pin "Gridfinity Layout Tool" "https://gridfinitylayouttool.com")
+      (builder.pin "Photopea" "https://photopea.com")
+      (builder.pin "JLCPCB" "https://jlcpcb.com")
+    ];
+  })
+  ++ (builder.mkFolder {
     title = "Home lab";
     sites = [
       (builder.pin "OPNSense" "http://192.168.1.1")
       (builder.pin "Grafana" "http://monitor.nboisvert.local:3000")
       (builder.pin "Adguard" "http://adguard.nboisvert.local")
+      (builder.pin "Proxmox" "https://jekyll.nboisvert.local:8006")
     ];
   });
 }
