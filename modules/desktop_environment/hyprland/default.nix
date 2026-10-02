@@ -194,7 +194,7 @@
         };
         configType = "hyprlang";
         plugins = [
-          # pkgs.hyprlandPlugins.hyprspace
+          pkgs.hyprlandPlugins.hyprspace
         ];
       };
       services.hyprpaper =
