@@ -112,6 +112,46 @@
         "type": "github"
       }
     },
+    "hazelnut": {
+      "inputs": {
+        "hazelnut-src": "hazelnut-src",
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791224365,
+        "narHash": "sha256-zyQUXoUnSq01Br+uewMbtsnWofq7iKgJ87vZHi4+XFI=",
+        "owner": "nicklayb",
+        "repo": "hazelnut-flake",
+        "rev": "15e7bb702e74daf1b702db03c0d3bb632927cfe2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "hazelnut-flake",
+        "type": "github"
+      }
+    },
+    "hazelnut-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785702627,
+        "narHash": "sha256-rlt/WWbdm+LLGy69AFNIbPlfFCS5OYpLiOce6x4vrU8=",
+        "owner": "ricardodantas",
+        "repo": "hazelnut",
+        "rev": "72dac6de91be2fc1c1043efb22b62d4dcd4036e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ricardodantas",
+        "repo": "hazelnut",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -389,6 +429,7 @@
         "astronvim-config": "astronvim-config",
         "catppuccin": "catppuccin",
         "elixir-extensions": "elixir-extensions",
+        "hazelnut": "hazelnut",
         "home-manager": "home-manager",
         "musnix": "musnix",
         "mutty": "mutty",

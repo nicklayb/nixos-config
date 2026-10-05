@@ -1,0 +1,12 @@
+[[watch]]
+path = "~/Téléchargements"
+recursive = false
+
+[[rule]]
+name = "Torrent"
+
+[rule.condition]
+extension = "torrent"
+
+[rule.action]
+type = "delete"

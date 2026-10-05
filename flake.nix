@@ -44,6 +44,12 @@
       url = "github:nicklayb/mutty";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hazelnut = {
+      url = "github:nicklayb/hazelnut-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+      inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
