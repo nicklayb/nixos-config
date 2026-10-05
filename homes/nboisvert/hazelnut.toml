@@ -2,11 +2,46 @@
 path = "~/Téléchargements"
 recursive = false
 
+[[watch]]
+path = "~/Documents"
+recursive = false
+
 [[rule]]
 name = "Torrent"
 
 [rule.condition]
 extension = "torrent"
+age_days_greater_than = 1
 
 [rule.action]
 type = "delete"
+
+[[rule]]
+name = "PDFs to Documents"
+
+[rule.condition]
+extension = "pdf"
+
+[rule.action]
+type = "move"
+destination = "~/Documents/PDFs"
+
+[[rule]]
+name = "Spreadsheets to Documents"
+
+[rule.condition]
+extensions = ["xlsx", "xls", "csv"]
+
+[rule.action]
+type = "move"
+destination = "~/Documents/Spreadsheets"
+
+[[rule]]
+name = "3D Models to Documents"
+
+[rule.condition]
+extensions = ["stl", "3mf"]
+
+[rule.action]
+type = "move"
+destination = "~/Documents/Models"
