@@ -60,6 +60,7 @@ in
               "zen.welcome-screen.seen" = true;
               "zen.view.use-single-toolbar" = false;
               "zen.workspaces.force-container-workspace" = true;
+              "zen.workspaces.swipe-actions.edge-actions" = false;
             };
             spacesForce = true;
             containersForce = true;
