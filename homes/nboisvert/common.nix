@@ -47,7 +47,7 @@
 
   catppuccin = {
     enable = true;
-    flavor = "frappe";
+    flavor = "latte";
     gtk.icon.enable = false;
   };
 

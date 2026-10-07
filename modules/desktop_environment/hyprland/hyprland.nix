@@ -6,6 +6,9 @@ let
       "anyrun"
     else
       "pgrep -x wofi >/dev/null 2>&1 || wofi --show drun";
+  colors = {
+    border = "303030";
+  };
 in
 {
   "$terminal" = "alacritty";
@@ -30,22 +33,28 @@ in
     gaps_out = config.mods.hyprland.gaps;
     border_size = 2;
     "col.active_border" = "rgba(ff65baee) rgba(ffab7dee) 45deg";
-    "col.inactive_border" = "rgba(595959aa)";
+    "col.inactive_border" = "rgba(${colors.border}ee)";
     resize_on_border = false;
     allow_tearing = "false";
     layout = "dwindle";
   };
 
   decoration = {
-    rounding = 8;
+    rounding = 3;
     active_opacity = 0.98;
     inactive_opacity = 0.96;
     dim_inactive = config.mods.hyprland.dimInactive;
-    blur = {
+    # blur = {
+    #   enabled = true;
+    #   size = 3;
+    #   passes = 1;
+    #   vibrancy = 0.1696;
+    # };
+    shadow = {
       enabled = true;
-      size = 3;
-      passes = 1;
-      vibrancy = 0.1696;
+      color = "rgba(${colors.border}ee)";
+      color_inactive = "rgba(00000000)";
+      offset = "3 3";
     };
   };
   cursor = {
