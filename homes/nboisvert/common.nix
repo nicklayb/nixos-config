@@ -15,13 +15,7 @@
     inputs.catppuccin.homeModules.catppuccin
     inputs.zen-browser.homeModules.twilight
     inputs.astronvim-config.homeManagerModules.default
-    inputs.hazelnut.homeManagerModules.default
   ];
-
-  programs.hazelnut = {
-    enable = true;
-    configFile = ./hazelnut.toml;
-  };
 
   programs.git = {
     enable = true;
