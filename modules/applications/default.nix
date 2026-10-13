@@ -10,6 +10,7 @@ in
     ./blender.nix
     ./dbeaver.nix
     ./deluge.nix
+    ./draftline
     ./matrix.nix
     ./firefox.nix
     ./gimp.nix
