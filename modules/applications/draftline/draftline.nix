@@ -25,6 +25,20 @@ appimageTools.wrapType2 {
     pkgs.libsoup_3
   ];
 
+  extraInstallCommands = ''
+    mkdir -p $out/share/applications
+
+    cat > $out/share/applications/draftline.desktop <<EOF
+    [Desktop Entry]
+    Name=Draftline
+    Comment=Writing application
+    Exec=draftline
+    Type=Application
+    Terminal=false
+    Categories=Office;WordProcessor;
+    EOF
+  '';
+
   meta = {
     description = "Draftline writing application";
     homepage = "https://draftline.ink/";
