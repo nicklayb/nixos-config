@@ -4,6 +4,7 @@
     ./dev/tools.nix
     ./command_line/tmux
     ./command_line/shells
+    ./command_line/mise.nix
     ./fonts/darwin.nix
     ./applications/vscode.nix
     ./applications/alacritty

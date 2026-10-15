@@ -38,7 +38,7 @@
     sites = [
       (builder.pin "UKG" "https://pngaming.ultipro.com")
       (builder.pin "Canadian UKG" "https://secure60.saashr.com/ta/6176628.login")
-      (builder.pin "Dayforce" "https://us252.dayforcehcm.com")
+      (builder.pin "Dayforce" "https://www.dayforcehcm.com/mydayforce/login.aspx")
     ];
   });
 }

@@ -55,6 +55,7 @@ in
       default = [
         "qwen3:8b"
         "nomic-embed-text"
+        "qwen3-coder:30b"
       ];
 
       description = ''
@@ -128,7 +129,7 @@ in
       pkgs.docker-client
     ];
 
-    launchd.daemons.local-ai-ollama = {
+    launchd.user.agents.local-ai-ollama = {
       serviceConfig = {
         ProgramArguments = [
           "${pkgs.ollama}/bin/ollama"

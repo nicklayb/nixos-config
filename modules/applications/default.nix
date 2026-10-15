@@ -10,6 +10,7 @@ in
     ./blender.nix
     ./dbeaver.nix
     ./deluge.nix
+    ./draftline
     ./matrix.nix
     ./firefox.nix
     ./gimp.nix
@@ -21,6 +22,7 @@ in
     ./obs_studio.nix
     ./playstation.nix
     ./reaper.nix
+    ./remmina.nix
     ./steam.nix
     ./thunderbird.nix
     ./thunar.nix
@@ -37,7 +39,6 @@ in
     vlc
     gparted
     exfatprogs
-    plexamp
     localsend
     libreoffice
     rclone

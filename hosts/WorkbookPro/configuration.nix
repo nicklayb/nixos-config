@@ -1,5 +1,6 @@
 {
   pkgs,
+  unstable-pkgs,
   username,
   system,
   lib,
@@ -15,6 +16,7 @@
     };
     fonts.enable = true;
     tmux.enable = true;
+    mise.enable = true;
     vscode = {
       enable = true;
       cycode = true;
@@ -30,9 +32,6 @@
     zen.enable = true;
     zsh = {
       enable = true;
-      extraContent = ''
-        export PATH="''${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-      '';
     };
   };
 
@@ -50,46 +49,48 @@
 
   environment = {
     systemPackages = [
-      pkgs.wget
+      pkgs.asdf-vm
+      pkgs.awscli2
       pkgs.btop
-      pkgs.ripgrep
-      pkgs.fzf
-      pkgs.unzip
-      pkgs.jq
-      pkgs.gitFull
-      pkgs.silver-searcher
-      pkgs.openssh
+      pkgs.cargo
+      pkgs.cmake
+      unstable-pkgs.claude-code
+      pkgs.colima
+      pkgs.coreutils
+      pkgs.curl
       pkgs.direnv
-      pkgs.k9s
-      pkgs.kubectx
-      pkgs.kubectl
       pkgs.docker
       pkgs.docker-compose
-      pkgs.coreutils
-      pkgs.obsidian
-      pkgs.curl
       pkgs.efm-langserver
-      pkgs.gnupg
-      pkgs.colima
-      pkgs.mas
+      pkgs.ffmpeg
+      pkgs.fzf
+      pkgs.gitFull
       pkgs.glow
-      pkgs.unrar
-      pkgs.awscli2
+      pkgs.gnupg
+      pkgs.ijq
+      pkgs.jq
+      pkgs.just
+      pkgs.k9s
+      pkgs.kubectl
+      pkgs.kubectx
       pkgs.lazygit
-      pkgs.smartmontools
+      pkgs.mas
+      pkgs.obsidian
+      pkgs.openssh
+      pkgs.pam-reattach
+      pkgs.postgresql_15
       pkgs.prototool
+      pkgs.rclone
+      pkgs.ripgrep
+      pkgs.silver-searcher
+      pkgs.smartmontools
+      pkgs.unrar
+      pkgs.unzip
+      pkgs.weechat
+      pkgs.wget
       pkgs.xz
       pkgs.zlib
-      pkgs.ijq
-      pkgs.rclone
-      pkgs.weechat
-      pkgs.ffmpeg
-      pkgs.pam-reattach
       pkgs.zsh-autosuggestions
-      pkgs.just
-      pkgs.postgresql_15
-      pkgs.cargo
-      pkgs.asdf-vm
       inputs.squix.packages.${system}.default
     ];
 

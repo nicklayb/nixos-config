@@ -1,7 +1,13 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./common.nix
+    inputs.hazelnut.homeManagerModules.default
   ];
   home.homeDirectory = "/home/${username}";
 
@@ -14,6 +20,11 @@
     EDITOR = "nvim";
     NIXPKGS_ALLOW_INSECURE = "1";
     NIXOS_OZONE_WL = "1";
+  };
+
+  programs.hazelnut = {
+    enable = true;
+    configFile = ./hazelnut.toml;
   };
 
   # Scripts

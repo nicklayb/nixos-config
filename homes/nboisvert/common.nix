@@ -19,6 +19,10 @@
 
   programs.git = {
     enable = true;
+    ignores = [
+      ".nix-mix"
+      ".nix-hex"
+    ];
     settings = {
       user = {
         name = mainUser.githubUsername;
@@ -44,6 +48,7 @@
   catppuccin = {
     enable = true;
     flavor = "frappe";
+    gtk.icon.enable = false;
   };
 
   home.file.".git/hooks/prepare-commit-msg" = {

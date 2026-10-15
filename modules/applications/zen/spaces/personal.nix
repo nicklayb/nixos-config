@@ -38,8 +38,12 @@
   pins = [
     (builder.essential "GitHub" "https://github.com")
     (builder.essential "Reddit" "https://reddit.com")
+
+    (builder.pin "GitLab" "https://gitlab.com")
     (builder.pin "Plex" "https://app.plex.tv")
     (builder.pin "Samply" "https://samply.app")
+    (builder.pin "YouTube" "https://youtube.com")
+    (builder.pin "Patreon" "https://patreon.com")
   ]
   ++ (builder.mkFolder {
     title = "Finance";
@@ -55,13 +59,33 @@
       (builder.pin "Facebook" "https://facebook.com")
       (builder.pin "Messenger" "https://messenger.com")
       (builder.pin "Slack" "https://slack.com")
-      (builder.pin "YouTube" "https://youtube.com")
+    ];
+  })
+  ++ (builder.mkFolder {
+    title = "AI";
+    sites = [
+      (builder.pin "ChatGPT" "https://chatgpt.com")
+      (builder.pin "Claude" "https://claude.ai")
+    ];
+  })
+  ++ (builder.mkFolder {
+    title = "Tools";
+    sites = [
+      (builder.pin "TinkerCAD" "https://tinkercad.com")
+      (builder.pin "Gridfinity Layout Tool" "https://gridfinitylayouttool.com")
+      (builder.pin "Photopea" "https://photopea.com")
+      (builder.pin "JLCPCB" "https://jlcpcb.com")
     ];
   })
   ++ (builder.mkFolder {
     title = "Home lab";
     sites = [
+      (builder.pin "OPNSense" "http://192.168.1.1")
+      (builder.pin "Frigate" "https://frigate.nboisvert.local")
+      (builder.pin "Omada" "https://omada.nboisvert.local")
       (builder.pin "Grafana" "http://monitor.nboisvert.local:3000")
+      (builder.pin "Adguard" "http://adguard.nboisvert.local")
+      (builder.pin "Proxmox" "https://jekyll.nboisvert.local:8006")
     ];
   });
 }

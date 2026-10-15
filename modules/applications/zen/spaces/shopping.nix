@@ -25,9 +25,11 @@
     (builder.pin "Aliexpress" "https://aliexpress.com")
     (builder.pin "Amazon" "https://amazon.ca")
     (builder.pin "Apple" "https://apple.ca/store")
+    (builder.pin "Bandcamp" "https://bandcamp.com")
     (builder.pin "eBay" "https://ebay.ca")
     (builder.pin "Kickstarter" "https://kickstarter.com")
     (builder.pin "Newegg" "https://newegg.ca")
+    (builder.pin "Qobuz" "https://qobuz.com/ca-fr/shop")
     (builder.pin "Reverb" "https://reverb.com")
   ];
 }

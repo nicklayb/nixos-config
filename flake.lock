@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787965438,
-        "narHash": "sha256-/oorJhxcLsNCjYttxDc87fu8MRwQvKb4LzM7HMOEpI4=",
+        "lastModified": 1790177714,
+        "narHash": "sha256-1GPAlGeyo8IvEgeDR3bI6te8OtZCXtj6vc/xPmYANWc=",
         "owner": "nicklayb",
         "repo": "astronvim",
-        "rev": "b407fe8edfeb87ea59e6f156beb21fd7792235e6",
+        "rev": "43f5cec93cfc4ba77ae9ea47beb0310ce02b2c65",
         "type": "github"
       },
       "original": {
@@ -112,6 +112,46 @@
         "type": "github"
       }
     },
+    "hazelnut": {
+      "inputs": {
+        "hazelnut-src": "hazelnut-src",
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791224365,
+        "narHash": "sha256-zyQUXoUnSq01Br+uewMbtsnWofq7iKgJ87vZHi4+XFI=",
+        "owner": "nicklayb",
+        "repo": "hazelnut-flake",
+        "rev": "15e7bb702e74daf1b702db03c0d3bb632927cfe2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "hazelnut-flake",
+        "type": "github"
+      }
+    },
+    "hazelnut-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785702627,
+        "narHash": "sha256-rlt/WWbdm+LLGy69AFNIbPlfFCS5OYpLiOce6x4vrU8=",
+        "owner": "ricardodantas",
+        "repo": "hazelnut",
+        "rev": "72dac6de91be2fc1c1043efb22b62d4dcd4036e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ricardodantas",
+        "repo": "hazelnut",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -141,11 +181,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789235087,
-        "narHash": "sha256-6hZ6Gy8isRQsWdI4l81Egag/PUIh68nSmFr2maInUNg=",
+        "lastModified": 1789430117,
+        "narHash": "sha256-t+U1mijItLJ64xZOifpfQ17kpAL73nU7pDI48ScacVc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fe48612c5321a2cc09b0f563757a9c9733d641f8",
+        "rev": "cda90fd8838825c689fde9d3f3b4e937937790df",
         "type": "github"
       },
       "original": {
@@ -266,11 +306,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1789006805,
-        "narHash": "sha256-xB8mKMOx1IA9vTDNLmJZ6n4wCMq/cuWBBOzGCRnqxrU=",
+        "lastModified": 1791260994,
+        "narHash": "sha256-Miqqk/ammqnTUxaoCyvtwoPeLbI1ksFyLxi/CazZpWY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8ce4ef6cb6f871616146b9fe26d2a5ae594e94fe",
+        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
         "type": "github"
       },
       "original": {
@@ -389,6 +429,7 @@
         "astronvim-config": "astronvim-config",
         "catppuccin": "catppuccin",
         "elixir-extensions": "elixir-extensions",
+        "hazelnut": "hazelnut",
         "home-manager": "home-manager",
         "musnix": "musnix",
         "mutty": "mutty",
@@ -495,11 +536,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789133576,
-        "narHash": "sha256-wJJGLMs78PDdbdXd0f50vq7s+xpKOuAUMZPsyDgXyew=",
+        "lastModified": 1790640826,
+        "narHash": "sha256-bxciMkBWQ+G9EPwRzZkJ/L+cVgCKbgoHfHAVSlXkj7s=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "975870eb40a0cb6dc1baf6d63a704f9cfd5d4f27",
+        "rev": "50e132ab7f46b99cc750a1f04d6857280d61a84e",
         "type": "github"
       },
       "original": {
