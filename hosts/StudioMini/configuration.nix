@@ -33,6 +33,7 @@
         "nomic-embed-text"
       ];
     };
+    virtualization.colima.enable = true;
     zen.enable = true;
     zsh = {
       enable = true;
@@ -76,8 +77,6 @@
       serve
       lazygit
       rclone
-      docker
-      colima
       ffmpeg
       oh-my-zsh
       tree-sitter

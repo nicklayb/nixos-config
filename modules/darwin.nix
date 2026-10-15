@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./dev/tools.nix
@@ -11,5 +11,6 @@
     ./applications/zen
     ./desktop_environment/darwin_tiling
     ./services/local_llm.nix
+    ./virtualization/colima.nix
   ];
 }
