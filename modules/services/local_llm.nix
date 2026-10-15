@@ -146,10 +146,8 @@ in
 
         RunAtLoad = true;
         KeepAlive = true;
-
-        StandardOutPath = "/var/log/local-ai-ollama.log";
-
-        StandardErrorPath = "/var/log/local-ai-ollama-error.log";
+        StandardOutPath = "${config.system.primaryUserHome}/Library/Logs/local-ai-ollama.log";
+        StandardErrorPath = "${config.system.primaryUserHome}/Library/Logs/local-ai-ollama-error.log";
       };
     };
 

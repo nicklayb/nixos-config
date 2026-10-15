@@ -16,7 +16,9 @@
       pkgs.docker
       pkgs.colima
     ];
-    launchd.agents."colima.default" = {
+    home-manager.users.${username}.home.file.".colima/default/colima.yaml".source = ./colima.yaml;
+
+    launchd.user.agents."colima.default" = {
       command = "${pkgs.colima}/bin/colima start --foreground";
       serviceConfig = {
         Label = "com.colima.default";
@@ -28,6 +30,8 @@
 
         EnvironmentVariables = {
           PATH = "${pkgs.colima}/bin:${pkgs.docker}/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+          HOME = "/Users/${username}";
+          COLIMA_SAVE_CONFIG = "0";
         };
       };
     };
