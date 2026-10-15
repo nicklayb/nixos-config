@@ -11,16 +11,16 @@ let
   opencodeConfig = {
     "$schema" = "https://opencode.ai/config.json";
 
-    model = "ollama/${cfg.model}";
+    model = "ollama/${cfg.ollama.model}";
 
     provider.ollama = {
       npm = "@ai-sdk/openai-compatible";
       name = "Ollama - Mac Mini";
 
-      options.baseURL = "${cfg.baseURL}/v1";
+      options.baseURL = "${cfg.ollama.baseURL}/v1";
 
-      models.${cfg.model} = {
-        name = cfg.model;
+      models.${cfg.ollama.model} = {
+        name = cfg.ollama.model;
         limit = {
           context = 65536;
           output = 8192;
