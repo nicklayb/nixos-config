@@ -82,6 +82,7 @@
     sites = [
       (builder.pin "OPNSense" "http://192.168.1.1")
       (builder.pin "Frigate" "https://frigate.nboisvert.local")
+      (builder.pin "Omada" "https://omada.nboisvert.local")
       (builder.pin "Grafana" "http://monitor.nboisvert.local:3000")
       (builder.pin "Adguard" "http://adguard.nboisvert.local")
       (builder.pin "Proxmox" "https://jekyll.nboisvert.local:8006")
