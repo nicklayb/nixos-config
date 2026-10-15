@@ -31,6 +31,7 @@
       models = [
         "qwen3:8b"
         "nomic-embed-text"
+        "qwen3-coder:30b"
       ];
     };
     virtualization.colima.enable = true;
