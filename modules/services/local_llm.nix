@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  unstable-pkgs,
   ...
 }:
 
@@ -23,7 +24,7 @@ let
       lib.makeBinPath [
         pkgs.coreutils
         pkgs.curl
-        pkgs.ollama
+        unstable-pkgs.ollama
       ]
     }:$PATH"
 
