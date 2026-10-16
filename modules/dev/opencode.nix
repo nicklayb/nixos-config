@@ -13,6 +13,19 @@ let
 
     model = "ollama/${cfg.ollama.model}";
 
+    agent.build.prompt = ''
+      Tool usage instructions:
+      - Never call a subagent name such as "explore" or "general"
+        as if it were a tool.
+      - To delegate a task, use the "task" tool.
+      - When using the "task" tool, specify the subagent type
+        and provide its prompt and description.
+      - For simple repository exploration, you may directly use
+        glob, grep, list, read, and bash.
+      - Never output pseudo-XML or textual representations of
+        tool calls. Invoke the available tools directly.
+    '';
+
     provider.ollama = {
       npm = "@ai-sdk/openai-compatible";
       name = "Ollama - Mac Mini";
