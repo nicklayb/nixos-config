@@ -2,11 +2,13 @@
   config,
   lib,
   pkgs,
+  unstable-pkgs,
   ...
 }:
 
 let
   cfg = config.mods.local_llm;
+  ollama = unstable-pkgs.ollama;
 
   inherit (lib)
     mkEnableOption
@@ -23,7 +25,7 @@ let
       lib.makeBinPath [
         pkgs.coreutils
         pkgs.curl
-        pkgs.ollama
+        ollama
       ]
     }:$PATH"
 
@@ -55,6 +57,7 @@ in
       default = [
         "qwen3:8b"
         "nomic-embed-text"
+        "qwen3-coder:30b"
       ];
 
       description = ''
@@ -124,14 +127,14 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.ollama
+      ollama
       pkgs.docker-client
     ];
 
-    launchd.daemons.local-ai-ollama = {
+    launchd.user.agents.local-ai-ollama = {
       serviceConfig = {
         ProgramArguments = [
-          "${pkgs.ollama}/bin/ollama"
+          "${ollama}/bin/ollama"
           "serve"
         ];
 
@@ -145,10 +148,8 @@ in
 
         RunAtLoad = true;
         KeepAlive = true;
-
-        StandardOutPath = "/var/log/local-ai-ollama.log";
-
-        StandardErrorPath = "/var/log/local-ai-ollama-error.log";
+        StandardOutPath = "${config.system.primaryUserHome}/Library/Logs/local-ai-ollama.log";
+        StandardErrorPath = "${config.system.primaryUserHome}/Library/Logs/local-ai-ollama-error.log";
       };
     };
 

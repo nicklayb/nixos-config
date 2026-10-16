@@ -114,6 +114,7 @@
       enable = true;
       hostname = hostname;
     };
+    opencode.enable = true;
     platformio.enable = true;
     playstation.enable = true;
     printing.enable = true;

@@ -31,8 +31,10 @@
       models = [
         "qwen3:8b"
         "nomic-embed-text"
+        "qwen3-coder:30b"
       ];
     };
+    virtualization.colima.enable = true;
     zen.enable = true;
     zsh = {
       enable = true;
@@ -76,8 +78,6 @@
       serve
       lazygit
       rclone
-      docker
-      colima
       ffmpeg
       oh-my-zsh
       tree-sitter

@@ -35,6 +35,7 @@
     distributedBuilders.enable = true;
     docker.enable = true;
     deluge.enable = true;
+    draftline.enable = true;
     flatpak.enable = true;
     gimp.enable = true;
     hyprland = {
