@@ -56,6 +56,7 @@ in
       default = [
         "qwen3:8b"
         "nomic-embed-text"
+        "qwen3-coder:30b"
       ];
 
       description = ''
@@ -129,7 +130,7 @@ in
       pkgs.docker-client
     ];
 
-    launchd.daemons.local-ai-ollama = {
+    launchd.user.agents.local-ai-ollama = {
       serviceConfig = {
         ProgramArguments = [
           "${pkgs.ollama}/bin/ollama"
@@ -146,10 +147,8 @@ in
 
         RunAtLoad = true;
         KeepAlive = true;
-
-        StandardOutPath = "/var/log/local-ai-ollama.log";
-
-        StandardErrorPath = "/var/log/local-ai-ollama-error.log";
+        StandardOutPath = "${config.system.primaryUserHome}/Library/Logs/local-ai-ollama.log";
+        StandardErrorPath = "${config.system.primaryUserHome}/Library/Logs/local-ai-ollama-error.log";
       };
     };
 

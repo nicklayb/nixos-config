@@ -17,6 +17,19 @@ WOFI=./modules/desktop_environment/wofi
 
 THEME=rose.css
 
+case "$(uname -s)" in
+  Darwin)
+    REBUILD=darwin-rebuild
+    ;;
+  Linux)
+    REBUILD=nixos-rebuild
+    ;;
+  *)
+    echo "Unsupported operating system: $(uname -s)" >&2
+    exit 1
+    ;;
+esac
+
 case $1 in
   repl)
     nix repl --file repl.nix
@@ -28,10 +41,10 @@ case $1 in
     wofi --show drun -s $WOFI/style.css -c $WOFI/config
     ;;
   switch)
-    sudo nixos-rebuild switch --flake ./
+    sudo "$REBUILD" switch --flake ./
     ;;
   test)
-    sudo nixos-rebuild test --flake ./
+    sudo "$REBUILD" test --flake ./
     ;;
   "")
     echo "Usage ./dev.sh [SOFTWARE]"
