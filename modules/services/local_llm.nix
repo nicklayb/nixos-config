@@ -2,11 +2,13 @@
   config,
   lib,
   pkgs,
+  unstable-pkgs,
   ...
 }:
 
 let
   cfg = config.mods.local_llm;
+  ollama = unstable-pkgs.ollama;
 
   inherit (lib)
     mkEnableOption
@@ -23,7 +25,7 @@ let
       lib.makeBinPath [
         pkgs.coreutils
         pkgs.curl
-        pkgs.ollama
+        ollama
       ]
     }:$PATH"
 
@@ -125,14 +127,14 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.ollama
+      ollama
       pkgs.docker-client
     ];
 
     launchd.user.agents.local-ai-ollama = {
       serviceConfig = {
         ProgramArguments = [
-          "${pkgs.ollama}/bin/ollama"
+          "${ollama}/bin/ollama"
           "serve"
         ];
 
