@@ -70,6 +70,7 @@
       enable = true;
       gpu = "amd";
     };
+    opencode.enable = true;
     platformio.enable = true;
     printing.enable = true;
     remmina.enable = true;
