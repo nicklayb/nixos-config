@@ -19,9 +19,11 @@ THEME=rose.css
 
 case "$(uname -s)" in
   Darwin)
+    OS=darwin
     REBUILD=darwin-rebuild
     ;;
   Linux)
+    OS=linux
     REBUILD=nixos-rebuild
     ;;
   *)
@@ -45,6 +47,14 @@ case $1 in
     ;;
   test)
     sudo "$REBUILD" test --flake ./
+    ;;
+  install-ca)
+    if [ "$OS" = "darwin" ]; then
+      sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ./certs/nboisvert-local.pem
+    elif [ "$OS" = "linux" ]; then
+      echo "CAs are installed by default on Linux."
+      exit 2
+    fi
     ;;
   "")
     echo "Usage ./dev.sh [SOFTWARE]"

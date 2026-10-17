@@ -57,6 +57,7 @@ in
             settings = {
               "browser.translations.automaticallyPopup" = false;
               "intl.locale.requested" = "fr,en-US";
+              "security.enterprise_roots.enabled" = true;
               "zen.welcome-screen.seen" = true;
               "zen.view.use-single-toolbar" = false;
               "zen.workspaces.force-container-workspace" = true;

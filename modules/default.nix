@@ -26,4 +26,8 @@
       "x-scheme-handler/about" = browser;
       "x-scheme-handler/unknown" = browser;
     };
+
+  security.pki.certificateFiles = [
+    ../certs/nboisvert-local.pem
+  ];
 }
