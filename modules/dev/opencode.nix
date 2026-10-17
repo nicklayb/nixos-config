@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs,
+  unstable-pkgs,
   username,
   ...
 }:
@@ -68,11 +68,11 @@ in
     };
   };
   config = lib.mkIf config.mods.opencode.enable {
-    environment.systemPackages = [ pkgs.opencode ];
+    environment.systemPackages = [ unstable-pkgs.opencode ];
 
-    home-manager.users.${username} = {
-      xdg.configFile."opencode/opencode.json".text = builtins.toJSON opencodeConfig;
-    };
+    # home-manager.users.${username} = {
+    #   xdg.configFile."opencode/opencode.json".text = builtins.toJSON opencodeConfig;
+    # };
   };
 
 }

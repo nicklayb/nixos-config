@@ -114,7 +114,10 @@
       enable = true;
       hostname = hostname;
     };
-    opencode.enable = true;
+    opencode = {
+      enable = true;
+      ollama.model = "devstral";
+    };
     platformio.enable = true;
     playstation.enable = true;
     printing.enable = true;
