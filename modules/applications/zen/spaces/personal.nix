@@ -71,20 +71,22 @@
   ++ (builder.mkFolder {
     title = "Tools";
     sites = [
-      (builder.pin "TinkerCAD" "https://tinkercad.com")
       (builder.pin "Gridfinity Layout Tool" "https://gridfinitylayouttool.com")
-      (builder.pin "Photopea" "https://photopea.com")
       (builder.pin "JLCPCB" "https://jlcpcb.com")
+      (builder.pin "Photopea" "https://photopea.com")
+      (builder.pin "TinkerCAD" "https://tinkercad.com")
     ];
   })
   ++ (builder.mkFolder {
     title = "Home lab";
     sites = [
-      (builder.pin "OPNSense" "https://router.nboisvert.local")
-      (builder.pin "Frigate" "https://frigate.nboisvert.local")
-      (builder.pin "Omada" "https://omada.nboisvert.local")
-      (builder.pin "Grafana" "https://grafana.nboisvert.local")
+      (builder.pin "Activepieces" "https://activepieces.k8s.home.arpa")
       (builder.pin "Adguard" "https://adguard.nboisvert.local")
+      (builder.pin "Frigate" "https://frigate.nboisvert.local")
+      (builder.pin "Grafana" "https://grafana.nboisvert.local")
+      (builder.pin "Headlamp" "https://k8s.home.arpa")
+      (builder.pin "OPNSense" "https://router.nboisvert.local")
+      (builder.pin "Omada" "https://omada.nboisvert.local")
       (builder.pin "Proxmox" "https://jekyll.nboisvert.local:8006")
     ];
   });
