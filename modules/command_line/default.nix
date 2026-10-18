@@ -2,6 +2,7 @@
 {
   imports = [
     ./mise.nix
+    ./opn_api
     ./tmux
     ./shells
   ];

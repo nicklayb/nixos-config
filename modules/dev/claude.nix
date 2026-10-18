@@ -13,6 +13,8 @@ in
     mods.claude = {
       enable = lib.mkEnableOption "Enables Claude";
     };
-    config = lib.mkIf cfg.enable { environment.systemPackages = [ unstable-pkgs.claude-code ]; };
+  };
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = [ unstable-pkgs.claude-code ];
   };
 }

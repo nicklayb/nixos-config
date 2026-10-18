@@ -16,6 +16,7 @@ let
   };
   unstable-pkgs = import inputs.nixpkgs-unstable {
     inherit system;
+    config.allowUnfree = true;
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
     ];

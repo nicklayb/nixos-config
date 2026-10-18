@@ -117,7 +117,9 @@
     };
     opencode = {
       enable = true;
-      ollama.model = "devstral";
+    };
+    opn-api = {
+      enable = true;
     };
     platformio.enable = true;
     playstation.enable = true;
