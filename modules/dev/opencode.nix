@@ -13,9 +13,10 @@ in
     mods.opencode = {
       enable = lib.mkEnableOption "Enables OpenCode";
       config = lib.mkOption {
-        type = lib.types.nullOr lib.types.attrsOf lib.types.any;
+        type = lib.types.nullOr (lib.types.attrsOf lib.types.anything);
         default = null;
         description = "OpenCode configuration as a JSON object.";
+      };
     };
   };
   config = lib.mkIf cfg.enable (
@@ -30,5 +31,4 @@ in
       })
     ]
   );
-
 }
