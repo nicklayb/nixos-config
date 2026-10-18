@@ -54,6 +54,7 @@
     };
     anyrun.enable = true;
     bluetooth.enable = true;
+    claude.enable = true;
     dbeaver.enable = true;
     deluge.enable = true;
     distributedBuilders.enable = true;
