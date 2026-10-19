@@ -32,6 +32,7 @@
         };
       };
     };
+    claude.enable = true;
     distributedBuilders.enable = true;
     docker.enable = true;
     deluge.enable = true;
