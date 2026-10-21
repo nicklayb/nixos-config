@@ -80,6 +80,7 @@
     steam.enable = true;
     thunderbird.enable = true;
     tmux.enable = true;
+    uv.enable = true;
     virtualization.qemu.enable = true;
     waybar.enable = true;
     waybar.theme = "rose";

@@ -7,5 +7,6 @@
     ./opencode.nix
     ./platformio.nix
     ./tools.nix
+    ./uv.nix
   ];
 }
