@@ -34,6 +34,12 @@
         "qwen3-coder:30b"
       ];
     };
+    linuxBuilder = {
+      enable = true;
+      isBootstrapped = false;
+      cores = 4;
+      memoryGibibytes = 4;
+    };
     virtualization.colima.enable = true;
     zen.enable = true;
     zsh = {

@@ -10,6 +10,7 @@
     ./applications/alacritty
     ./applications/zen
     ./desktop_environment/darwin_tiling
+    ./dev/linux_builder.nix
     ./services/local_llm.nix
     ./virtualization/colima
   ];
