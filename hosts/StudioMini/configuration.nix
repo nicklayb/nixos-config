@@ -39,6 +39,9 @@
       isBootstrapped = false;
       cores = 4;
       memoryGibibytes = 4;
+      remoteAuthorizedKeys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH81bTPl401LcgfiCQPVtS2TDmB9zsc3NOz4qzjy3Qif root@hades"
+      ];
     };
     virtualization.colima.enable = true;
     zen.enable = true;
