@@ -32,6 +32,7 @@
         };
       };
     };
+    claude.enable = true;
     distributedBuilders.enable = true;
     docker.enable = true;
     deluge.enable = true;
@@ -71,6 +72,7 @@
       gpu = "amd";
     };
     opencode.enable = true;
+    opn-api.enable = true;
     platformio.enable = true;
     printing.enable = true;
     remmina.enable = true;
@@ -78,6 +80,7 @@
     steam.enable = true;
     thunderbird.enable = true;
     tmux.enable = true;
+    uv.enable = true;
     virtualization.qemu.enable = true;
     waybar.enable = true;
     waybar.theme = "rose";

@@ -2,13 +2,12 @@
   config,
   lib,
   pkgs,
-  unstable-pkgs,
   ...
 }:
 
 let
   cfg = config.mods.local_llm;
-  ollama = unstable-pkgs.ollama;
+  ollamaBinary = "${config.homebrew.prefix}/bin/ollama";
 
   inherit (lib)
     mkEnableOption
@@ -25,7 +24,6 @@ let
       lib.makeBinPath [
         pkgs.coreutils
         pkgs.curl
-        ollama
       ]
     }:$PATH"
 
@@ -43,7 +41,7 @@ let
 
     ${lib.concatMapStringsSep "\n" (model: ''
       echo "Pulling model: ${model}"
-      ollama pull ${lib.escapeShellArg model}
+      ${lib.escapeShellArg ollamaBinary} pull ${lib.escapeShellArg model}
     '') cfg.models}
   '';
 
@@ -127,14 +125,18 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-      ollama
       pkgs.docker-client
     ];
+
+    homebrew = {
+      enable = true;
+      brews = [ "ollama" ];
+    };
 
     launchd.user.agents.local-ai-ollama = {
       serviceConfig = {
         ProgramArguments = [
-          "${ollama}/bin/ollama"
+          ollamaBinary
           "serve"
         ];
 
