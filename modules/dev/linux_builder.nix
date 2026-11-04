@@ -72,7 +72,12 @@ in
     diskGibibytes = mkOption {
       type = types.ints.positive;
       default = 64;
-      description = "Maximum disk size of the VM, in GiB.";
+      description = ''
+        Maximum disk size of the VM, in GiB.
+
+        Only used when the disk image is created: delete the existing image
+        (`/var/lib/linux-builder/nixos.qcow2`) for a new size to take effect.
+      '';
     };
 
     remoteAuthorizedKeys = mkOption {
@@ -88,6 +93,11 @@ in
   };
 
   config = mkIf cfg.enable {
+    warnings = lib.optional (!cfg.isBootstrapped) ''
+      mods.linuxBuilder.isBootstrapped is false: cores, memory, disk size and
+      remote authorized keys are ignored and the stock builder defaults apply.
+    '';
+
     nix.linux-builder = {
       enable = true;
       ephemeral = cfg.isEphemeral;

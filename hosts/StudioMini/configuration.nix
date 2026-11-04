@@ -36,9 +36,10 @@
     };
     linuxBuilder = {
       enable = true;
-      isBootstrapped = false;
+      isBootstrapped = true;
       cores = 4;
       memoryGibibytes = 4;
+      diskGibibytes = 40;
       remoteAuthorizedKeys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH81bTPl401LcgfiCQPVtS2TDmB9zsc3NOz4qzjy3Qif root@hades"
       ];
