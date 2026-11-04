@@ -31,8 +31,11 @@
       init = {
         defaultBranch = "main";
       };
-      core = {
-        hooksPath = "${config.home.homeDirectory}/.git/hooks";
+      hook = {
+        branchPrefix = {
+          command = "${config.home.homeDirectory}/.git/hooks/prepare-commit-msg";
+          event = "prepare-commit-msg";
+        };
       };
       pull = {
         rebase = false;
