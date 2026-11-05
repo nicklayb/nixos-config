@@ -11,15 +11,15 @@ if [ -z "$COMMIT_SOURCE" ] || [ "$COMMIT_SOURCE" = "message" ]; then
         exit 0
     fi
     
-    JIRA_TICKET=$(echo "$BRANCH_NAME" | grep -o -E '[A-Z]+-[0-9]+')
-    
+    JIRA_TICKET=$(echo "$BRANCH_NAME" | grep -o -E '[A-Z]+-[0-9]+' | head -n 1)
+
     if [ -n "$JIRA_TICKET" ]; then
         PREFIX="[$JIRA_TICKET]"
     else
         PREFIX="[$BRANCH_NAME]"
     fi
     
-    if ! grep -q "^$PREFIX" "$COMMIT_MSG_FILE"; then
+    if [[ "$(head -n 1 "$COMMIT_MSG_FILE")" != "$PREFIX"* ]]; then
         TEMP_MSG=$(cat "$COMMIT_MSG_FILE")
         echo "$PREFIX $TEMP_MSG" > "$COMMIT_MSG_FILE"
     fi
