@@ -71,7 +71,6 @@
       enable = true;
       gpu = "amd";
     };
-    opencode.enable = true;
     opn-api.enable = true;
     platformio.enable = true;
     printing.enable = true;
