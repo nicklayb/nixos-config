@@ -82,12 +82,14 @@
     sites = [
       (builder.pin "Activepieces" "https://activepieces.k8s.home.arpa")
       (builder.pin "Adguard" "https://adguard.nboisvert.local")
+      (builder.pin "Belgo" "https://belgo.k8s.home.arpa")
       (builder.pin "Frigate" "https://frigate.nboisvert.local")
       (builder.pin "Grafana" "https://grafana.nboisvert.local")
       (builder.pin "Headlamp" "https://k8s.home.arpa")
       (builder.pin "OPNSense" "https://router.nboisvert.local")
       (builder.pin "Omada" "https://omada.nboisvert.local")
-      (builder.pin "Proxmox" "https://jekyll.nboisvert.local:8006")
+      (builder.pin "Proxmox" "https://proxmox.nboisvert.local")
+      (builder.pin "Traefik" "https://traefik.nboisvert.local")
     ];
   });
 }
