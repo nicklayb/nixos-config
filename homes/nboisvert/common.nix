@@ -22,6 +22,7 @@
     ignores = [
       ".nix-mix"
       ".nix-hex"
+      "CLAUDE.local.md"
     ];
     settings = {
       user = {
