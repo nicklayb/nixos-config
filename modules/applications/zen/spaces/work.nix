@@ -23,6 +23,7 @@
   ];
   pins = [
     (builder.pin "Microsoft Apps" "https://myapps.microsoft.com")
+    (builder.pin "Alcan" "https://alcan.k8s.home.arpa")
   ]
   ++ (builder.mkFolder {
     title = "Atlassian";
