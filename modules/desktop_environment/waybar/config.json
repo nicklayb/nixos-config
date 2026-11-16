@@ -2,7 +2,19 @@
 	"layer": "top",
 	"modules-left": ["image#logo", "hyprland/submap", "hyprland/window"],
 	"modules-center": ["hyprland/workspaces", "task"],
-	"modules-right": ["group/group-backlight", "pulseaudio", "network", "group/group-perf", "battery", "clock"],
+	"modules-right": ["custom/sleep-inhibitor", "group/group-backlight", "pulseaudio", "network", "group/group-perf", "battery", "clock"],
+	"custom/sleep-inhibitor": {
+		"exec": "/home/nboisvert/.config/waybar/sleep-inhibitor.sh status",
+		"on-click": "/home/nboisvert/.config/waybar/sleep-inhibitor.sh toggle",
+		"return-type": "json",
+		"interval": 30,
+		"signal": 8,
+		"format": "{icon}",
+		"format-icons": {
+			"inactive": "<span alpha=\"35%\">󰅶</span>",
+			"active": "<span color=\"#f5a142\">󰅶</span>"
+		}
+	},
 	"image#logo": {
 		"path": "/home/nboisvert/.config/waybar/nixos.svg",
 		"size": 20,

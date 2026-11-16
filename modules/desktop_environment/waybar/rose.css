@@ -7,7 +7,7 @@
 	font-size: 12px;
 }
 
-#backlight-slider, #backlight, #disk, #network, #bluetooth, #pulseaudio, #cpu, #memory, #clock, #battery, #group-power {
+#custom-sleep-inhibitor, #backlight-slider, #backlight, #disk, #network, #bluetooth, #pulseaudio, #cpu, #memory, #clock, #battery, #group-power {
 	border-radius: 1px;
 	padding-left: 8px;
 	padding-right: 8px;

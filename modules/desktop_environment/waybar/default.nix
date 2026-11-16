@@ -42,6 +42,7 @@
       xdg.configFile."waybar/config".source = ./config.json;
       xdg.configFile."waybar/mocha.css".source = ./mocha.css;
       xdg.configFile."waybar/nixos.svg".source = ./nixos.svg;
+      xdg.configFile."waybar/sleep-inhibitor.sh".source = ./sleep-inhibitor.sh;
     };
   };
 }
