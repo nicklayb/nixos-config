@@ -115,9 +115,6 @@
       enable = true;
       hostname = hostname;
     };
-    opencode = {
-      enable = true;
-    };
     opn-api = {
       enable = true;
     };
