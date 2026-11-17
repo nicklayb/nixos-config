@@ -29,6 +29,7 @@
       skhd.enable = false;
       spacebar.enable = false;
     };
+    virtualization.colima.enable = true;
     zen.enable = true;
     zsh = {
       enable = true;
