@@ -80,8 +80,9 @@
   ++ (builder.mkFolder {
     title = "Home lab";
     sites = [
-      (builder.pin "Activepieces" "https://activepieces.k8s.home.arpa")
+      (builder.pin "Activepieces" "https://ap.nboisvert.com")
       (builder.pin "Adguard" "https://adguard.nboisvert.local")
+      (builder.pin "ArgoCD" "https://argocd.k8s.home.arpa")
       (builder.pin "Belgo" "https://belgo.k8s.home.arpa")
       (builder.pin "Frigate" "https://frigate.nboisvert.local")
       (builder.pin "Grafana" "https://grafana.nboisvert.local")
