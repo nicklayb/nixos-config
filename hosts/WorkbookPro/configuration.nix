@@ -123,6 +123,9 @@
       "cycode"
       "platformio"
     ];
+    casks = [
+      "vlc"
+    ];
   };
 
   system.defaults = {
