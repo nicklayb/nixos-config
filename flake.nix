@@ -50,6 +50,10 @@
       inputs.home-manager.follows = "home-manager";
       inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
+    immurok = {
+      url = "github:nicklayb/immurok-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

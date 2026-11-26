@@ -67,6 +67,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ./hosts/${hostname}/hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.catppuccin.nixosModules.catppuccin
+    inputs.immurok.nixosModules.default
     (nixos-home-config username)
   ];
 }

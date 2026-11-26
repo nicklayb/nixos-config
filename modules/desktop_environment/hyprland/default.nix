@@ -230,7 +230,10 @@
         };
       services.hypridle = {
         enable = true;
-        settings = import ./hypridle.nix { timers = config.mods.hyprland.hypridle.timers; };
+        settings = import ./hypridle.nix {
+          inherit pkgs;
+          timers = config.mods.hyprland.hypridle.timers;
+        };
       };
       programs.hyprlock = {
         enable = true;

@@ -194,6 +194,26 @@
         "type": "github"
       }
     },
+    "immurok": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1795642892,
+        "narHash": "sha256-4NTOr13hrmjWgqpE+ZK6yATWzmKKjWI5DyLD9bPY02g=",
+        "owner": "nicklayb",
+        "repo": "immurok-flake",
+        "rev": "ad58e7d5f3c8ec827f7ba9f7f85018d6db388e63",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicklayb",
+        "repo": "immurok-flake",
+        "type": "github"
+      }
+    },
     "musnix": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -431,6 +451,7 @@
         "elixir-extensions": "elixir-extensions",
         "hazelnut": "hazelnut",
         "home-manager": "home-manager",
+        "immurok": "immurok",
         "musnix": "musnix",
         "mutty": "mutty",
         "nix-darwin": "nix-darwin",
