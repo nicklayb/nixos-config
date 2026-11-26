@@ -90,6 +90,7 @@
       (builder.pin "OPNSense" "https://router.nboisvert.local")
       (builder.pin "Omada" "https://omada.nboisvert.local")
       (builder.pin "Proxmox" "https://proxmox.nboisvert.local")
+      (builder.pin "Robotnic" "https://robotnic.nboisvert.local")
       (builder.pin "Traefik" "https://traefik.nboisvert.local")
     ];
   });
