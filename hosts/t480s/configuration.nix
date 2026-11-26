@@ -107,7 +107,6 @@
         # "4, down, dispatcher, hyprexpo:expo, off"
       ];
     };
-    inputs.immurok.enable = true;
     inputs.logitech.enable = true;
     inputs.touchpad.enable = true;
     insomnia.enable = true;

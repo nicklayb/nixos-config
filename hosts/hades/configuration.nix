@@ -62,6 +62,7 @@
       ];
     };
     inputs.logitech.enable = true;
+    inputs.immurok.enable = true;
     nautilus.enable = true;
     networking = {
       enable = true;
