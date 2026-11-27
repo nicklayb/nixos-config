@@ -68,6 +68,7 @@
       enable = true;
       hostname = hostname;
     };
+    node-exporter.enable = true;
     obs_studio = {
       enable = true;
       gpu = "amd";
@@ -76,7 +77,6 @@
     platformio.enable = true;
     printing.enable = true;
     remmina.enable = true;
-    services.node-exporter.enable = true;
     sddm.enable = true;
     steam.enable = true;
     thunderbird.enable = true;
