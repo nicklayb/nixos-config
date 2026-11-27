@@ -76,6 +76,7 @@
     platformio.enable = true;
     printing.enable = true;
     remmina.enable = true;
+    services.node-exporter.enable = true;
     sddm.enable = true;
     steam.enable = true;
     thunderbird.enable = true;
@@ -110,6 +111,14 @@
     pkgs.freecad
     pkgs.kicad
   ];
+
+  networking.firewall = {
+    # Ports for Robotnic
+    allowedTCPPorts = [
+      4040
+      4041
+    ];
+  };
 
   system.stateVersion = "25.11";
 }
